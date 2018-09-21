@@ -115,7 +115,7 @@ public class QuoteBook {
     static private Random nRandom = new Random();
     static int lastInt = -2;
     //Methods (abilities; tings the object can do
-    static Quote getQuote() {
+    static Quote getRandomQuote() {
         //Button was clicked, so update the data for new fact.
         Quote newQuote;
         int randomInt;

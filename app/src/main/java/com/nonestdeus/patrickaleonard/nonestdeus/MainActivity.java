@@ -3,11 +3,17 @@ package com.nonestdeus.patrickaleonard.nonestdeus;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import static android.widget.Toast.LENGTH_LONG;
+
+public class MainActivity extends FragmentActivity {
 
     private TextView mTextMessage;
 
@@ -16,9 +22,14 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            if(fragmentManager.findFragmentById(R.id.container) != null) {
+                fragmentManager.beginTransaction().remove(fragmentManager.findFragmentById(R.id.container)).commit();
+            }
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    randomQuoteFragment(fragmentTransaction);
                     return true;
                 case R.id.navigation_dashboard:
                     mTextMessage.setText(R.string.title_dashboard);
@@ -28,6 +39,13 @@ public class MainActivity extends AppCompatActivity {
                     return true;
             }
             return false;
+        }
+
+        private void randomQuoteFragment(FragmentTransaction fragmentTransaction) {
+            mTextMessage.setText(R.string.title_random);
+            RandomQuoteFragment randomQuoteFragment = RandomQuoteFragment.newInstance();
+            fragmentTransaction.add(R.id.container,randomQuoteFragment);
+            fragmentTransaction.commit();
         }
     };
 
@@ -39,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        Toast toast =Toast.makeText(this, R.string.opening_toast_text, LENGTH_LONG);
+        toast.setGravity(Gravity.TOP | Gravity.START, 0, 0);
+        toast.show();
     }
 
 }

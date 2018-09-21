@@ -5,9 +5,11 @@ package com.nonestdeus.patrickaleonard.nonestdeus;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -16,33 +18,41 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
+import static android.content.Context.CLIPBOARD_SERVICE;
 import static android.widget.Toast.LENGTH_LONG;
 
 
-public class NonEstDeusActivity extends AppCompatActivity {
+public class RandomQuoteFragment extends Fragment {
 
-    public static final String TAG = NonEstDeusActivity.class.getSimpleName();
+    public static final String TAG = RandomQuoteFragment.class.getSimpleName();
 
-    @BindView(R.id.quoteTextView) TextView mQuoteText;
-    @BindView(R.id.quoteAuthorTextView) TextView mQuoteAuthorText;
-    @BindView(R.id.quoteNumTextView) TextView mQuoteNumText;
-    @BindView(R.id.quoteButton) Button mQuoteButton;
-    @BindView(R.id.copyQuoteIcon)  ImageView mCopyQuoteIcon;
-    @BindView(R.id.relativeLayout) RelativeLayout mRelativeLayout;
+    TextView mQuoteText;
+    TextView mQuoteAuthorText;
+    TextView mQuoteNumText;
+    Button mQuoteButton;
+    ImageView mCopyQuoteIcon;
+    RelativeLayout mRelativeLayout;
 
     protected ClipboardManager mClipboardManager;
     protected Quote mQuote;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_non_est_deus);
-        ButterKnife.bind(this);
+    public static RandomQuoteFragment newInstance() {
+        return new RandomQuoteFragment();
+    }
 
-        mClipboardManager = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.quote_fragment,container,false);
+        mQuoteButton = (Button)view.findViewById(R.id.quoteButton);
+        mCopyQuoteIcon = (ImageView)view.findViewById(R.id.copyQuoteIcon);
+        mQuoteAuthorText = (TextView)view.findViewById(R.id.quoteAuthorTextView);
+        mQuoteText = (TextView)view.findViewById(R.id.quoteTextView);
+        mQuoteNumText = (TextView)view.findViewById(R.id.quoteNumTextView);
+        mRelativeLayout = (RelativeLayout)view.findViewById(R.id.relativeLayout);
+
+        mClipboardManager = (ClipboardManager) getActivity().getSystemService(CLIPBOARD_SERVICE);
 
         mQuoteButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +64,7 @@ public class NonEstDeusActivity extends AppCompatActivity {
         mCopyQuoteIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(NonEstDeusActivity.this, R.string.clipboard_copy_toast, Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(getActivity(), R.string.clipboard_copy_toast, Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP, 0, 0);
                 toast.show();
                 String textToCopy = String.format(Locale.getDefault(),"\"%s\" -- %s",getString(mQuote.quoteTextId),
@@ -63,21 +73,13 @@ public class NonEstDeusActivity extends AppCompatActivity {
                 mClipboardManager.setPrimaryClip(clip);
             }
         });
-
-        Toast toast =Toast.makeText(this, R.string.opening_toast_text, LENGTH_LONG);
-        toast.setGravity(Gravity.TOP | Gravity.START, 0, 0);
-        toast.show();
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
         setLayoutToNewQuote();
+        return view;
     }
 
     private void setLayoutToNewQuote() {
         //Get a random quote from the QuoteBook and display it to the user.
-        mQuote = QuoteBook.getQuote();
+        mQuote = QuoteBook.getRandomQuote();
         mQuoteText.setText(getString(mQuote.quoteTextId));
         mQuoteAuthorText.setText(getString(mQuote.quoteAuthorId));
         String quoteNum = "#" + QuoteBook.lastInt;
