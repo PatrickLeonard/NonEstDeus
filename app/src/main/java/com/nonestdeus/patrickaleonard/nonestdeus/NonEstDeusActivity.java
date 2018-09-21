@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static android.widget.Toast.LENGTH_LONG;
@@ -26,12 +26,12 @@ public class NonEstDeusActivity extends AppCompatActivity {
 
     public static final String TAG = NonEstDeusActivity.class.getSimpleName();
 
-    @Bind(R.id.quoteTextView) TextView mQuoteText;
-    @Bind(R.id.quoteAuthorTextView) TextView mQuoteAuthorText;
-    @Bind(R.id.quoteNumTextView) TextView mQuoteNumText;
-    @Bind(R.id.quoteButton) Button mQuoteButton;
-    @Bind(R.id.copyQuoteIcon)  ImageView mCopyQuoteIcon;
-    @Bind(R.id.relativeLayout) RelativeLayout mRelativeLayout;
+    @BindView(R.id.quoteTextView) TextView mQuoteText;
+    @BindView(R.id.quoteAuthorTextView) TextView mQuoteAuthorText;
+    @BindView(R.id.quoteNumTextView) TextView mQuoteNumText;
+    @BindView(R.id.quoteButton) Button mQuoteButton;
+    @BindView(R.id.copyQuoteIcon)  ImageView mCopyQuoteIcon;
+    @BindView(R.id.relativeLayout) RelativeLayout mRelativeLayout;
 
     protected ClipboardManager mClipboardManager;
     protected Quote mQuote;

@@ -59,6 +59,7 @@
         android:layout_alignRight="@+id/quoteTextView"
         android:layout_alignEnd="@+id/quoteTextView"
         android:src="@drawable/copy_icon"
-        android:clickable="true"/>
+        android:clickable="true"
+        android:focusable="true"/>
 
 </RelativeLayout>

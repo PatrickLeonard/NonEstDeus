@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">Non est deus</string>
+    <string name="app_name">NonEstDeus</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
     <string name="quoteNum">000</string>
     <string name="quoteText">This is some test quote text so that something displays on the screen.</string>
     <string name="authorText">Me myself and I</string>
