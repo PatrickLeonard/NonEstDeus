@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * A fragment representing a list of Items.
@@ -20,10 +23,12 @@ import java.util.Arrays;
  */
 public class QuoteListFragment extends Fragment {
 
-    // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
-    // TODO: Customize parameters
+    private static final String ARG_SORT_BY = "sort-by";
+    public static final String SORT_BY_AUTHOR = "sort-author";
+    public static final String SORT_BY_NUMBER = "sort-number";
     private int mColumnCount = 1;
+    private String mSortBy;
     private OnListFragmentInteractionListener mListener;
 
     /**
@@ -33,12 +38,12 @@ public class QuoteListFragment extends Fragment {
     public QuoteListFragment() {
     }
 
-    // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static QuoteListFragment newInstance(int columnCount) {
+    public static QuoteListFragment newInstance(int columnCount,String sortBy) {
         QuoteListFragment fragment = new QuoteListFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
+        args.putString(ARG_SORT_BY,sortBy);
         fragment.setArguments(args);
         return fragment;
     }
@@ -49,6 +54,9 @@ public class QuoteListFragment extends Fragment {
 
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
+        }
+        if (getArguments() != null) {
+            mSortBy = getArguments().getString(ARG_SORT_BY);
         }
     }
 
@@ -66,7 +74,8 @@ public class QuoteListFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new QuoteRecyclerViewAdapter(Arrays.asList(QuoteBook.nQuoteArray), mListener));
+            recyclerView.setAdapter(new QuoteRecyclerViewAdapter(QuoteBook.getQuoteList(getContext(),mSortBy),mListener,mSortBy));
+            recyclerView.setBackgroundColor(ColorWheel.getColor());
         }
         return view;
     }

@@ -1,5 +1,12 @@
 package com.nonestdeus.patrickaleonard.nonestdeus;
 
+import android.content.Context;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -8,7 +15,7 @@ import java.util.Random;
 public class QuoteBook {
     //Member variables (properties about the object)
     //Create array of facts
-    static Quote[] nQuoteArray = new Quote[]{
+    private static Quote[] nQuoteArray = new Quote[]{
             new Quote(R.string.dawkins_quote_1, R.string.dawkins_author),
             new Quote(R.string.douglas_adams_quote_1, R.string.douglas_adams_author),
             new Quote(R.string.hitchens_quote_1, R.string.hitchens_author),
@@ -112,10 +119,10 @@ public class QuoteBook {
             new Quote(R.string.hepburn_quote_1, R.string.hepburn_author),
             new Quote(R.string.wozniak_quote_1, R.string.wozniak_author)
     };
-    static private Random nRandom = new Random();
-    static int lastInt = -2;
+    private static Random nRandom = new Random();
+    private static int lastInt = -2;
     //Methods (abilities; tings the object can do
-    static Quote getRandomQuote() {
+    public static Quote getRandomQuote() {
         //Button was clicked, so update the data for new fact.
         Quote newQuote;
         int randomInt;
@@ -125,10 +132,25 @@ public class QuoteBook {
         }while(randomInt == lastInt);
 
         newQuote = nQuoteArray[randomInt];
-        lastInt = randomInt;
+        lastInt = randomInt+1;
         newQuote.quoteNum=lastInt;
         return newQuote;
     }
 
-
+    public static List<Quote> getQuoteList(final Context context, String sortBy) {
+        List<Quote> quoteList = new ArrayList<Quote>();
+        for(int i=0;i<nQuoteArray.length;i++) {
+            nQuoteArray[i].quoteNum=i+1;
+            quoteList.add(i,nQuoteArray[i]);
+        }
+        if(sortBy.equals(QuoteListFragment.SORT_BY_AUTHOR)) {
+            Collections.sort(quoteList, new Comparator<Quote>() {
+                @Override
+                public int compare(Quote o1, Quote o2) {
+                    return context.getString(o1.quoteAuthorId).compareToIgnoreCase(context.getString(o2.quoteAuthorId));
+                }
+            });
+        }
+        return quoteList;
+    }
 }

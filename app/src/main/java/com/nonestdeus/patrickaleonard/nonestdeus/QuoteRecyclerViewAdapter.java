@@ -1,5 +1,6 @@
 package com.nonestdeus.patrickaleonard.nonestdeus;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import com.nonestdeus.patrickaleonard.nonestdeus.QuoteListFragment.OnListFragmentInteractionListener;
 
 
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -20,12 +22,11 @@ public class QuoteRecyclerViewAdapter extends RecyclerView.Adapter<QuoteRecycler
 
     private final List<Quote> mValues;
     private final OnListFragmentInteractionListener mListener;
+    private String mSortBy;
 
-    public QuoteRecyclerViewAdapter(List<Quote> items, OnListFragmentInteractionListener listener) {
-        for(int i=0;i<items.size();i++) {
-            items.get(i).quoteNum=i+1;
-        }
+    public QuoteRecyclerViewAdapter(List<Quote> items, OnListFragmentInteractionListener listener,String sortBy) {
         mValues = items;
+        mSortBy = sortBy;
         mListener = listener;
     }
 
@@ -40,10 +41,10 @@ public class QuoteRecyclerViewAdapter extends RecyclerView.Adapter<QuoteRecycler
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).quoteNum+"");
-        String shortenedQuoteString = holder.mContentView.getContext().getString(mValues.get(position).quoteTextId);
-        shortenedQuoteString = shortenedQuoteString.substring(0,(shortenedQuoteString.length() < 35 ? shortenedQuoteString.length() : 35))+"...";
-        holder.mContentView.setText(shortenedQuoteString);
-
+        int randomBackgroundColor = ColorWheel.getColor();
+        holder.mIdView.setBackgroundColor(randomBackgroundColor);
+        holder.mContentView.setText(getShortenedDisplayString(holder, position));
+        holder.mContentView.setBackgroundColor(randomBackgroundColor);
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +55,20 @@ public class QuoteRecyclerViewAdapter extends RecyclerView.Adapter<QuoteRecycler
                 }
             }
         });
+    }
+
+    @NonNull
+    private String getShortenedDisplayString(ViewHolder holder, int position) {
+        String shortenedDisplayString;
+        if(mSortBy.equals(QuoteListFragment.SORT_BY_AUTHOR)) {
+            shortenedDisplayString = holder.mContentView.getContext().getString(mValues.get(position).quoteAuthorId);
+        }
+        else {
+            shortenedDisplayString = holder.mContentView.getContext().getString(mValues.get(position).quoteTextId);
+        }
+        shortenedDisplayString = shortenedDisplayString.substring(0,(shortenedDisplayString.length() < 35 ? shortenedDisplayString.length() : 35));
+        shortenedDisplayString = shortenedDisplayString.length() == 35 ? shortenedDisplayString+"..." : shortenedDisplayString;
+        return shortenedDisplayString;
     }
 
     @Override

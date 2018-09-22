@@ -31,13 +31,13 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
             FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    randomQuoteFragment(fragmentTransaction);
+                    quoteFragment(fragmentTransaction,QuoteBook.getRandomQuote());
                     return true;
                 case R.id.navigation_by_number:
-                    quoteListFragment(fragmentTransaction);
+                    quoteListFragment(fragmentTransaction,QuoteListFragment.SORT_BY_NUMBER);
                     return true;
                 case R.id.navigation_by_author:
-                    mTextMessage.setText(R.string.title_by_author);
+                    quoteListFragment(fragmentTransaction,QuoteListFragment.SORT_BY_AUTHOR);
                     return true;
             }
             return false;
@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
 
     };
 
-    private void quoteListFragment(FragmentTransaction fragmentTransaction) {
-        QuoteListFragment quoteListFragment = QuoteListFragment.newInstance(1);
+    private void quoteListFragment(FragmentTransaction fragmentTransaction,String sortBy) {
+        QuoteListFragment quoteListFragment = QuoteListFragment.newInstance(1,sortBy);
         fragmentTransaction.add(R.id.container,quoteListFragment);
         fragmentTransaction.commit();
     }
@@ -57,9 +57,9 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
         }
     }
 
-    private void randomQuoteFragment(FragmentTransaction fragmentTransaction) {
-        RandomQuoteFragment randomQuoteFragment = RandomQuoteFragment.newInstance();
-        fragmentTransaction.add(R.id.container,randomQuoteFragment);
+    private void quoteFragment(FragmentTransaction fragmentTransaction, Quote quote) {
+        QuoteFragment quoteFragment = QuoteFragment.newInstance(quote);
+        fragmentTransaction.add(R.id.container,quoteFragment);
         fragmentTransaction.commit();
     }
 
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
         toast.setGravity(Gravity.TOP | Gravity.START, 0, 0);
         toast.show();
         mFragmentManager = getSupportFragmentManager();
-        randomQuoteFragment(mFragmentManager.beginTransaction());
+    quoteFragment(mFragmentManager.beginTransaction(),QuoteBook.getRandomQuote());
     }
 
     @Override
@@ -126,6 +126,6 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
 
     @Override
     public void onListFragmentInteraction(Quote quote) {
-        Toast.makeText(MainActivity.this,quote.quoteNum+" "+ getString(quote.quoteTextId)+ " was clicked", Toast.LENGTH_LONG).show();
+        quoteFragment(mFragmentManager.beginTransaction(),quote);
     }
 }
