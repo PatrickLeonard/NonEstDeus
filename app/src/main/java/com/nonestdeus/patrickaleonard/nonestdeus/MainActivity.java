@@ -16,12 +16,12 @@ import android.widget.Toast;
 
 import static android.widget.Toast.LENGTH_LONG;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements QuoteListFragment.OnListFragmentInteractionListener {
 
     public static final String TAG = MainActivity.class.getCanonicalName();
     public static final String APP_VERSION = "1.1.0";
     private TextView mTextMessage;
-
+    private FragmentManager mFragmentManager;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -33,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                     randomQuoteFragment(fragmentTransaction);
                     return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_by_number);
+                case R.id.navigation_by_number:
+                    quoteListFragment(fragmentTransaction);
                     return true;
-                case R.id.navigation_notifications:
+                case R.id.navigation_by_author:
                     mTextMessage.setText(R.string.title_by_author);
                     return true;
             }
@@ -45,19 +45,28 @@ public class MainActivity extends AppCompatActivity {
 
     };
 
+    private void quoteListFragment(FragmentTransaction fragmentTransaction) {
+        QuoteListFragment quoteListFragment = QuoteListFragment.newInstance(1);
+        fragmentTransaction.add(R.id.container,quoteListFragment);
+        fragmentTransaction.commit();
+    }
+
     private void clearFragment() {
         if(mFragmentManager.findFragmentById(R.id.container) != null) {
             mFragmentManager.beginTransaction().remove( mFragmentManager.findFragmentById(R.id.container)).commit();
         }
     }
 
-    private FragmentManager mFragmentManager;
+    private void randomQuoteFragment(FragmentTransaction fragmentTransaction) {
+        RandomQuoteFragment randomQuoteFragment = RandomQuoteFragment.newInstance();
+        fragmentTransaction.add(R.id.container,randomQuoteFragment);
+        fragmentTransaction.commit();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -115,11 +124,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-    private void randomQuoteFragment(FragmentTransaction fragmentTransaction) {
-        mTextMessage.setText(R.string.title_random);
-        RandomQuoteFragment randomQuoteFragment = RandomQuoteFragment.newInstance();
-        fragmentTransaction.add(R.id.container,randomQuoteFragment);
-        fragmentTransaction.commit();
+    @Override
+    public void onListFragmentInteraction(Quote quote) {
+        Toast.makeText(MainActivity.this,quote.quoteNum+" "+ getString(quote.quoteTextId)+ " was clicked", Toast.LENGTH_LONG).show();
     }
 }

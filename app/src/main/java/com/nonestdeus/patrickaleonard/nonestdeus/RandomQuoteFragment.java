@@ -38,7 +38,7 @@ public class RandomQuoteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.quote_fragment,container,false);
+        View view = inflater.inflate(R.layout.random_quote_fragment,container,false);
         mCopyQuoteIcon = (ImageView)view.findViewById(R.id.copyQuoteIcon);
         mQuoteAuthorText = (TextView)view.findViewById(R.id.quoteAuthorTextView);
         mQuoteText = (TextView)view.findViewById(R.id.quoteTextView);

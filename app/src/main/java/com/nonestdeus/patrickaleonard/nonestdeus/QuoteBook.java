@@ -126,6 +126,7 @@ public class QuoteBook {
 
         newQuote = nQuoteArray[randomInt];
         lastInt = randomInt;
+        newQuote.quoteNum=lastInt;
         return newQuote;
     }
 

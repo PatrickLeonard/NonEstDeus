@@ -6,7 +6,7 @@ package com.nonestdeus.patrickaleonard.nonestdeus;
 public class Quote {
     public int quoteTextId;
     public int quoteAuthorId;
-
+    public int quoteNum;
     public Quote(int textId, int authorId) {
         this.quoteTextId = textId; this.quoteAuthorId = authorId;
     }
