@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_license"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_license" />
+
+    <item
+        android:id="@+id/menu_report_problem"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_report_problem" />
+
+</menu>

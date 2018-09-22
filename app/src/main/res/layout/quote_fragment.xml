@@ -18,35 +18,27 @@
         android:textSize="18sp" />
 
     <TextView
+        android:id="@+id/quoteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/quoteText"
-        android:id="@+id/quoteTextView"
-        android:layout_marginTop="50dp"
-        android:textSize="@dimen/abc_text_size_title_material"
         android:layout_below="@+id/quoteNumTextView"
         android:layout_centerHorizontal="true"
-        android:textIsSelectable="true"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/buttonText"
-        android:id="@+id/quoteButton"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/quoteNumTextView" />
+        android:layout_marginTop="50dp"
+        android:text="@string/quoteText"
+        android:textIsSelectable="true"
+        android:textSize="@dimen/abc_text_size_title_material" />
 
     <TextView
+        android:id="@+id/quoteAuthorTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/quoteNumTextView"
+        android:layout_marginBottom="50dp"
         android:text="@string/authorText"
-        android:id="@+id/quoteAuthorTextView"
-        android:layout_above="@+id/quoteButton"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="35dp"
-        android:textSize="@dimen/abc_text_size_title_material"
-        android:textIsSelectable="true"/>
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textIsSelectable="true"
+        android:textSize="@dimen/abc_text_size_title_material" />
 
     <ImageView
         android:layout_width="wrap_content"

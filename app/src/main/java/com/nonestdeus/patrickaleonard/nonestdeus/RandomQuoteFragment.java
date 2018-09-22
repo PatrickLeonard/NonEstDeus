@@ -1,7 +1,5 @@
 package com.nonestdeus.patrickaleonard.nonestdeus;
 
-
-
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.os.Bundle;
@@ -10,7 +8,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -19,8 +16,6 @@ import android.widget.Toast;
 import java.util.Locale;
 
 import static android.content.Context.CLIPBOARD_SERVICE;
-import static android.widget.Toast.LENGTH_LONG;
-
 
 public class RandomQuoteFragment extends Fragment {
 
@@ -29,7 +24,6 @@ public class RandomQuoteFragment extends Fragment {
     TextView mQuoteText;
     TextView mQuoteAuthorText;
     TextView mQuoteNumText;
-    Button mQuoteButton;
     ImageView mCopyQuoteIcon;
     RelativeLayout mRelativeLayout;
 
@@ -45,22 +39,12 @@ public class RandomQuoteFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.quote_fragment,container,false);
-        mQuoteButton = (Button)view.findViewById(R.id.quoteButton);
         mCopyQuoteIcon = (ImageView)view.findViewById(R.id.copyQuoteIcon);
         mQuoteAuthorText = (TextView)view.findViewById(R.id.quoteAuthorTextView);
         mQuoteText = (TextView)view.findViewById(R.id.quoteTextView);
         mQuoteNumText = (TextView)view.findViewById(R.id.quoteNumTextView);
         mRelativeLayout = (RelativeLayout)view.findViewById(R.id.relativeLayout);
-
         mClipboardManager = (ClipboardManager) getActivity().getSystemService(CLIPBOARD_SERVICE);
-
-        mQuoteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setLayoutToNewQuote();
-            }
-        });
-
         mCopyQuoteIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,10 +68,7 @@ public class RandomQuoteFragment extends Fragment {
         mQuoteAuthorText.setText(getString(mQuote.quoteAuthorId));
         String quoteNum = "#" + QuoteBook.lastInt;
         mQuoteNumText.setText(quoteNum);
-        //Get a random color in from the ColorWheel and
-        int color = ColorWheel.getColor();
-        mRelativeLayout.setBackgroundColor(color);
-        mQuoteButton.setTextColor(color);
+        //Get a random color in from the ColorWheel and set to background
+        mRelativeLayout.setBackgroundColor(ColorWheel.getColor());
     }
-
 }
