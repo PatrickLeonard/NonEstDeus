@@ -1,5 +1,6 @@
 package com.nonestdeus.patrickaleonard.nonestdeus;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -17,6 +18,8 @@ import static android.widget.Toast.LENGTH_LONG;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String TAG = MainActivity.class.getCanonicalName();
+    public static final String APP_VERSION = "1.1.0";
     private TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -24,9 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            if(mFragmentManager.findFragmentById(R.id.container) != null) {
-                mFragmentManager.beginTransaction().remove( mFragmentManager.findFragmentById(R.id.container)).commit();
-            }
+            clearFragment();
             FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
             switch (item.getItemId()) {
                 case R.id.navigation_home:
@@ -43,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
     };
+
+    private void clearFragment() {
+        if(mFragmentManager.findFragmentById(R.id.container) != null) {
+            mFragmentManager.beginTransaction().remove( mFragmentManager.findFragmentById(R.id.container)).commit();
+        }
+    }
+
     private FragmentManager mFragmentManager;
 
     @Override
@@ -72,15 +80,41 @@ public class MainActivity extends AppCompatActivity {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.menu_license:
-                //TODO  Add license fragment
+                clearFragment();
+                displayLicense();
                 return true;
-            case R.id.menu_report_problem:
-                //TODO Add report problem fragment
+            case R.id.menu_send_feedback:
+                sendFeedback();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    private void displayLicense() {
+        mTextMessage.setText("NonEstDeus App. Ver. " + MainActivity.APP_VERSION  + "\n\n" +
+                "Copyright (c) 2018, Patrick Leonard\n\n" +
+                "This software is provided \'as is\' and without any express or implied " +
+                "warranties, including, but no limited to, the implied warranties of " +
+                "merchantability and fitness for a particular purpose are disclaimed." +
+                "\n\nNonEstDeus is an open source project. The source code for NonEstDeus " +
+                "can be found, with license, on Github:\nhttps://github.com/PatrickLeonard/NonEstDeus");
+    }
+
+    private void sendFeedback() {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("message/rfc822");
+        intent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"patrickleonard789@gmail.com"});
+        intent.putExtra(Intent.EXTRA_SUBJECT, "NonEstDeus Feedback Report");
+        intent.putExtra(Intent.EXTRA_TEXT   , "We'd really like to receive your feedback." +
+                " Please let us know how we can improve the application below:\n\n");
+        try {
+            startActivity(Intent.createChooser(intent, "Choose email client..."));
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(MainActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
     private void randomQuoteFragment(FragmentTransaction fragmentTransaction) {
         mTextMessage.setText(R.string.title_random);
