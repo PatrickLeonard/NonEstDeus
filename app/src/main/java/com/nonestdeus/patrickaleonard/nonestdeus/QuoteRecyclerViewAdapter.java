@@ -23,11 +23,13 @@ public class QuoteRecyclerViewAdapter extends RecyclerView.Adapter<QuoteRecycler
     private final List<Quote> mValues;
     private final OnListFragmentInteractionListener mListener;
     private String mSortBy;
+    private int mRandomBackgroundColor;
 
     public QuoteRecyclerViewAdapter(List<Quote> items, OnListFragmentInteractionListener listener,String sortBy) {
         mValues = items;
         mSortBy = sortBy;
         mListener = listener;
+        mRandomBackgroundColor = ColorWheel.getColor();
     }
 
     @Override
@@ -41,10 +43,9 @@ public class QuoteRecyclerViewAdapter extends RecyclerView.Adapter<QuoteRecycler
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).quoteNum+"");
-        int randomBackgroundColor = ColorWheel.getColor();
-        holder.mIdView.setBackgroundColor(randomBackgroundColor);
+        holder.mIdView.setBackgroundColor(mRandomBackgroundColor);
         holder.mContentView.setText(getShortenedDisplayString(holder, position));
-        holder.mContentView.setBackgroundColor(randomBackgroundColor);
+        holder.mContentView.setBackgroundColor(mRandomBackgroundColor);
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

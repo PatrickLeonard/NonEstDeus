@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  * A fragment representing a list of Items.
- * <p/>
+ *
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
