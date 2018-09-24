@@ -13,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import static android.widget.Toast.LENGTH_LONG;
 
@@ -68,6 +69,8 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mTextMessage = (TextView) findViewById(R.id.message);
+        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.my_awesome_toolbar);
+        setSupportActionBar(toolbar);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Toast toast =Toast.makeText(this, R.string.opening_toast_text, LENGTH_LONG);
