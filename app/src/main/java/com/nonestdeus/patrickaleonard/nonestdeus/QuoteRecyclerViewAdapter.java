@@ -10,7 +10,6 @@ import android.widget.TextView;
 import com.nonestdeus.patrickaleonard.nonestdeus.QuoteListFragment.OnListFragmentInteractionListener;
 
 
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -44,7 +43,7 @@ public class QuoteRecyclerViewAdapter extends RecyclerView.Adapter<QuoteRecycler
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).quoteNum+"");
         holder.mIdView.setBackgroundColor(mRandomBackgroundColor);
-        holder.mContentView.setText(getShortenedDisplayString(holder, position));
+        holder.mContentView.setText(getdisplayString(holder, position));
         holder.mContentView.setBackgroundColor(mRandomBackgroundColor);
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,17 +58,15 @@ public class QuoteRecyclerViewAdapter extends RecyclerView.Adapter<QuoteRecycler
     }
 
     @NonNull
-    private String getShortenedDisplayString(ViewHolder holder, int position) {
-        String shortenedDisplayString;
+    private String getdisplayString(ViewHolder holder, int position) {
+        String displayString;
         if(mSortBy.equals(QuoteListFragment.SORT_BY_AUTHOR)) {
-            shortenedDisplayString = holder.mContentView.getContext().getString(mValues.get(position).quoteAuthorId);
+            displayString = holder.mContentView.getContext().getString(mValues.get(position).quoteAuthorId);
         }
         else {
-            shortenedDisplayString = holder.mContentView.getContext().getString(mValues.get(position).quoteTextId);
+            displayString = holder.mContentView.getContext().getString(mValues.get(position).quoteTextId);
         }
-        shortenedDisplayString = shortenedDisplayString.substring(0,(shortenedDisplayString.length() < 35 ? shortenedDisplayString.length() : 35));
-        shortenedDisplayString = shortenedDisplayString.length() == 35 ? shortenedDisplayString+"..." : shortenedDisplayString;
-        return shortenedDisplayString;
+        return displayString;
     }
 
     @Override

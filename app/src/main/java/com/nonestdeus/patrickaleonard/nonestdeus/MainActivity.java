@@ -73,9 +73,6 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
         setSupportActionBar(toolbar);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        Toast toast =Toast.makeText(this, R.string.opening_toast_text, LENGTH_LONG);
-        toast.setGravity(Gravity.TOP | Gravity.START, 0, 0);
-        toast.show();
         mFragmentManager = getSupportFragmentManager();
     quoteFragment(mFragmentManager.beginTransaction(),QuoteBook.getRandomQuote());
     }
