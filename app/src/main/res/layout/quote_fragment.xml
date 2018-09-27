@@ -16,7 +16,7 @@
         android:id="@+id/quoteNumTextView"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:textColor="#96ffffff"
+        android:textColor="#ff000000"
         android:text="@string/quoteNum"
         android:textSize="18sp" />
 
