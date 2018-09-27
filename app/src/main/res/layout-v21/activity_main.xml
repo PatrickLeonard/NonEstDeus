@@ -12,6 +12,7 @@
         android:layout_height="?attr/actionBarSize"
         android:layout_width="match_parent"
         app:logo="@mipmap/ic_launcher"
+        android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         android:background="@android:color/white" />
