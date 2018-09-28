@@ -2,7 +2,6 @@ package com.nonestdeus.patrickaleonard.nonestdeus;
 
 import android.graphics.Color;
 
-import java.security.SecureRandom;
 import java.util.Random;
 
 /**
@@ -11,8 +10,8 @@ import java.util.Random;
 public class ColorWheel {
 
     //Member variables (properties about the object)
-    //Create array of facts
-    static public String[] nColors = {"#39add1","#3079ab","#c25975",
+    //Create array of hex color codes
+    static private String[] nColors = {"#39add1","#3079ab","#c25975",
             "#e15258","#f9845b","#838cc7","#7d569e","#53bbb4",
             "#51b46d","#e0ab18","#637a91","#f092b0","#b7c0c7",
             "#FFAEB9","#CD8C95","#CD2990","#BA55D3","#3D59AB",

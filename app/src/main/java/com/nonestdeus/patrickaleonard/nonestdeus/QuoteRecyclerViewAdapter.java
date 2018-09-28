@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 import com.nonestdeus.patrickaleonard.nonestdeus.QuoteListFragment.OnListFragmentInteractionListener;
 
-
 import java.util.List;
+import java.util.Locale;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link Quote} and makes a call to the
@@ -23,28 +23,32 @@ public class QuoteRecyclerViewAdapter extends RecyclerView.Adapter<QuoteRecycler
     private final OnListFragmentInteractionListener mListener;
     private String mSortBy;
     private int mRandomBackgroundColor;
+    private int mRandomTextColor;
 
     public QuoteRecyclerViewAdapter(List<Quote> items, OnListFragmentInteractionListener listener,String sortBy) {
         mValues = items;
         mSortBy = sortBy;
         mListener = listener;
         mRandomBackgroundColor = ColorWheel.getColor();
+        mRandomTextColor = ColorWheel.getColor();
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, @NonNull int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.quote_item_fragment, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).quoteNum+"");
+        holder.mIdView.setText(String.format(Locale.getDefault(),"%d",mValues.get(position).quoteNum));
         holder.mIdView.setBackgroundColor(mRandomBackgroundColor);
-        holder.mContentView.setText(getdisplayString(holder, position));
+        holder.mIdView.setTextColor(mRandomTextColor);
+        holder.mContentView.setText(getDisplayString(holder, position));
         holder.mContentView.setBackgroundColor(mRandomBackgroundColor);
+        holder.mContentView.setTextColor(mRandomTextColor);
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,10 +62,11 @@ public class QuoteRecyclerViewAdapter extends RecyclerView.Adapter<QuoteRecycler
     }
 
     @NonNull
-    private String getdisplayString(ViewHolder holder, int position) {
+    private String getDisplayString(ViewHolder holder, int position) {
         String displayString;
         if(mSortBy.equals(QuoteListFragment.SORT_BY_AUTHOR)) {
-            displayString = holder.mContentView.getContext().getString(mValues.get(position).quoteAuthorId);
+            displayString = holder.mContentView.getContext().getString(mValues.get(position).quoteAuthorId) +
+            " -- " + holder.mContentView.getContext().getString(mValues.get(position).quoteTextId);
         }
         else {
             displayString = holder.mContentView.getContext().getString(mValues.get(position).quoteTextId);

@@ -1,27 +1,25 @@
 package com.nonestdeus.patrickaleonard.nonestdeus;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
-
-import static android.widget.Toast.LENGTH_LONG;
 
 public class MainActivity extends AppCompatActivity implements QuoteListFragment.OnListFragmentInteractionListener {
 
     public static final String TAG = MainActivity.class.getCanonicalName();
     public static final String APP_VERSION = "1.1.0";
     private TextView mTextMessage;
+    private BottomNavigationView mBottomNavigationView;
     private FragmentManager mFragmentManager;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -29,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             clearFragment();
+            setColorPalette();
             FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
             switch (item.getItemId()) {
                 case R.id.navigation_home:
@@ -69,12 +68,34 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mTextMessage = (TextView) findViewById(R.id.message);
-        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.my_awesome_toolbar);
-        setSupportActionBar(toolbar);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        setToolBar();
+        setBottomNavigation();
         mFragmentManager = getSupportFragmentManager();
-    quoteFragment(mFragmentManager.beginTransaction(),QuoteBook.getRandomQuote());
+        quoteFragment(mFragmentManager.beginTransaction(),QuoteBook.getRandomQuote());
+    }
+
+    private void setBottomNavigation() {
+        mBottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
+        mBottomNavigationView.setBackgroundColor(ColorWheel.getColor());
+        mBottomNavigationView.setItemIconTintList(ColorStateList.valueOf(ColorWheel.getColor()));
+        mBottomNavigationView.setItemTextColor(ColorStateList.valueOf(ColorWheel.getColor()));
+        //TODO Be able to set the active item to a different text/image color
+        mBottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    }
+
+    private void setToolBar() {
+        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.my_awesome_toolbar);
+        toolbar.setBackgroundColor(ColorWheel.getColor());
+        toolbar.setTitleTextColor(ColorWheel.getColor());
+        setSupportActionBar(toolbar);
+    }
+
+    private void setColorPalette () {
+        setToolBar();
+        mBottomNavigationView.setBackgroundColor(ColorWheel.getColor());
+        mBottomNavigationView.setItemIconTintList(ColorStateList.valueOf(ColorWheel.getColor()));
+        mBottomNavigationView.setItemTextColor(ColorStateList.valueOf(ColorWheel.getColor()));
+        mBottomNavigationView.setItemTextAppearanceActive(R.style.TextAppearance_AppCompat_Inverse);
     }
 
     @Override

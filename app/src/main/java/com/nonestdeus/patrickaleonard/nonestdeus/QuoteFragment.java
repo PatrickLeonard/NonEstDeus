@@ -89,5 +89,9 @@ public class QuoteFragment extends Fragment {
         }
         //Get a random color in from the ColorWheel and set to background
         mRelativeLayout.setBackgroundColor(ColorWheel.getColor());
+        mQuoteText.setTextColor(ColorWheel.getColor());
+        mQuoteNumText.setTextColor(ColorWheel.getColor());
+        mQuoteAuthorText.setTextColor(ColorWheel.getColor());
+        mCopyQuoteIcon.setColorFilter(ColorWheel.getColor());
     }
 }
