@@ -1,7 +1,6 @@
 package com.nonestdeus.patrickaleonard.nonestdeus;
 
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -11,14 +10,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements QuoteListFragment.OnListFragmentInteractionListener {
 
     public static final String TAG = MainActivity.class.getCanonicalName();
     public static final String APP_VERSION = "1.1.0";
-    private TextView mTextMessage;
     private BottomNavigationView mBottomNavigationView;
     private FragmentManager mFragmentManager;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -26,12 +23,11 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            clearFragment();
             setColorPalette();
             FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    quoteFragment(fragmentTransaction,QuoteBook.getRandomQuote());
+                    quoteFragment(fragmentTransaction.addToBackStack(null),QuoteBook.getRandomQuote());
                     return true;
                 case R.id.navigation_by_number:
                     quoteListFragment(fragmentTransaction,QuoteListFragment.SORT_BY_NUMBER);
@@ -47,19 +43,19 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
 
     private void quoteListFragment(FragmentTransaction fragmentTransaction,String sortBy) {
         QuoteListFragment quoteListFragment = QuoteListFragment.newInstance(1,sortBy);
-        fragmentTransaction.add(R.id.container,quoteListFragment);
+        fragmentTransaction.replace(R.id.container,quoteListFragment);
         fragmentTransaction.commit();
-    }
-
-    private void clearFragment() {
-        if(mFragmentManager.findFragmentById(R.id.container) != null) {
-            mFragmentManager.beginTransaction().remove( mFragmentManager.findFragmentById(R.id.container)).commit();
-        }
     }
 
     private void quoteFragment(FragmentTransaction fragmentTransaction, Quote quote) {
         QuoteFragment quoteFragment = QuoteFragment.newInstance(quote);
-        fragmentTransaction.add(R.id.container,quoteFragment);
+        fragmentTransaction.replace(R.id.container,quoteFragment);
+        fragmentTransaction.commit();
+    }
+
+    private void licenseFragment(FragmentTransaction fragmentTransaction) {
+        LicenseFragment licenseFragment = LicenseFragment.newInstance();
+        fragmentTransaction.replace(R.id.container,licenseFragment);
         fragmentTransaction.commit();
     }
 
@@ -67,42 +63,52 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mTextMessage = (TextView) findViewById(R.id.message);
         setToolBar();
         setBottomNavigation();
         mFragmentManager = getSupportFragmentManager();
         quoteFragment(mFragmentManager.beginTransaction(),QuoteBook.getRandomQuote());
     }
 
+    @Override
+    public void onBackPressed() {
+        if(mFragmentManager != null &&
+                mFragmentManager.getBackStackEntryCount() >= 1) {
+            mFragmentManager.popBackStackImmediate();
+        }
+        else {
+            super.onBackPressed();
+        }
+    }
+
     private void setBottomNavigation() {
-        mBottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
+        mBottomNavigationView = findViewById(R.id.navigation);
         mBottomNavigationView.setBackgroundColor(ColorWheel.getColor());
-        mBottomNavigationView.setItemIconTintList(ColorStateList.valueOf(ColorWheel.getColor()));
-        mBottomNavigationView.setItemTextColor(ColorStateList.valueOf(ColorWheel.getColor()));
+        //mBottomNavigationView.setItemIconTintList(ColorStateList.valueOf(ColorWheel.getColor()));
+        //mBottomNavigationView.setItemTextColor(ColorStateList.valueOf(ColorWheel.getColor()));
         //TODO Be able to set the active item to a different text/image color
         mBottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
     private void setToolBar() {
-        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.my_awesome_toolbar);
+        android.support.v7.widget.Toolbar toolbar = findViewById(R.id.my_awesome_toolbar);
         toolbar.setBackgroundColor(ColorWheel.getColor());
-        toolbar.setTitleTextColor(ColorWheel.getColor());
+        //toolbar.setTitleTextColor(ColorWheel.getColor());
         setSupportActionBar(toolbar);
     }
 
     private void setColorPalette () {
         setToolBar();
         mBottomNavigationView.setBackgroundColor(ColorWheel.getColor());
-        mBottomNavigationView.setItemIconTintList(ColorStateList.valueOf(ColorWheel.getColor()));
-        mBottomNavigationView.setItemTextColor(ColorStateList.valueOf(ColorWheel.getColor()));
-        mBottomNavigationView.setItemTextAppearanceActive(R.style.TextAppearance_AppCompat_Inverse);
+        //mBottomNavigationView.setItemIconTintList(ColorStateList.valueOf(ColorWheel.getColor()));
+        //mBottomNavigationView.setItemTextColor(ColorStateList.valueOf(ColorWheel.getColor()));
+        //mBottomNavigationView.setItemTextAppearanceActive(R.style.TextAppearance_AppCompat_Inverse);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -110,8 +116,7 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.menu_license:
-                clearFragment();
-                displayLicense();
+                licenseFragment(mFragmentManager.beginTransaction().addToBackStack(null));
                 return true;
             case R.id.menu_send_feedback:
                 sendFeedback();
@@ -119,16 +124,6 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-    private void displayLicense() {
-        mTextMessage.setText("NonEstDeus App. Ver. " + MainActivity.APP_VERSION  + "\n\n" +
-                "Copyright (c) 2018, Patrick Leonard\n\n" +
-                "This software is provided \'as is\' and without any express or implied " +
-                "warranties, including, but no limited to, the implied warranties of " +
-                "merchantability and fitness for a particular purpose are disclaimed." +
-                "\n\nNonEstDeus is an open source project. The source code for NonEstDeus " +
-                "can be found, with license, on Github:\nhttps://github.com/PatrickLeonard/NonEstDeus");
     }
 
     private void sendFeedback() {
@@ -147,6 +142,6 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
 
     @Override
     public void onListFragmentInteraction(Quote quote) {
-        quoteFragment(mFragmentManager.beginTransaction(),quote);
+        quoteFragment(mFragmentManager.beginTransaction().addToBackStack(null),quote);
     }
 }

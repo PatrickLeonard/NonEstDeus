@@ -56,7 +56,7 @@ public class QuoteFragment extends Fragment {
                 Toast toast;
                 String textToCopy;
                 if(getArguments() == null) {
-                    toast = Toast.makeText(getActivity(), R.string.error_occured, Toast.LENGTH_LONG);
+                    toast = Toast.makeText(getActivity(), R.string.error_occurred, Toast.LENGTH_LONG);
                 }
                 else {
                     textToCopy = String.format(Locale.getDefault(),"\"%s\" -- %s",getString(getArguments().getInt(Quote.ARG_QUOTE_TEXT)),
@@ -75,8 +75,8 @@ public class QuoteFragment extends Fragment {
 
     private void setLayoutToNewQuote() {
         if(getArguments() == null) {
-            mQuoteText.setText(getString(R.string.error_occured));
-            mQuoteAuthorText.setText(getString(R.string.error_occured));
+            mQuoteText.setText(getString(R.string.error_occurred));
+            mQuoteAuthorText.setText(getString(R.string.error_occurred));
             mQuoteNumText.setText("#" + 0);
             return;
         }
@@ -89,9 +89,9 @@ public class QuoteFragment extends Fragment {
         }
         //Get a random color in from the ColorWheel and set to background
         mRelativeLayout.setBackgroundColor(ColorWheel.getColor());
-        mQuoteText.setTextColor(ColorWheel.getColor());
-        mQuoteNumText.setTextColor(ColorWheel.getColor());
-        mQuoteAuthorText.setTextColor(ColorWheel.getColor());
-        mCopyQuoteIcon.setColorFilter(ColorWheel.getColor());
+        //mQuoteText.setTextColor(ColorWheel.getColor());
+        //mQuoteNumText.setTextColor(ColorWheel.getColor());
+        //mQuoteAuthorText.setTextColor(ColorWheel.getColor());
+        //mCopyQuoteIcon.setColorFilter(ColorWheel.getColor());
     }
 }

@@ -45,10 +45,10 @@ public class QuoteRecyclerViewAdapter extends RecyclerView.Adapter<QuoteRecycler
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(String.format(Locale.getDefault(),"%d",mValues.get(position).quoteNum));
         holder.mIdView.setBackgroundColor(mRandomBackgroundColor);
-        holder.mIdView.setTextColor(mRandomTextColor);
+        //holder.mIdView.setTextColor(mRandomTextColor);
         holder.mContentView.setText(getDisplayString(holder, position));
         holder.mContentView.setBackgroundColor(mRandomBackgroundColor);
-        holder.mContentView.setTextColor(mRandomTextColor);
+        //holder.mContentView.setTextColor(mRandomTextColor);
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

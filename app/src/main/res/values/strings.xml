@@ -30,7 +30,7 @@
     <string name="carlin_author">George Carlin</string>
     <string name="carlin_quote_1">Atheism is a non-prophet organization.</string>
     <string name="twain_author">Mark Twain</string>
-    <string name="twain_quote_1">The Bible has noble poetry in it... and some good morals and a wealth of obscenity, and upwards of a thousand lies.</string>
+    <string name="twain_quote_1">The Bible has noble poetry in it… and some good morals and a wealth of obscenity, and upwards of a thousand lies.</string>
     <string name="hitchens_quote_2">Human decency is not derived from religion. It precedes it.</string>
     <string name="author_pirsig">Robert M. Pirsig</string>
     <string name="pirsig_quote_1">When one person suffers from a delusion, it is called insanity. When many people suffer from a delusion it is called a Religion.</string>
@@ -136,7 +136,7 @@
     <string name="bertrand_russel_quote_1">The idea that things must have a beginning is really due to the poverty of our imagination.</string>
     <string name="tochukwu_author">Aniekee Tochukwu</string>
     <string name="tochukwu_quote_1">Blessed are the doubters: for they shall not be easily fooled.</string>
-    <string name="neil_degrasse_tyson_quote_3">I\'d ask [God] why he keeps trying to kill us all with disease, pestilence, and natural disasters. I\'d ask why 99% of all species there ever were are now extinct -- if God works in mysterious ways, that way is mysteriously genocidal.</string>
+    <string name="neil_degrasse_tyson_quote_3">I\'d ask [God] why he keeps trying to kill us all with disease, pestilence, and natural disasters. I\'d ask why 99% of all species there ever were are now extinct — if God works in mysterious ways, that way is mysteriously genocidal.</string>
     <string name="navabi_author">Armin Navabi</string>
     <string name="navabi_quote_1">If God creates morality, then morality is nothing more than the whimsy of a divine being blindly followed by humans.</string>
     <string name="navabi_quote_2">Scriptures may have grains of historical truth within them, but there is also ample hyperbole, speculation and mythology.</string>
@@ -146,7 +146,7 @@
     <string name="navabi_quote_3">Not knowing the answer to a question is not a valid excuse for making up a fairytale to explain it.</string>
     <string name="navabi_quote_4">There is no evidence to suggest that God helps people. There is, however, ample evidence that people can help themselves and each other.</string>
     <string name="culliton_author">Travis Culliton</string>
-    <string name="culliton_quote_1">Nothing in any religious teachings goes beyond Humanism, unless you add the supernatural...Make believe is the only difference between being human and being religious.</string>
+    <string name="culliton_quote_1">Nothing in any religious teachings goes beyond Humanism, unless you add the supernatural…Make believe is the only difference between being human and being religious.</string>
     <string name="shaha_author">Alom Shaha</string>
     <string name="shaha_quote_1">Religion allows people to ignore the needs of real beings in favour of the supposed wishes of a being that does not exist.</string>
     <string name="robert_jordan_author">Robert Jordan</string>
@@ -182,10 +182,11 @@
     <string name="tennesse_williams_quote_1">All your Western theologies, the whole mythology of them, are based on the concept of God as a senile delinquent</string>
     <string name="amis_quote_2">It\'s possible to be flippant here, when Jihadists fly aircraft into buildings they shout God is Great, what do atheists shout when they do it?</string>
     <string name="chomsky_author">Noam Chomsky</string>
-    <string name="chomsky_quote_1">...if you ask me whether or not I\'m an atheist, I wouldn\'t even answer. I would first want an explanation of what it is that I\'m supposed not to believe in, and I\'ve never seen an explanation.</string>
+    <string name="chomsky_quote_1">…if you ask me whether or not I\'m an atheist, I wouldn\'t even answer. I would first want an explanation of what it is that I\'m supposed not to believe in, and I\'ve never seen an explanation.</string>
     <string name="hepburn_author">Katharine Hepburn</string>
     <string name="hepburn_quote_1">I am an atheist and that\'s it. I believe there\'s nothing we can know except that we should be kind to each other and do what we can for other people.</string>
     <string name="wozniak_author">Steve Wozniak</string>
     <string name="wozniak_quote_1">I am also atheist or agnostic (I don\'t even know the difference). I\'ve never been to church and prefer to think for myself.</string>
-    <string name="error_occured">Some error occured. Please try again.</string>
+    <string name="error_occurred">Some error occurred. Please try again.</string>
+    <string name="license">NonEstDeus App. Ver. %s \n\nCopyright © 2018, Patrick Leonard\n\nThis software is provided \'as is\' and without any express or implied warranties, including, but no limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed.\n\nNonEstDeus is an open source project. The source code for NonEstDeus can be found, with license, on Github:\nhttps://github.com/PatrickLeonard/NonEstDeus</string>
 </resources>

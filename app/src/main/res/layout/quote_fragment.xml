@@ -40,7 +40,7 @@
         android:text="@string/authorText"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textIsSelectable="true"
-        android:textSize="@dimen/abc_text_size_title_material" />
+        android:textSize="18sp" />
 
     <ImageView
         android:contentDescription="@string/clipboard_copy_toast"
