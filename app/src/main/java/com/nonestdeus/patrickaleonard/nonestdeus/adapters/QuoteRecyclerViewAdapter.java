@@ -1,4 +1,4 @@
-package com.nonestdeus.patrickaleonard.nonestdeus;
+package com.nonestdeus.patrickaleonard.nonestdeus.adapters;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -7,7 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.nonestdeus.patrickaleonard.nonestdeus.QuoteListFragment.OnListFragmentInteractionListener;
+import com.nonestdeus.patrickaleonard.nonestdeus.R;
+import com.nonestdeus.patrickaleonard.nonestdeus.fragments.QuoteListFragment;
+import com.nonestdeus.patrickaleonard.nonestdeus.fragments.QuoteListFragment.OnListFragmentInteractionListener;
+import com.nonestdeus.patrickaleonard.nonestdeus.quotes.Quote;
 
 import java.util.List;
 import java.util.Locale;
@@ -25,12 +28,13 @@ public class QuoteRecyclerViewAdapter extends RecyclerView.Adapter<QuoteRecycler
     private int mRandomBackgroundColor;
     private int mRandomTextColor;
 
-    public QuoteRecyclerViewAdapter(List<Quote> items, OnListFragmentInteractionListener listener,String sortBy) {
+    public QuoteRecyclerViewAdapter(List<Quote> items, OnListFragmentInteractionListener listener,String sortBy,
+                                    int backgroundColor, int randomTextColor) {
         mValues = items;
         mSortBy = sortBy;
         mListener = listener;
-        mRandomBackgroundColor = ColorWheel.getColor();
-        mRandomTextColor = ColorWheel.getColor();
+        mRandomBackgroundColor = backgroundColor;
+        mRandomTextColor = randomTextColor;
     }
 
     @Override
@@ -45,10 +49,10 @@ public class QuoteRecyclerViewAdapter extends RecyclerView.Adapter<QuoteRecycler
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(String.format(Locale.getDefault(),"%d",mValues.get(position).quoteNum));
         holder.mIdView.setBackgroundColor(mRandomBackgroundColor);
-        //holder.mIdView.setTextColor(mRandomTextColor);
+        holder.mIdView.setTextColor(mRandomTextColor);
         holder.mContentView.setText(getDisplayString(holder, position));
         holder.mContentView.setBackgroundColor(mRandomBackgroundColor);
-        //holder.mContentView.setTextColor(mRandomTextColor);
+        holder.mContentView.setTextColor(mRandomTextColor);
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

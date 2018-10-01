@@ -1,7 +1,8 @@
-package com.nonestdeus.patrickaleonard.nonestdeus;
+package com.nonestdeus.patrickaleonard.nonestdeus.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,10 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import com.nonestdeus.patrickaleonard.nonestdeus.palletWheel.PalletWheel;
+import com.nonestdeus.patrickaleonard.nonestdeus.quotes.Quote;
+import com.nonestdeus.patrickaleonard.nonestdeus.quotes.QuoteBook;
+import com.nonestdeus.patrickaleonard.nonestdeus.adapters.QuoteRecyclerViewAdapter;
+import com.nonestdeus.patrickaleonard.nonestdeus.R;
 
 /**
  * A fragment representing a list of Items.
@@ -61,7 +63,7 @@ public class QuoteListFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.quote_list_fragment, container, false);
         // Set the adapter
@@ -73,8 +75,10 @@ public class QuoteListFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new QuoteRecyclerViewAdapter(QuoteBook.getQuoteList(getContext(),mSortBy),mListener,mSortBy));
-            recyclerView.setBackgroundColor(ColorWheel.getColor());
+            recyclerView.setAdapter(new QuoteRecyclerViewAdapter(QuoteBook.getQuoteList(getContext(),mSortBy),mListener,mSortBy,
+                    PalletWheel.getPallet(getActivity()).getListItemBackgroundColor(),
+                    PalletWheel.getPallet(getActivity()).getQuoteTextColor()));
+            recyclerView.setBackgroundColor(PalletWheel.getPallet(getActivity()).getQuoteBackgroundColor());
         }
         return view;
     }

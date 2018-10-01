@@ -1,8 +1,9 @@
-package com.nonestdeus.patrickaleonard.nonestdeus;
+package com.nonestdeus.patrickaleonard.nonestdeus.fragments;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -12,6 +13,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.nonestdeus.patrickaleonard.nonestdeus.palletWheel.PalletWheel;
+import com.nonestdeus.patrickaleonard.nonestdeus.quotes.Quote;
+import com.nonestdeus.patrickaleonard.nonestdeus.R;
 
 import java.util.Locale;
 
@@ -40,15 +45,15 @@ public class QuoteFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.quote_fragment,container,false);
-        mCopyQuoteIcon = (ImageView)view.findViewById(R.id.copyQuoteIcon);
-        mQuoteAuthorText = (TextView)view.findViewById(R.id.quoteAuthorTextView);
-        mQuoteText = (TextView)view.findViewById(R.id.quoteTextView);
-        mQuoteNumText = (TextView)view.findViewById(R.id.quoteNumTextView);
-        mRelativeLayout = (RelativeLayout)view.findViewById(R.id.relativeLayout);
+        mCopyQuoteIcon = view.findViewById(R.id.copyQuoteIcon);
+        mQuoteAuthorText = view.findViewById(R.id.quoteAuthorTextView);
+        mQuoteText = view.findViewById(R.id.quoteTextView);
+        mQuoteNumText = view.findViewById(R.id.quoteNumTextView);
+        mRelativeLayout = view.findViewById(R.id.relativeLayout);
         mClipboardManager = (ClipboardManager) getActivity().getSystemService(CLIPBOARD_SERVICE);
         mCopyQuoteIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +62,8 @@ public class QuoteFragment extends Fragment {
                 String textToCopy;
                 if(getArguments() == null) {
                     toast = Toast.makeText(getActivity(), R.string.error_occurred, Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.TOP, 0, 0);
+                    toast.show();
                 }
                 else {
                     textToCopy = String.format(Locale.getDefault(),"\"%s\" -- %s",getString(getArguments().getInt(Quote.ARG_QUOTE_TEXT)),
@@ -64,9 +71,9 @@ public class QuoteFragment extends Fragment {
                     ClipData clip = ClipData.newPlainText(getString(R.string.clip_description_label), textToCopy);
                     mClipboardManager.setPrimaryClip(clip);
                     toast = Toast.makeText(getActivity(), R.string.clipboard_copy_toast, Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.TOP, 0, 0);
+                    toast.show();
                 }
-                toast.setGravity(Gravity.TOP, 0, 0);
-                toast.show();;
             }
         });
         setLayoutToNewQuote();
@@ -77,7 +84,7 @@ public class QuoteFragment extends Fragment {
         if(getArguments() == null) {
             mQuoteText.setText(getString(R.string.error_occurred));
             mQuoteAuthorText.setText(getString(R.string.error_occurred));
-            mQuoteNumText.setText("#" + 0);
+            mQuoteNumText.setText(String.format(Locale.getDefault(), "#%d",0));
             return;
         }
         else {
@@ -87,11 +94,12 @@ public class QuoteFragment extends Fragment {
             String quoteNum = "#" + getArguments().getInt(Quote.ARG_QUOTE_NUM, 0);
             mQuoteNumText.setText(quoteNum);
         }
-        //Get a random color in from the ColorWheel and set to background
-        mRelativeLayout.setBackgroundColor(ColorWheel.getColor());
-        //mQuoteText.setTextColor(ColorWheel.getColor());
-        //mQuoteNumText.setTextColor(ColorWheel.getColor());
-        //mQuoteAuthorText.setTextColor(ColorWheel.getColor());
-        //mCopyQuoteIcon.setColorFilter(ColorWheel.getColor());
+        //Get a random color in from the PalletWheel and set to background
+        mRelativeLayout.setBackgroundColor(PalletWheel.getPallet(getActivity()).getQuoteBackgroundColor());
+        int quoteTextColor = PalletWheel.getPallet(getActivity()).getQuoteTextColor();
+        mQuoteText.setTextColor(quoteTextColor);
+        mQuoteNumText.setTextColor(quoteTextColor);
+        mQuoteAuthorText.setTextColor(quoteTextColor);
+        mCopyQuoteIcon.setColorFilter(quoteTextColor);
     }
 }

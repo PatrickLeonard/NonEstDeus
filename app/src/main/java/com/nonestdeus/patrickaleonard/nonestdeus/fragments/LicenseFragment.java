@@ -1,12 +1,17 @@
-package com.nonestdeus.patrickaleonard.nonestdeus;
+package com.nonestdeus.patrickaleonard.nonestdeus.fragments;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.nonestdeus.patrickaleonard.nonestdeus.palletWheel.PalletWheel;
+import com.nonestdeus.patrickaleonard.nonestdeus.MainActivity;
+import com.nonestdeus.patrickaleonard.nonestdeus.R;
 
 import java.util.Locale;
 
@@ -30,13 +35,14 @@ public class LicenseFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.license_fragment,container,false);
         TextView textView = view.findViewById(R.id.message);
         textView.setText(String.format(Locale.getDefault(),getString(R.string.license),MainActivity.APP_VERSION));
+        textView.setTextColor(PalletWheel.getPallet(getActivity()).getQuoteTextColor());
         RelativeLayout relativeLayout = view.findViewById(R.id.licenseLayout);
-        relativeLayout.setBackgroundColor(ColorWheel.getColor());
+        relativeLayout.setBackgroundColor(PalletWheel.getPallet(getActivity()).getQuoteBackgroundColor());
         return view;
     }
 }

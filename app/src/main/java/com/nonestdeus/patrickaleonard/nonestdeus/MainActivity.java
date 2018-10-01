@@ -12,6 +12,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.nonestdeus.patrickaleonard.nonestdeus.fragments.LicenseFragment;
+import com.nonestdeus.patrickaleonard.nonestdeus.fragments.QuoteFragment;
+import com.nonestdeus.patrickaleonard.nonestdeus.fragments.QuoteListFragment;
+import com.nonestdeus.patrickaleonard.nonestdeus.palletWheel.PalletWheel;
+import com.nonestdeus.patrickaleonard.nonestdeus.quotes.Quote;
+import com.nonestdeus.patrickaleonard.nonestdeus.quotes.QuoteBook;
+
 public class MainActivity extends AppCompatActivity implements QuoteListFragment.OnListFragmentInteractionListener {
 
     public static final String TAG = MainActivity.class.getCanonicalName();
@@ -63,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        PalletWheel.setPallet(this.getBaseContext());
         setToolBar();
         setBottomNavigation();
         mFragmentManager = getSupportFragmentManager();
@@ -82,25 +90,25 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
 
     private void setBottomNavigation() {
         mBottomNavigationView = findViewById(R.id.navigation);
-        mBottomNavigationView.setBackgroundColor(ColorWheel.getColor());
-        //mBottomNavigationView.setItemIconTintList(ColorStateList.valueOf(ColorWheel.getColor()));
-        //mBottomNavigationView.setItemTextColor(ColorStateList.valueOf(ColorWheel.getColor()));
-        //TODO Be able to set the active item to a different text/image color
+        mBottomNavigationView.setBackgroundColor(PalletWheel.getPallet(this).getmBarBackgroundColorID());
+        //mBottomNavigationView.setItemIconTintList(ColorStateList.valueOf(PalletWheel.getColor()));
+        //mBottomNavigationView.setItemTextColor(ColorStateList.valueOf(PalletWheel.getColor()));
         mBottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
     private void setToolBar() {
         android.support.v7.widget.Toolbar toolbar = findViewById(R.id.my_awesome_toolbar);
-        toolbar.setBackgroundColor(ColorWheel.getColor());
-        //toolbar.setTitleTextColor(ColorWheel.getColor());
+        toolbar.setBackgroundColor(PalletWheel.getPallet(this.getBaseContext()).getmBarBackgroundColorID());
+        toolbar.setTitleTextColor(PalletWheel.getPallet(this.getBaseContext()).getTitleTextColor());
+        toolbar.setSubtitle(R.string.actionbar_subtitle);
         setSupportActionBar(toolbar);
     }
 
     private void setColorPalette () {
         setToolBar();
-        mBottomNavigationView.setBackgroundColor(ColorWheel.getColor());
-        //mBottomNavigationView.setItemIconTintList(ColorStateList.valueOf(ColorWheel.getColor()));
-        //mBottomNavigationView.setItemTextColor(ColorStateList.valueOf(ColorWheel.getColor()));
+        mBottomNavigationView.setBackgroundColor(PalletWheel.getPallet(this).getmBarBackgroundColorID());
+        //mBottomNavigationView.setItemIconTintList(ColorStateList.valueOf(PalletWheel.getColor()));
+        //mBottomNavigationView.setItemTextColor(ColorStateList.valueOf(PalletWheel.getColor()));
         //mBottomNavigationView.setItemTextAppearanceActive(R.style.TextAppearance_AppCompat_Inverse);
     }
 
@@ -134,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
         intent.putExtra(Intent.EXTRA_TEXT   , "We'd really like to receive your feedback." +
                 " Please let us know how we can improve the application below:\n\n");
         try {
-            startActivity(Intent.createChooser(intent, "Choose email client..."));
+            startActivity(Intent.createChooser(intent, "Choose email client to send app feedback..."));
         } catch (android.content.ActivityNotFoundException ex) {
             Toast.makeText(MainActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
         }

@@ -9,5 +9,5 @@
     android:layout_marginTop="?attr/actionBarSize"
     android:layout_marginBottom="@dimen/fragment_layout_bottom_margin"
     app:layoutManager="LinearLayoutManager"
-    tools:context=".QuoteListFragment"
+    tools:context=".fragments.QuoteListFragment"
     tools:listitem="@layout/quote_item_fragment" />

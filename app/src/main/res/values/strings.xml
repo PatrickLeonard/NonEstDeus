@@ -189,4 +189,21 @@
     <string name="wozniak_quote_1">I am also atheist or agnostic (I don\'t even know the difference). I\'ve never been to church and prefer to think for myself.</string>
     <string name="error_occurred">Some error occurred. Please try again.</string>
     <string name="license">NonEstDeus App. Ver. %s \n\nCopyright © 2018, Patrick Leonard\n\nThis software is provided \'as is\' and without any express or implied warranties, including, but no limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed.\n\nNonEstDeus is an open source project. The source code for NonEstDeus can be found, with license, on Github:\nhttps://github.com/PatrickLeonard/NonEstDeus</string>
+    <string name="actionbar_subtitle">Quotes about atheism</string>
+    
+    <string-array name="red_fuzz_smoke_storm">
+        <item>#000000</item>
+        <item>#D86C6C</item>
+        <item>#F7F2F2</item>
+        <item>#E5C3C3</item>
+        <item>#EF2323</item>
+    </string-array>
+
+    <string-array name="azure_black_sea_serpent">
+        <item>#040F0F</item>
+        <item>#51BCBC</item>
+        <item>#D4F4F4</item>
+        <item>#A1EAEA</item>
+        <item>#1C4949</item>
+    </string-array>
 </resources>

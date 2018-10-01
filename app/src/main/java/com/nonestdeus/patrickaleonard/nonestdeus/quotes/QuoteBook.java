@@ -1,9 +1,11 @@
-package com.nonestdeus.patrickaleonard.nonestdeus;
+package com.nonestdeus.patrickaleonard.nonestdeus.quotes;
 
 import android.content.Context;
 
+import com.nonestdeus.patrickaleonard.nonestdeus.R;
+import com.nonestdeus.patrickaleonard.nonestdeus.fragments.QuoteListFragment;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
