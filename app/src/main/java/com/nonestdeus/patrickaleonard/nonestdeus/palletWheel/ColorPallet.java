@@ -16,7 +16,7 @@ public class ColorPallet {
         this.mTitleTextColorID = mTitleTextColor;
     }
 
-    public int getmBarBackgroundColorID() {
+    public int getBarBackgroundColorID() {
         return mBarBackgroundColorID;
     }
 

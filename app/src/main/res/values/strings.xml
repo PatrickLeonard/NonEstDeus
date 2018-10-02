@@ -192,18 +192,42 @@
     <string name="actionbar_subtitle">Quotes about atheism</string>
     
     <string-array name="red_fuzz_smoke_storm">
+        <!--Title Text Color-->
         <item>#000000</item>
-        <item>#D86C6C</item>
-        <item>#F7F2F2</item>
+        <!--Toolbar/Navigation Bar Background Color-->
         <item>#E5C3C3</item>
-        <item>#EF2323</item>
+        <!--Quote Text Color-->
+        <item>#D86C6C</item>
+        <!--Quote Background Color-->
+        <item>#F7F2F2</item>
+        <!--List Fragment Item Background Color-->
+        <item>#FFCCCC</item>
     </string-array>
 
     <string-array name="azure_black_sea_serpent">
+        <!--Title Text Color-->
         <item>#040F0F</item>
+        <!--Toolbar/Navigation Bar Background Color-->
         <item>#51BCBC</item>
-        <item>#D4F4F4</item>
-        <item>#A1EAEA</item>
+        <!--Quote Text Color-->
         <item>#1C4949</item>
+        <!--Quote Background Color-->
+        <item>#D4F4F4</item>
+        <!--List Fragment Item Background Color-->
+        <item>#A1EAEA</item>
     </string-array>
+
+    <string-array name="platinum_pastel_power_burgundy">
+        <!--Title Text Color-->
+        <item>#424242</item>
+        <!--Toolbar/Navigation Bar Background Color-->
+        <item>#AEA4BF</item>
+        <!--Quote Text Color-->
+        <item>#3B252C</item>
+        <!--Quote Background Color-->
+        <item>#E3E4DB</item>
+        <!--List Fragment Item Background Color-->
+        <item>#CDCDCD</item>
+    </string-array>
+
 </resources>

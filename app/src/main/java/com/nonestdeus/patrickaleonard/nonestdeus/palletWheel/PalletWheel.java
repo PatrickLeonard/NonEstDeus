@@ -15,7 +15,7 @@ public class PalletWheel {
 
     //Member variables (properties about the object)
     static private int[] nPallets = { R.array.red_fuzz_smoke_storm,
-            R.array.azure_black_sea_serpent
+            R.array.azure_black_sea_serpent, R.array.platinum_pastel_power_burgundy
     };
     static private Random nRandom = new Random();
     static private int lastPallet = -1;

@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
 
     private void setBottomNavigation() {
         mBottomNavigationView = findViewById(R.id.navigation);
-        mBottomNavigationView.setBackgroundColor(PalletWheel.getPallet(this).getmBarBackgroundColorID());
+        mBottomNavigationView.setBackgroundColor(PalletWheel.getPallet(this).getBarBackgroundColorID());
         //mBottomNavigationView.setItemIconTintList(ColorStateList.valueOf(PalletWheel.getColor()));
         //mBottomNavigationView.setItemTextColor(ColorStateList.valueOf(PalletWheel.getColor()));
         mBottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -98,15 +98,16 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
 
     private void setToolBar() {
         android.support.v7.widget.Toolbar toolbar = findViewById(R.id.my_awesome_toolbar);
-        toolbar.setBackgroundColor(PalletWheel.getPallet(this.getBaseContext()).getmBarBackgroundColorID());
+        toolbar.setBackgroundColor(PalletWheel.getPallet(this.getBaseContext()).getBarBackgroundColorID());
         toolbar.setTitleTextColor(PalletWheel.getPallet(this.getBaseContext()).getTitleTextColor());
         toolbar.setSubtitle(R.string.actionbar_subtitle);
+        toolbar.setSubtitleTextColor(PalletWheel.getPallet(this.getBaseContext()).getTitleTextColor());
         setSupportActionBar(toolbar);
     }
 
     private void setColorPalette () {
         setToolBar();
-        mBottomNavigationView.setBackgroundColor(PalletWheel.getPallet(this).getmBarBackgroundColorID());
+        mBottomNavigationView.setBackgroundColor(PalletWheel.getPallet(this).getBarBackgroundColorID());
         //mBottomNavigationView.setItemIconTintList(ColorStateList.valueOf(PalletWheel.getColor()));
         //mBottomNavigationView.setItemTextColor(ColorStateList.valueOf(PalletWheel.getColor()));
         //mBottomNavigationView.setItemTextAppearanceActive(R.style.TextAppearance_AppCompat_Inverse);
@@ -137,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
     private void sendFeedback() {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("message/rfc822");
-        intent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"patrickleonard789@gmail.com"});
+        intent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"nonestdeusfeedback@gmail.com"});
         intent.putExtra(Intent.EXTRA_SUBJECT, "NonEstDeus Feedback Report");
         intent.putExtra(Intent.EXTRA_TEXT   , "We'd really like to receive your feedback." +
                 " Please let us know how we can improve the application below:\n\n");
