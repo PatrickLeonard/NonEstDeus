@@ -11,27 +11,29 @@ import java.util.Random;
 /**
  * Created by Patrick A Leonard on 7/21/2015.
  */
-public class PalletWheel {
+public class PaletteWheel {
 
     //Member variables (properties about the object)
+    //String arrays that hold the related color values
     static private int[] nPallets = { R.array.red_fuzz_smoke_storm,
-            R.array.azure_black_sea_serpent, R.array.platinum_pastel_power_burgundy
+            R.array.azure_black_sea_serpent, R.array.platinum_pastel_power_burgundy,
+            R.array.mantis_mint_tea_apple,R.array.grey_redwood_taupe_raisin
     };
     static private Random nRandom = new Random();
     static private int lastPallet = -1;
-    static private ColorPallet colorPallet;
-    static public ColorPallet getPallet(Context context) {
-        if(PalletWheel.colorPallet == null) {
+    static private ColorPalette colorPalette;
+    static public ColorPalette getPallet(Context context) {
+        if(PaletteWheel.colorPalette == null) {
             setPallet(context);
         }
-        return PalletWheel.colorPallet;
+        return PaletteWheel.colorPalette;
     }
     /**
      * Retrieves a random integer used to determine te displayed color pallet
      */
     static public void setPallet(Context context) {
-        ColorPallet colorPallet;
-        Log.println(Log.DEBUG,"PalletWheel","Finding random int");
+        ColorPalette colorPalette;
+        Log.println(Log.DEBUG,"PaletteWheel","Finding random int");
         int randomInt;
         //Get a random integer based on the size of the nPallets array without repeating the last number
         do {
@@ -40,9 +42,9 @@ public class PalletWheel {
         int palletStringArrayID = nPallets[randomInt];
         lastPallet = randomInt;
         String[] palletStringArray = context.getResources().getStringArray(palletStringArrayID);
-        colorPallet = new ColorPallet(Color.parseColor(palletStringArray[0]) ,
+        colorPalette = new ColorPalette(Color.parseColor(palletStringArray[0]) ,
                 Color.parseColor(palletStringArray[1]), Color.parseColor(palletStringArray[2]),
                 Color.parseColor(palletStringArray[3]),Color.parseColor(palletStringArray[4]));
-        PalletWheel.colorPallet = colorPallet;
+        PaletteWheel.colorPalette = colorPalette;
     }
 }

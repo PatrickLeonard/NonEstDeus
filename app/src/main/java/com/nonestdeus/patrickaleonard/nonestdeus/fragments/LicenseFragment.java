@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.nonestdeus.patrickaleonard.nonestdeus.palletWheel.PalletWheel;
+import com.nonestdeus.patrickaleonard.nonestdeus.palletWheel.PaletteWheel;
 import com.nonestdeus.patrickaleonard.nonestdeus.MainActivity;
 import com.nonestdeus.patrickaleonard.nonestdeus.R;
 
@@ -40,9 +40,9 @@ public class LicenseFragment extends Fragment {
         View view = inflater.inflate(R.layout.license_fragment,container,false);
         TextView textView = view.findViewById(R.id.message);
         textView.setText(String.format(Locale.getDefault(),getString(R.string.license),MainActivity.APP_VERSION));
-        textView.setTextColor(PalletWheel.getPallet(getActivity()).getQuoteTextColor());
+        textView.setTextColor(PaletteWheel.getPallet(getActivity()).getQuoteTextColor());
         RelativeLayout relativeLayout = view.findViewById(R.id.licenseLayout);
-        relativeLayout.setBackgroundColor(PalletWheel.getPallet(getActivity()).getQuoteBackgroundColor());
+        relativeLayout.setBackgroundColor(PaletteWheel.getPallet(getActivity()).getQuoteBackgroundColor());
         return view;
     }
 }

@@ -14,7 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.nonestdeus.patrickaleonard.nonestdeus.palletWheel.PalletWheel;
+import com.nonestdeus.patrickaleonard.nonestdeus.palletWheel.PaletteWheel;
 import com.nonestdeus.patrickaleonard.nonestdeus.quotes.Quote;
 import com.nonestdeus.patrickaleonard.nonestdeus.R;
 
@@ -94,9 +94,9 @@ public class QuoteFragment extends Fragment {
             String quoteNum = "#" + getArguments().getInt(Quote.ARG_QUOTE_NUM, 0);
             mQuoteNumText.setText(quoteNum);
         }
-        //Get a random color in from the PalletWheel and set to background
-        mRelativeLayout.setBackgroundColor(PalletWheel.getPallet(getActivity()).getQuoteBackgroundColor());
-        int quoteTextColor = PalletWheel.getPallet(getActivity()).getQuoteTextColor();
+        //Get a random color in from the PaletteWheel and set to background
+        mRelativeLayout.setBackgroundColor(PaletteWheel.getPallet(getActivity()).getQuoteBackgroundColor());
+        int quoteTextColor = PaletteWheel.getPallet(getActivity()).getQuoteTextColor();
         mQuoteText.setTextColor(quoteTextColor);
         mQuoteNumText.setTextColor(quoteTextColor);
         mQuoteAuthorText.setTextColor(quoteTextColor);

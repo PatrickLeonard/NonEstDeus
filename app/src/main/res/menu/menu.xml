@@ -2,6 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/menu_palette_swap"
+        android:icon="@mipmap/ic_color_palette"
+        app:showAsAction="ifRoom|withText"
+        android:title="@string/change_color_palette" />
+    <item
         android:id="@+id/menu_send_feedback"
         android:icon="@drawable/ic_feedback"
         app:showAsAction="ifRoom|withText"

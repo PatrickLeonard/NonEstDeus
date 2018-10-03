@@ -1,6 +1,6 @@
 package com.nonestdeus.patrickaleonard.nonestdeus.palletWheel;
 
-public class ColorPallet {
+public class ColorPalette {
 
     private int mTitleTextColorID;
     private int mBarBackgroundColorID;
@@ -48,7 +48,7 @@ public class ColorPallet {
         this.mListItemBackgroundColorID = mListItemBackgroundColor;
     }
 
-    public ColorPallet(int mTitleTextColor, int mBarBackgroundColor, int mQuoteTextColor, int mQuoteBackgroundColor, int mListItemBackgroundColor) {
+    public ColorPalette(int mTitleTextColor, int mBarBackgroundColor, int mQuoteTextColor, int mQuoteBackgroundColor, int mListItemBackgroundColor) {
         this.mTitleTextColorID = mTitleTextColor;
         this.mBarBackgroundColorID = mBarBackgroundColor;
         this.mQuoteTextColorID = mQuoteTextColor;

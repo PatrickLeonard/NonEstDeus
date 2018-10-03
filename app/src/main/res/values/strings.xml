@@ -189,8 +189,9 @@
     <string name="wozniak_quote_1">I am also atheist or agnostic (I don\'t even know the difference). I\'ve never been to church and prefer to think for myself.</string>
     <string name="error_occurred">Some error occurred. Please try again.</string>
     <string name="license">NonEstDeus App. Ver. %s \n\nCopyright © 2018, Patrick Leonard\n\nThis software is provided \'as is\' and without any express or implied warranties, including, but no limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed.\n\nNonEstDeus is an open source project. The source code for NonEstDeus can be found, with license, on Github:\nhttps://github.com/PatrickLeonard/NonEstDeus</string>
-    <string name="actionbar_subtitle">Quotes about atheism</string>
-    
+    <string name="actionbar_subtitle">Atheism Quotes</string>
+    <string name="change_color_palette">Change colors</string>
+
     <string-array name="red_fuzz_smoke_storm">
         <!--Title Text Color-->
         <item>#000000</item>
@@ -228,6 +229,32 @@
         <item>#E3E4DB</item>
         <!--List Fragment Item Background Color-->
         <item>#CDCDCD</item>
+    </string-array>
+
+    <string-array name="mantis_mint_tea_apple">
+        <!--Title Text Color-->
+        <item>#337733</item>
+        <!--Toolbar/Navigation Bar Background Color-->
+        <item>#B2D89E</item>
+        <!--Quote Text Color-->
+        <item>#009900</item>
+        <!--Quote Background Color-->
+        <item>#CAEFB6</item>
+        <!--List Fragment Item Background Color-->
+        <item>#9DE577</item>
+    </string-array>
+
+    <string-array name="grey_redwood_taupe_raisin">
+        <!--Title Text Color-->
+        <item>#9B5852</item>
+        <!--Toolbar/Navigation Bar Background Color-->
+        <item>#D7CDCC</item>
+        <!--Quote Text Color-->
+        <item>#2B1D1C</item>
+        <!--Quote Background Color-->
+        <item>#705B59</item>
+        <!--List Fragment Item Background Color-->
+        <item>#FFFFFF</item>
     </string-array>
 
 </resources>

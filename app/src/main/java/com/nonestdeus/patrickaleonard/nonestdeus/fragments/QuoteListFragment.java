@@ -11,7 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.nonestdeus.patrickaleonard.nonestdeus.palletWheel.PalletWheel;
+import com.nonestdeus.patrickaleonard.nonestdeus.palletWheel.PaletteWheel;
 import com.nonestdeus.patrickaleonard.nonestdeus.quotes.Quote;
 import com.nonestdeus.patrickaleonard.nonestdeus.quotes.QuoteBook;
 import com.nonestdeus.patrickaleonard.nonestdeus.adapters.QuoteRecyclerViewAdapter;
@@ -76,9 +76,9 @@ public class QuoteListFragment extends Fragment {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
             recyclerView.setAdapter(new QuoteRecyclerViewAdapter(QuoteBook.getQuoteList(getContext(),mSortBy),mListener,mSortBy,
-                    PalletWheel.getPallet(getActivity()).getListItemBackgroundColor(),
-                    PalletWheel.getPallet(getActivity()).getQuoteTextColor()));
-            recyclerView.setBackgroundColor(PalletWheel.getPallet(getActivity()).getQuoteBackgroundColor());
+                    PaletteWheel.getPallet(getActivity()).getListItemBackgroundColor(),
+                    PaletteWheel.getPallet(getActivity()).getQuoteTextColor()));
+            recyclerView.setBackgroundColor(PaletteWheel.getPallet(getActivity()).getQuoteBackgroundColor());
         }
         return view;
     }

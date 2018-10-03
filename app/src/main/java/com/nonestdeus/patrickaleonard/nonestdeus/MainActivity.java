@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.nonestdeus.patrickaleonard.nonestdeus.fragments.LicenseFragment;
 import com.nonestdeus.patrickaleonard.nonestdeus.fragments.QuoteFragment;
 import com.nonestdeus.patrickaleonard.nonestdeus.fragments.QuoteListFragment;
-import com.nonestdeus.patrickaleonard.nonestdeus.palletWheel.PalletWheel;
+import com.nonestdeus.patrickaleonard.nonestdeus.palletWheel.PaletteWheel;
 import com.nonestdeus.patrickaleonard.nonestdeus.quotes.Quote;
 import com.nonestdeus.patrickaleonard.nonestdeus.quotes.QuoteBook;
 
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        PalletWheel.setPallet(this.getBaseContext());
+        PaletteWheel.setPallet(this.getBaseContext());
         setToolBar();
         setBottomNavigation();
         mFragmentManager = getSupportFragmentManager();
@@ -90,26 +90,26 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
 
     private void setBottomNavigation() {
         mBottomNavigationView = findViewById(R.id.navigation);
-        mBottomNavigationView.setBackgroundColor(PalletWheel.getPallet(this).getBarBackgroundColorID());
-        //mBottomNavigationView.setItemIconTintList(ColorStateList.valueOf(PalletWheel.getColor()));
-        //mBottomNavigationView.setItemTextColor(ColorStateList.valueOf(PalletWheel.getColor()));
+        mBottomNavigationView.setBackgroundColor(PaletteWheel.getPallet(this).getBarBackgroundColorID());
+        //mBottomNavigationView.setItemIconTintList(ColorStateList.valueOf(PaletteWheel.getColor()));
+        //mBottomNavigationView.setItemTextColor(ColorStateList.valueOf(PaletteWheel.getColor()));
         mBottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
     private void setToolBar() {
         android.support.v7.widget.Toolbar toolbar = findViewById(R.id.my_awesome_toolbar);
-        toolbar.setBackgroundColor(PalletWheel.getPallet(this.getBaseContext()).getBarBackgroundColorID());
-        toolbar.setTitleTextColor(PalletWheel.getPallet(this.getBaseContext()).getTitleTextColor());
+        toolbar.setBackgroundColor(PaletteWheel.getPallet(this.getBaseContext()).getBarBackgroundColorID());
+        toolbar.setTitleTextColor(PaletteWheel.getPallet(this.getBaseContext()).getTitleTextColor());
         toolbar.setSubtitle(R.string.actionbar_subtitle);
-        toolbar.setSubtitleTextColor(PalletWheel.getPallet(this.getBaseContext()).getTitleTextColor());
+        toolbar.setSubtitleTextColor(PaletteWheel.getPallet(this.getBaseContext()).getTitleTextColor());
         setSupportActionBar(toolbar);
     }
 
     private void setColorPalette () {
         setToolBar();
-        mBottomNavigationView.setBackgroundColor(PalletWheel.getPallet(this).getBarBackgroundColorID());
-        //mBottomNavigationView.setItemIconTintList(ColorStateList.valueOf(PalletWheel.getColor()));
-        //mBottomNavigationView.setItemTextColor(ColorStateList.valueOf(PalletWheel.getColor()));
+        mBottomNavigationView.setBackgroundColor(PaletteWheel.getPallet(this).getBarBackgroundColorID());
+        //mBottomNavigationView.setItemIconTintList(ColorStateList.valueOf(PaletteWheel.getColor()));
+        //mBottomNavigationView.setItemTextColor(ColorStateList.valueOf(PaletteWheel.getColor()));
         //mBottomNavigationView.setItemTextAppearanceActive(R.style.TextAppearance_AppCompat_Inverse);
     }
 
@@ -129,6 +129,9 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
                 return true;
             case R.id.menu_send_feedback:
                 sendFeedback();
+                return true;
+            case R.id.menu_palette_swap:
+                recreate();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
