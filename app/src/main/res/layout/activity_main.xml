@@ -14,6 +14,8 @@
         app:logo="@mipmap/ic_launcher"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:contentInsetStart="0dp"
+        android:fitsSystemWindows="true"
         android:background="@android:color/white" />
 
     <android.support.design.widget.BottomNavigationView
