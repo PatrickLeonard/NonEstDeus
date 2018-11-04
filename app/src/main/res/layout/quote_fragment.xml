@@ -16,6 +16,7 @@
         android:id="@+id/quoteNumTextView"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
+        android:layout_toStartOf="@id/fb_share_button"
         android:textColor="#ff000000"
         android:text="@string/quoteNum"
         android:textSize="18sp" />
@@ -52,5 +53,13 @@
         android:src="@drawable/copy_icon"
         android:clickable="true"
         android:focusable="true"/>
+
+    <com.facebook.share.widget.ShareButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fb_share_button"
+        android:layout_toStartOf="@id/copyQuoteIcon"
+        android:layout_alignBottom="@id/copyQuoteIcon"
+        android:layout_marginEnd="12dp"/>
 
 </RelativeLayout>

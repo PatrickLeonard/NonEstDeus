@@ -2,6 +2,7 @@ package com.nonestdeus.patrickaleonard.nonestdeus.fragments;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.share.model.ShareHashtag;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.MessageDialog;
+import com.facebook.share.widget.SendButton;
+import com.facebook.share.widget.ShareButton;
 import com.nonestdeus.patrickaleonard.nonestdeus.palletWheel.PaletteWheel;
 import com.nonestdeus.patrickaleonard.nonestdeus.quotes.Quote;
 import com.nonestdeus.patrickaleonard.nonestdeus.R;
@@ -31,6 +37,7 @@ public class QuoteFragment extends Fragment {
     TextView mQuoteNumText;
     ImageView mCopyQuoteIcon;
     RelativeLayout mRelativeLayout;
+    ShareButton mShareButton;
 
     protected ClipboardManager mClipboardManager;
 
@@ -54,6 +61,7 @@ public class QuoteFragment extends Fragment {
         mQuoteText = view.findViewById(R.id.quoteTextView);
         mQuoteNumText = view.findViewById(R.id.quoteNumTextView);
         mRelativeLayout = view.findViewById(R.id.relativeLayout);
+        mShareButton = view.findViewById(R.id.fb_share_button);
         mClipboardManager = (ClipboardManager) getActivity().getSystemService(CLIPBOARD_SERVICE);
         mCopyQuoteIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +85,7 @@ public class QuoteFragment extends Fragment {
             }
         });
         setLayoutToNewQuote();
+        shareToFacebook();
         return view;
     }
 
@@ -93,6 +102,7 @@ public class QuoteFragment extends Fragment {
             mQuoteAuthorText.setText(getString(getArguments().getInt(Quote.ARG_QUOTE_AUTHOR), 0));
             String quoteNum = "#" + getArguments().getInt(Quote.ARG_QUOTE_NUM, 0);
             mQuoteNumText.setText(quoteNum);
+            shareToFacebook(); //make sure to execute after setting the quote/author texts
         }
         //Get a random color in from the PaletteWheel and set to background
         mRelativeLayout.setBackgroundColor(PaletteWheel.getPallet(getActivity()).getQuoteBackgroundColor());
@@ -101,5 +111,18 @@ public class QuoteFragment extends Fragment {
         mQuoteNumText.setTextColor(quoteTextColor);
         mQuoteAuthorText.setTextColor(quoteTextColor);
         mCopyQuoteIcon.setColorFilter(quoteTextColor);
+    }
+
+    private void shareToFacebook() {
+        try {
+            final ShareLinkContent content = new ShareLinkContent.Builder()
+                    .setContentUrl(Uri.parse("https://play.google.com/store/apps/details?id=com.nonestdeus.patrickaleonard.nonestdeus"))
+                    .setQuote("\""+mQuoteText.getText()+"\" -- "+mQuoteAuthorText.getText())
+                    .setShareHashtag(new ShareHashtag.Builder().setHashtag("#nonestdeus").build())
+                    .build();
+            mShareButton.setShareContent(content);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

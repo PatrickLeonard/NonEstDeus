@@ -18,7 +18,7 @@
     <string name="license">NonEstDeus App. Ver. %s \n\nCopyright © 2018, Patrick Leonard\n\nThis software is provided \'as is\' and without any express or implied warranties, including, but no limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed.\n\nNonEstDeus is an open source project. The source code for NonEstDeus can be found, with license, on Github:\nhttps://github.com/PatrickLeonard/NonEstDeus</string>
     <string name="actionbar_subtitle">Atheism Quotes</string>
     <string name="change_color_palette">Colors</string>
-
+    <string name="facebook_app_id">283909378905424</string>
     <!--Quotes and Authors -->
     <string name="dawkins_quote_1">We are all atheists about most of the gods that humanity has ever believed in. Some of us just go one god further.</string>
     <string name="dawkins_author">Richard Dawkins</string>
@@ -101,7 +101,7 @@
     <string name="jethro_tull_author">Jethro Tull</string>
     <string name="jethro_tull_quote_1">In the beginning Man created God; and in the image of Man created he him.</string>
     <string name="jeni_author">Richard Jeni</string>
-    <string name="jeni_quote_1">You\'re basically killing each other to see who\'s got the better imaginary xfriend.</string>
+    <string name="jeni_quote_1">You\'re basically killing each other to see who\'s got the better imaginary friend.</string>
     <string name="ruth_green_quote_3">Today evolution of human intelligence has advanced us to the stage where most of us are too smart to invent new gods but are reluctant to give up the old1 ones.</string>
     <string name="neil_degrasse_tyson_quote_2">God is an ever receding pocket of scientific ignorance.</string>
     <string name="stanton_author">Elizabeth Cady Stanton</string>
