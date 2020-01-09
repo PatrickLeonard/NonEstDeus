@@ -1,9 +1,8 @@
-package com.nonestdeus.patrickaleonard.nonestdeus.quotes;
-
+package com.patrickleonard.nonestdeus.atheismquotes.quotes;
 import android.content.Context;
 
-import com.nonestdeus.patrickaleonard.nonestdeus.R;
-import com.nonestdeus.patrickaleonard.nonestdeus.fragments.QuoteListFragment;
+import com.patrickleonard.nonestdeus.atheismquotes.R;
+import com.patrickleonard.nonestdeus.atheismquotes.fragments.QuoteListFragment;
 
 import java.util.ArrayList;
 import java.util.Collections;

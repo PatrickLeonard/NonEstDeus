@@ -1,5 +1,4 @@
-package com.nonestdeus.patrickaleonard.nonestdeus.fragments;
-
+package com.patrickleonard.nonestdeus.atheismquotes.fragments;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -9,9 +8,9 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.nonestdeus.patrickaleonard.nonestdeus.palletWheel.PaletteWheel;
-import com.nonestdeus.patrickaleonard.nonestdeus.MainActivity;
-import com.nonestdeus.patrickaleonard.nonestdeus.R;
+import com.patrickleonard.nonestdeus.atheismquotes.palletWheel.PaletteWheel;
+import com.patrickleonard.nonestdeus.atheismquotes.MainActivity;
+import com.patrickleonard.nonestdeus.atheismquotes.R;
 
 import java.util.Locale;
 

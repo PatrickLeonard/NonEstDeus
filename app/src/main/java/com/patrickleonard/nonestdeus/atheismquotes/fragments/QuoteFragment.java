@@ -1,5 +1,4 @@
-package com.nonestdeus.patrickaleonard.nonestdeus.fragments;
-
+package com.patrickleonard.nonestdeus.atheismquotes.fragments;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.net.Uri;
@@ -17,12 +16,10 @@ import android.widget.Toast;
 
 import com.facebook.share.model.ShareHashtag;
 import com.facebook.share.model.ShareLinkContent;
-import com.facebook.share.widget.MessageDialog;
-import com.facebook.share.widget.SendButton;
 import com.facebook.share.widget.ShareButton;
-import com.nonestdeus.patrickaleonard.nonestdeus.palletWheel.PaletteWheel;
-import com.nonestdeus.patrickaleonard.nonestdeus.quotes.Quote;
-import com.nonestdeus.patrickaleonard.nonestdeus.R;
+import com.patrickleonard.nonestdeus.atheismquotes.palletWheel.PaletteWheel;
+import com.patrickleonard.nonestdeus.atheismquotes.quotes.Quote;
+import com.patrickleonard.nonestdeus.atheismquotes.R;
 
 import java.util.Locale;
 
@@ -118,7 +115,7 @@ public class QuoteFragment extends Fragment {
             final ShareLinkContent content = new ShareLinkContent.Builder()
                     .setContentUrl(Uri.parse("https://play.google.com/store/apps/details?id=com.nonestdeus.patrickaleonard.nonestdeus"))
                     .setQuote("\""+mQuoteText.getText()+"\" -- "+mQuoteAuthorText.getText())
-                    .setShareHashtag(new ShareHashtag.Builder().setHashtag("#nonestdeus").build())
+                    .setShareHashtag(new ShareHashtag.Builder().setHashtag("#com.patrickleonard.atheismquotes.nonestdeus").build())
                     .build();
             mShareButton.setShareContent(content);
         } catch (Exception e) {

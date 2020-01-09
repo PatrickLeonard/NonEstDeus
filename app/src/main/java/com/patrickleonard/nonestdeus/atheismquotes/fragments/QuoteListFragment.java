@@ -1,5 +1,4 @@
-package com.nonestdeus.patrickaleonard.nonestdeus.fragments;
-
+package com.patrickleonard.nonestdeus.atheismquotes.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,11 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.nonestdeus.patrickaleonard.nonestdeus.palletWheel.PaletteWheel;
-import com.nonestdeus.patrickaleonard.nonestdeus.quotes.Quote;
-import com.nonestdeus.patrickaleonard.nonestdeus.quotes.QuoteBook;
-import com.nonestdeus.patrickaleonard.nonestdeus.adapters.QuoteRecyclerViewAdapter;
-import com.nonestdeus.patrickaleonard.nonestdeus.R;
+import com.patrickleonard.nonestdeus.atheismquotes.palletWheel.PaletteWheel;
+import com.patrickleonard.nonestdeus.atheismquotes.quotes.Quote;
+import com.patrickleonard.nonestdeus.atheismquotes.quotes.QuoteBook;
+import com.patrickleonard.nonestdeus.atheismquotes.adapters.QuoteRecyclerViewAdapter;
+import com.patrickleonard.nonestdeus.atheismquotes.R;
 
 /**
  * A fragment representing a list of Items.

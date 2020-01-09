@@ -1,4 +1,4 @@
-package com.nonestdeus.patrickaleonard.nonestdeus;
+package com.patrickleonard.nonestdeus.atheismquotes;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,17 +12,17 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.nonestdeus.patrickaleonard.nonestdeus.fragments.LicenseFragment;
-import com.nonestdeus.patrickaleonard.nonestdeus.fragments.QuoteFragment;
-import com.nonestdeus.patrickaleonard.nonestdeus.fragments.QuoteListFragment;
-import com.nonestdeus.patrickaleonard.nonestdeus.palletWheel.PaletteWheel;
-import com.nonestdeus.patrickaleonard.nonestdeus.quotes.Quote;
-import com.nonestdeus.patrickaleonard.nonestdeus.quotes.QuoteBook;
+import com.patrickleonard.nonestdeus.atheismquotes.fragments.LicenseFragment;
+import com.patrickleonard.nonestdeus.atheismquotes.fragments.QuoteFragment;
+import com.patrickleonard.nonestdeus.atheismquotes.fragments.QuoteListFragment;
+import com.patrickleonard.nonestdeus.atheismquotes.palletWheel.PaletteWheel;
+import com.patrickleonard.nonestdeus.atheismquotes.quotes.Quote;
+import com.patrickleonard.nonestdeus.atheismquotes.quotes.QuoteBook;
 
 public class MainActivity extends AppCompatActivity implements QuoteListFragment.OnListFragmentInteractionListener {
 
     public static final String TAG = MainActivity.class.getCanonicalName();
-    public static final String APP_VERSION = "1.1.0";
+    public static final String APP_VERSION = "1.2.1";
     private BottomNavigationView mBottomNavigationView;
     private FragmentManager mFragmentManager;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -152,7 +152,6 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
         }
     }
 
-    @Override
     public void onListFragmentInteraction(Quote quote) {
         quoteFragment(mFragmentManager.beginTransaction().addToBackStack(null),quote);
     }

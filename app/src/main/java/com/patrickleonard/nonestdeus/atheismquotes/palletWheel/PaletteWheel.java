@@ -1,10 +1,9 @@
-package com.nonestdeus.patrickaleonard.nonestdeus.palletWheel;
-
+package com.patrickleonard.nonestdeus.atheismquotes.palletWheel;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.Log;
 
-import com.nonestdeus.patrickaleonard.nonestdeus.R;
+import com.patrickleonard.nonestdeus.atheismquotes.R;
 
 import java.util.Random;
 

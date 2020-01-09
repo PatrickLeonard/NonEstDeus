@@ -1,4 +1,4 @@
-package com.nonestdeus.patrickaleonard.nonestdeus.palletWheel;
+package com.patrickleonard.nonestdeus.atheismquotes.palletWheel;
 
 public class ColorPalette {
 
