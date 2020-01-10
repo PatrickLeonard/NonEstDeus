@@ -16,32 +16,30 @@
         android:id="@+id/quoteNumTextView"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_toStartOf="@id/fb_share_button"
         android:textColor="#ff000000"
         android:text="@string/quoteNum"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/quoteAuthorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/authorText"
+        android:layout_below="@id/quoteNumTextView"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textIsSelectable="true"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/quoteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/quoteNumTextView"
+        android:layout_below="@+id/quoteAuthorTextView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:text="@string/quoteText"
         android:textIsSelectable="true"
         android:textSize="@dimen/abc_text_size_title_material" />
-
-    <TextView
-        android:id="@+id/quoteAuthorTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/quoteNumTextView"
-        android:text="@string/authorText"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textIsSelectable="true"
-        android:textSize="18sp" />
 
     <ImageView
         android:contentDescription="@string/clipboard_copy_toast"

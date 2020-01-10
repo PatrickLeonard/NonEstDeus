@@ -8,7 +8,7 @@ Fun way to learn about Android application development with Android Studio as a 
 
 ## Installation
 
-You can find and install this Android app via Google Play by pointing your browser to the following URL: https://play.google.com/store/apps/details?id=com.nonestdeus.patrickaleonard.nonestdeus
+You can find and install this Android app via Google Play by pointing your browser to the following URL: https://play.google.com/store/apps/details?id=com.patrickleonard.atheismquotes.nonestdeus
 
 ## Contributors
 

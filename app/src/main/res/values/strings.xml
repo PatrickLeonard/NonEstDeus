@@ -247,6 +247,19 @@
         <item>#9DE577</item>
     </string-array>
 
+    <string-array name="jungle_acajou_peach_ochre_mustard">
+        <!--Title Text Color-->
+        <item>#1B2021</item>
+        <!--Toolbar/Navigation Bar Background Color-->
+        <item>#EFC69B</item>
+        <!--Quote Text Color-->
+        <item>#481D24</item>
+        <!--Quote Background Color-->
+        <item>#E9724C</item>
+        <!--List Fragment Item Background Color-->
+        <item>#FFC857</item>
+    </string-array>
+
     <string-array name="grey_redwood_taupe_raisin">
         <!--Title Text Color-->
         <item>#9B5852</item>

@@ -16,7 +16,8 @@ public class PaletteWheel {
     //String arrays that hold the related color values
     static private int[] nPallets = { R.array.red_fuzz_smoke_storm,
             R.array.azure_black_sea_serpent, R.array.platinum_pastel_power_burgundy,
-            R.array.mantis_mint_tea_apple,R.array.grey_redwood_taupe_raisin
+            R.array.mantis_mint_tea_apple,R.array.grey_redwood_taupe_raisin,
+            R.array.jungle_acajou_peach_ochre_mustard
     };
     static private Random nRandom = new Random();
     static private int lastPallet = -1;

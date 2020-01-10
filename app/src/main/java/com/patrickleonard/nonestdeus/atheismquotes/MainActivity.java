@@ -22,7 +22,7 @@ import com.patrickleonard.nonestdeus.atheismquotes.quotes.QuoteBook;
 public class MainActivity extends AppCompatActivity implements QuoteListFragment.OnListFragmentInteractionListener {
 
     public static final String TAG = MainActivity.class.getCanonicalName();
-    public static final String APP_VERSION = "1.2.1";
+    public static final String APP_VERSION = "1.2.2";
     private BottomNavigationView mBottomNavigationView;
     private FragmentManager mFragmentManager;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
