@@ -71,9 +71,9 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         PaletteWheel.setPallet(this.getBaseContext());
+        mFragmentManager = getSupportFragmentManager();
         setToolBar();
         setBottomNavigation();
-        mFragmentManager = getSupportFragmentManager();
         quoteFragment(mFragmentManager.beginTransaction(),QuoteBook.getRandomQuote());
     }
 
@@ -132,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
                 return true;
             case R.id.menu_palette_swap:
                 recreate();
+                mBottomNavigationView.setSelectedItemId(R.id.navigation_home);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
