@@ -1,6 +1,7 @@
 package com.patrickleonard.nonestdeus.atheismquotes.fragments;
 import android.content.Context;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -10,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.patrickleonard.nonestdeus.atheismquotes.MainActivity;
+import com.patrickleonard.nonestdeus.atheismquotes.palletWheel.ColorPalette;
 import com.patrickleonard.nonestdeus.atheismquotes.palletWheel.PaletteWheel;
 import com.patrickleonard.nonestdeus.atheismquotes.quotes.Quote;
 import com.patrickleonard.nonestdeus.atheismquotes.quotes.QuoteBook;
@@ -68,6 +71,7 @@ public class QuoteListFragment extends Fragment {
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
+            ColorPalette colorPalette = PaletteWheel.getPalette(context, PreferenceManager.getDefaultSharedPreferences(context).getInt(MainActivity.THEME_PREFERENCE_KEY,1));
             RecyclerView recyclerView = (RecyclerView) view;
             if (mColumnCount <= 1) {
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
@@ -75,9 +79,9 @@ public class QuoteListFragment extends Fragment {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
             recyclerView.setAdapter(new QuoteRecyclerViewAdapter(QuoteBook.getQuoteList(getContext(),mSortBy),mListener,mSortBy,
-                    PaletteWheel.getPallet(getActivity()).getListItemBackgroundColor(),
-                    PaletteWheel.getPallet(getActivity()).getQuoteTextColor()));
-            recyclerView.setBackgroundColor(PaletteWheel.getPallet(getActivity()).getQuoteBackgroundColor());
+                    colorPalette.getListItemBackgroundColor(),
+                    colorPalette.getQuoteTextColor()));
+            recyclerView.setBackgroundColor(colorPalette.getQuoteBackgroundColor());
         }
         return view;
     }

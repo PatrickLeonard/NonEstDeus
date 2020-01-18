@@ -5,8 +5,6 @@ import android.util.Log;
 
 import com.patrickleonard.nonestdeus.atheismquotes.R;
 
-import java.util.Random;
-
 /**
  * Created by Patrick A Leonard on 7/21/2015.
  */
@@ -19,32 +17,14 @@ public class PaletteWheel {
             R.array.mantis_mint_tea_apple,R.array.grey_redwood_taupe_raisin,
             R.array.jungle_acajou_peach_ochre_mustard
     };
-    static private Random nRandom = new Random();
-    static private int lastPallet = -1;
-    static private ColorPalette colorPalette;
-    static public ColorPalette getPallet(Context context) {
-        if(PaletteWheel.colorPalette == null) {
-            setPallet(context);
-        }
-        return PaletteWheel.colorPalette;
-    }
-    /**
-     * Retrieves a random integer used to determine te displayed color pallet
-     */
-    static public void setPallet(Context context) {
-        ColorPalette colorPalette;
-        Log.println(Log.DEBUG,"PaletteWheel","Finding random int");
-        int randomInt;
+
+    static public ColorPalette getPalette(Context context, int themeNum) {
+        Log.println(Log.DEBUG,"PaletteWheel","Creating ColorPalette!");
         //Get a random integer based on the size of the nPallets array without repeating the last number
-        do {
-            randomInt = nRandom.nextInt(nPallets.length);
-        }while(randomInt == lastPallet); //More than one String Array of Colors is required
-        int palletStringArrayID = nPallets[randomInt];
-        lastPallet = randomInt;
+        int palletStringArrayID = nPallets[themeNum];
         String[] palletStringArray = context.getResources().getStringArray(palletStringArrayID);
-        colorPalette = new ColorPalette(Color.parseColor(palletStringArray[0]) ,
+        return new ColorPalette(Color.parseColor(palletStringArray[0]) ,
                 Color.parseColor(palletStringArray[1]), Color.parseColor(palletStringArray[2]),
                 Color.parseColor(palletStringArray[3]),Color.parseColor(palletStringArray[4]));
-        PaletteWheel.colorPalette = colorPalette;
     }
 }
