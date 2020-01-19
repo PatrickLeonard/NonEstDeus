@@ -36,7 +36,7 @@ public class QuoteFragment extends Fragment {
     TextView mQuoteAuthorText;
     TextView mQuoteNumText;
     ImageView mCopyQuoteIcon;
-    ColorPalette mColorPalette;
+    //ColorPalette mColorPalette;
     RelativeLayout mRelativeLayout;
     ShareButton mShareButton;
 
@@ -57,7 +57,8 @@ public class QuoteFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         final View view = inflater.inflate(R.layout.quote_fragment,container,false);
-        mColorPalette = PaletteWheel.getPalette(view.getContext(), PreferenceManager.getDefaultSharedPreferences(view.getContext()).getInt(MainActivity.THEME_PREFERENCE_KEY,1));
+        //mColorPalette = PaletteWheel.getPalette(view.getContext(), PreferenceManager.getDefaultSharedPreferences(view.getContext()).getInt(MainActivity.THEME_PREFERENCE_KEY,1));
+        view.getContext().setTheme(R.style.BlueGray_Cyan);
         mCopyQuoteIcon = view.findViewById(R.id.copyQuoteIcon);
         mQuoteAuthorText = view.findViewById(R.id.quoteAuthorTextView);
         mQuoteText = view.findViewById(R.id.quoteTextView);
@@ -107,12 +108,12 @@ public class QuoteFragment extends Fragment {
             shareToFacebook(); //make sure to execute after setting the quote/author texts
         }
         //Get a random color in from the PaletteWheel and set to background
-        mRelativeLayout.setBackgroundColor(mColorPalette.getQuoteBackgroundColor());
-        int quoteTextColor = mColorPalette.getQuoteTextColor();
-        mQuoteText.setTextColor(quoteTextColor);
-        mQuoteNumText.setTextColor(quoteTextColor);
-        mQuoteAuthorText.setTextColor(quoteTextColor);
-        mCopyQuoteIcon.setColorFilter(quoteTextColor);
+        //mRelativeLayout.setBackgroundColor(mColorPalette.getQuoteBackgroundColor());
+        //int quoteTextColor = mColorPalette.getQuoteTextColor();
+        //mQuoteText.setTextColor(quoteTextColor);
+        //mQuoteNumText.setTextColor(quoteTextColor);
+        //mQuoteAuthorText.setTextColor(quoteTextColor);
+        //mCopyQuoteIcon.setColorFilter(quoteTextColor);
     }
 
     private void shareToFacebook() {

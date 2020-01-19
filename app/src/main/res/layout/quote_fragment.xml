@@ -7,8 +7,7 @@
     android:layout_marginTop="?attr/actionBarSize"
     android:layout_marginBottom="@dimen/fragment_layout_bottom_margin"
     tools:context=".fragments.QuoteFragment"
-    android:id="@+id/relativeLayout"
-    android:background="@android:color/holo_blue_light">
+    android:id="@+id/relativeLayout">
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,7 +15,6 @@
         android:id="@+id/quoteNumTextView"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:textColor="#ff000000"
         android:text="@string/quoteNum"
         android:textSize="18sp" />
 

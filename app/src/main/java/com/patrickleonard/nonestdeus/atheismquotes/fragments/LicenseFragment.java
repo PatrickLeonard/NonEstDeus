@@ -39,12 +39,12 @@ public class LicenseFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.license_fragment,container,false);
-        ColorPalette colorPalette = PaletteWheel.getPalette(view.getContext(), PreferenceManager.getDefaultSharedPreferences(view.getContext()).getInt(MainActivity.THEME_PREFERENCE_KEY,1));
+        //ColorPalette colorPalette = PaletteWheel.getPalette(view.getContext(), PreferenceManager.getDefaultSharedPreferences(view.getContext()).getInt(MainActivity.THEME_PREFERENCE_KEY,1));
         TextView textView = view.findViewById(R.id.message);
         textView.setText(String.format(Locale.getDefault(),getString(R.string.license),MainActivity.APP_VERSION));
-        textView.setTextColor(colorPalette.getQuoteTextColor());
+        //textView.setTextColor(colorPalette.getQuoteTextColor());
         RelativeLayout relativeLayout = view.findViewById(R.id.licenseLayout);
-        relativeLayout.setBackgroundColor(colorPalette.getQuoteBackgroundColor());
+        //relativeLayout.setBackgroundColor(colorPalette.getQuoteBackgroundColor());
         return view;
     }
 }

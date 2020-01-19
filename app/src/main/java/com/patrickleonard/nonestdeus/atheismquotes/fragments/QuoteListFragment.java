@@ -1,22 +1,16 @@
 package com.patrickleonard.nonestdeus.atheismquotes.fragments;
 import android.content.Context;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
-import com.patrickleonard.nonestdeus.atheismquotes.MainActivity;
-import com.patrickleonard.nonestdeus.atheismquotes.palletWheel.ColorPalette;
-import com.patrickleonard.nonestdeus.atheismquotes.palletWheel.PaletteWheel;
 import com.patrickleonard.nonestdeus.atheismquotes.quotes.Quote;
 import com.patrickleonard.nonestdeus.atheismquotes.quotes.QuoteBook;
-import com.patrickleonard.nonestdeus.atheismquotes.adapters.QuoteRecyclerViewAdapter;
+import com.patrickleonard.nonestdeus.atheismquotes.adapters.QuoteListViewAdapter;
 import com.patrickleonard.nonestdeus.atheismquotes.R;
 
 /**
@@ -31,7 +25,6 @@ public class QuoteListFragment extends Fragment {
     private static final String ARG_SORT_BY = "sort-by";
     public static final String SORT_BY_AUTHOR = "sort-author";
     public static final String SORT_BY_NUMBER = "sort-number";
-    private int mColumnCount = 1;
     private String mSortBy;
     private OnListFragmentInteractionListener mListener;
 
@@ -57,7 +50,7 @@ public class QuoteListFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-            mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
+            int mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
         if (getArguments() != null) {
             mSortBy = getArguments().getString(ARG_SORT_BY);
@@ -69,19 +62,10 @@ public class QuoteListFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.quote_list_fragment, container, false);
         // Set the adapter
-        if (view instanceof RecyclerView) {
+        if (view instanceof ListView) {
             Context context = view.getContext();
-            ColorPalette colorPalette = PaletteWheel.getPalette(context, PreferenceManager.getDefaultSharedPreferences(context).getInt(MainActivity.THEME_PREFERENCE_KEY,1));
-            RecyclerView recyclerView = (RecyclerView) view;
-            if (mColumnCount <= 1) {
-                recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            } else {
-                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
-            }
-            recyclerView.setAdapter(new QuoteRecyclerViewAdapter(QuoteBook.getQuoteList(getContext(),mSortBy),mListener,mSortBy,
-                    colorPalette.getListItemBackgroundColor(),
-                    colorPalette.getQuoteTextColor()));
-            recyclerView.setBackgroundColor(colorPalette.getQuoteBackgroundColor());
+            ListView listView = (ListView) view;
+            listView.setAdapter(new QuoteListViewAdapter(QuoteBook.getQuoteList(context,mSortBy),mListener,mSortBy));
         }
         return view;
     }

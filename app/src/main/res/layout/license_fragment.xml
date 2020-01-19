@@ -5,8 +5,7 @@
     android:layout_marginTop="?attr/actionBarSize"
     android:layout_marginBottom="@dimen/fragment_layout_bottom_margin"
     tools:context=".fragments.LicenseFragment"
-    android:id="@+id/licenseLayout"
-    android:background="@android:color/holo_blue_light">
+    android:id="@+id/licenseLayout">
 
     <TextView
         android:id="@+id/message"

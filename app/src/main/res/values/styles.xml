@@ -1,11 +1,84 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="BlueGray.Cyan" parent="AppTheme">
+        <item name="colorPrimary">@color/BlueGray_Cyan_primary</item>
+        <item name="colorPrimaryDark">@color/BlueGray_Cyan_primary_dark</item>
+        <item name="colorAccent">@color/BlueGray_Cyan_accent</item>
+        <item name="android:textColorPrimary">@color/BlueGray_Cyan_primary_text</item>
+        <item name="android:textColorSecondary">@color/BlueGray_Cyan_secondary_text</item>
+        <item name="android:divider">@color/BlueGray_Cyan_divider</item>
+        <item name="toolbarStyle">@style/BlueGray.Cyan.ToolBarStyle</item>
+    </style>
+
+    <style name="BlueGray.Cyan.ToolBarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/BlueGray_Cyan_primary</item>
+        <item name="titleTextColor">@android:color/white</item>
+        <item name="subtitleTextColor">@color/BlueGray_Cyan_primary_light</item>
+    </style>
+
+    <style name="LightGreen.Pink" parent="AppTheme">
+        <item name="colorPrimary">@color/LightGreen_Pink_primary</item>
+        <item name="colorPrimaryDark">@color/LightGreen_Pink_primary_dark</item>
+        <item name="colorAccent">@color/LightGreen_Pink_accent</item>
+        <item name="android:textColorPrimary">@color/LightGreen_Pink_primary_text</item>
+        <item name="android:textColorSecondary">@color/LightGreen_Pink_secondary_text</item>
+        <item name="android:divider">@color/LightGreen_Pink_divider</item>
+        <item name="toolbarStyle">@style/LightGreen.Pink.ToolBarStyle</item>
+        <item name="tabStyle">@style/LightGreen.Pink.TabWidgetStyle</item>
+    </style>
+
+    <style name="LightGreen.Pink.ToolBarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/LightGreen_Pink_primary</item>
+        <item name="titleTextColor">@android:color/white</item>
+        <item name="subtitleTextColor">@color/LightGreen_Pink_primary_light</item>
+        <item name="android:itemTextAppearance">@android:color/white</item>
+    </style>
+
+    <style name="LightGreen.Pink.TabWidgetStyle" parent="Widget.Design.TabLayout">
+        <item name="tabBackground">@color/LightGreen_Pink_primary</item>
+        <item name="tabSelectedTextColor">@android:color/white</item>
+    </style>
+
+    <style name="Pink.Indigo" parent="AppTheme">
+        <item name="colorPrimary">@color/Pink_Indigo_primary</item>
+        <item name="colorPrimaryDark">@color/Pink_Indigo_primary_dark</item>
+        <item name="colorAccent">@color/Pink_Indigo_accent</item>
+        <item name="android:textColorPrimary">@color/Pink_Indigo_primary_text</item>
+        <item name="android:textColorSecondary">@color/Pink_Indigo_secondary_text</item>
+        <item name="android:divider">@color/Pink_Indigo_divider</item>
+    </style>
+
+    <style name="Orange.Blue" parent="AppTheme">
+        <item name="colorPrimary">@color/Orange_Blue_primary</item>
+        <item name="colorPrimaryDark">@color/Orange_Blue_primary_dark</item>
+        <item name="colorAccent">@color/Orange_Blue_accent</item>
+        <item name="android:textColorPrimary">@color/Orange_Blue_primary_text</item>
+        <item name="android:textColorSecondary">@color/Orange_Blue_secondary_text</item>
+        <item name="android:divider">@color/Orange_Blue_divider</item>
+    </style>
+
+    <style name="Purple.Amber" parent="AppTheme">
+        <item name="colorPrimary">@color/Purple_Amber_primary</item>
+        <item name="colorPrimaryDark">@color/Purple_Amber_primary_dark</item>
+        <item name="colorAccent">@color/Purple_Amber_accent</item>
+        <item name="android:textColorPrimary">@color/Purple_Amber_primary_text</item>
+        <item name="android:textColorSecondary">@color/Purple_Amber_secondary_text</item>
+        <item name="android:divider">@color/Purple_Amber_divider</item>
+    </style>
+
+    <style name="Brown.Blue" parent="AppTheme">
+        <item name="colorPrimary">@color/Brown_Blue_primary</item>
+        <item name="colorPrimaryDark">@color/Brown_Blue_primary_dark</item>
+        <item name="colorAccent">@color/Brown_Blue_accent</item>
+        <item name="android:textColorPrimary">@color/Brown_Blue_primary_text</item>
+        <item name="android:textColorSecondary">@color/Brown_Blue_secondary_text</item>
+        <item name="android:divider">@color/Brown_Blue_divider</item>
     </style>
 
 </resources>

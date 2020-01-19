@@ -7,28 +7,60 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/my_awesome_toolbar"
-        android:layout_height="?attr/actionBarSize"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        app:logo="@mipmap/ic_launcher"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:contentInsetStart="0dp"
-        android:fitsSystemWindows="true"
-        app:layout_constraintTop_toTopOf="@id/container"
-        android:background="@android:color/white" />
-
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="0dp"
-        android:layout_marginStart="0dp"
-        android:background="?android:attr/windowBackground"
+        app:layout_constraintTop_toTopOf="@id/container">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/my_awesome_toolbar"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="@id/container"
+            app:logo="@mipmap/ic_launcher"
+            app:contentInsetStart="0dp"
+            android:fitsSystemWindows="true"
+            app:subtitle="@string/actionbar_subtitle"
+            style="@style/Widget.AppCompat.Toolbar"
+            />
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.design.widget.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabGravity="fill"
+        app:tabMode="fixed"
+        app:tabMaxWidth="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation" />
+        android:id="@+id/navigation"
+        style="@style/Widget.Design.TabLayout"
+        >
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/navigation_home"
+            android:icon="@drawable/random"
+            android:text="@string/title_random" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/navigation_by_number"
+            android:icon="@drawable/number_sign"
+            android:text="@string/title_by_number" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/navigation_by_author"
+            android:icon="@drawable/inkwell"
+            android:text="@string/title_by_author" />
+
+    </android.support.design.widget.TabLayout>
 
 </android.support.constraint.ConstraintLayout>
