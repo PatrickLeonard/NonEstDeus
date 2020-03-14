@@ -4,16 +4,23 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+        <item name="android:actionMenuTextColor">@android:color/white</item>
     </style>
+    
+    <!-- BLUE GRAY - CYAN -->
 
     <style name="BlueGray.Cyan" parent="AppTheme">
         <item name="colorPrimary">@color/BlueGray_Cyan_primary</item>
         <item name="colorPrimaryDark">@color/BlueGray_Cyan_primary_dark</item>
         <item name="colorAccent">@color/BlueGray_Cyan_accent</item>
         <item name="android:textColorPrimary">@color/BlueGray_Cyan_primary_text</item>
-        <item name="android:textColorSecondary">@color/BlueGray_Cyan_secondary_text</item>
+        <item name="android:textColorSecondary">@color/BlueGray_Cyan_accent</item>
         <item name="android:divider">@color/BlueGray_Cyan_divider</item>
         <item name="toolbarStyle">@style/BlueGray.Cyan.ToolBarStyle</item>
+        <item name="tabStyle">@style/BlueGray.Cyan.TabWidgetStyle</item>
+        <item name="android:tabWidgetStyle">@style/BlueGray.Cyan.TabWidgetStyle</item>
+        <item name="android:listViewStyle">@style/BlueGray.Cyan.ListViewStyle</item>
     </style>
 
     <style name="BlueGray.Cyan.ToolBarStyle" parent="Widget.AppCompat.Toolbar">
@@ -21,6 +28,37 @@
         <item name="titleTextColor">@android:color/white</item>
         <item name="subtitleTextColor">@color/BlueGray_Cyan_primary_light</item>
     </style>
+
+    <style name="BlueGray.Cyan.TabWidgetStyle" parent="Widget.Design.TabLayout">
+        <item name="tabBackground">@color/BlueGray_Cyan_primary</item>
+        <item name="tabSelectedTextColor">@color/BlueGray_Cyan_accent</item>
+    </style>
+
+    <style name="BlueGray.Cyan.AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/BlueGray_Cyan_primary</item>
+        <item name="android:windowTitleStyle">@style/BlueGray.Cyan.AlertDialogTheme.TitleTextAppearance</item>
+        <item name="textColorAlertDialogListItem">@android:color/white</item>
+        <item name="colorAccent">@color/BlueGray_Cyan_accent</item>
+        <item name="buttonBarStyle">@style/BlueGray.Cyan.AlertDialogTheme.ButtonBar</item>
+    </style>
+
+    <style name="BlueGray.Cyan.AlertDialogTheme.TitleTextAppearance" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BlueGray.Cyan.AlertDialogTheme.ButtonBar" parent="Widget.AppCompat.ButtonBar.AlertDialog">
+        <item name="android:background">@drawable/button_border</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="BlueGray.Cyan.ListViewStyle" parent="Widget.AppCompat.ListView">
+        <item name="android:background">@color/BlueGray_Cyan_primary_light</item>
+        <item name="android:divider">@color/BlueGray_Cyan_divider</item>
+        <item name="android:dividerHeight">2dp</item>
+    </style>
+
+    <!-- LIGHT GREEN - PINK -->
 
     <style name="LightGreen.Pink" parent="AppTheme">
         <item name="colorPrimary">@color/LightGreen_Pink_primary</item>
@@ -31,6 +69,7 @@
         <item name="android:divider">@color/LightGreen_Pink_divider</item>
         <item name="toolbarStyle">@style/LightGreen.Pink.ToolBarStyle</item>
         <item name="tabStyle">@style/LightGreen.Pink.TabWidgetStyle</item>
+        <item name="android:listViewStyle">@style/LightGreen.Pink.ListViewStyle</item>
     </style>
 
     <style name="LightGreen.Pink.ToolBarStyle" parent="Widget.AppCompat.Toolbar">
@@ -42,8 +81,34 @@
 
     <style name="LightGreen.Pink.TabWidgetStyle" parent="Widget.Design.TabLayout">
         <item name="tabBackground">@color/LightGreen_Pink_primary</item>
-        <item name="tabSelectedTextColor">@android:color/white</item>
+        <item name="tabSelectedTextColor">@color/LightGreen_Pink_accent</item>
     </style>
+
+    <style name="LightGreen.Pink.AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/LightGreen_Pink_primary</item>
+        <item name="android:windowTitleStyle">@style/LightGreen.Pink.AlertDialogTheme.TitleTextAppearance</item>
+        <item name="textColorAlertDialogListItem">@android:color/white</item>
+        <item name="colorAccent">@color/LightGreen_Pink_accent</item>
+        <item name="buttonBarStyle">@style/LightGreen.Pink.AlertDialogTheme.ButtonBar</item>
+    </style>
+
+    <style name="LightGreen.Pink.AlertDialogTheme.ButtonBar" parent="Widget.AppCompat.ButtonBar.AlertDialog">
+        <item name="android:background">@drawable/button_border</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="LightGreen.Pink.AlertDialogTheme.TitleTextAppearance" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="LightGreen.Pink.ListViewStyle" parent="Widget.AppCompat.ListView">
+        <item name="android:background">@color/LightGreen_Pink_primary_light</item>
+        <item name="android:divider">@color/LightGreen_Pink_divider</item>
+        <item name="android:dividerHeight">2dp</item>
+    </style>
+
+    <!-- PINK - INDIGO -->
 
     <style name="Pink.Indigo" parent="AppTheme">
         <item name="colorPrimary">@color/Pink_Indigo_primary</item>
@@ -52,7 +117,49 @@
         <item name="android:textColorPrimary">@color/Pink_Indigo_primary_text</item>
         <item name="android:textColorSecondary">@color/Pink_Indigo_secondary_text</item>
         <item name="android:divider">@color/Pink_Indigo_divider</item>
+        <item name="toolbarStyle">@style/Pink.Indigo.ToolBarStyle</item>
+        <item name="tabStyle">@style/Pink.Indigo.TabWidgetStyle</item>
+        <item name="android:listViewStyle">@style/Pink.Indigo.ListViewStyle</item>
     </style>
+
+    <style name="Pink.Indigo.ToolBarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/Pink_Indigo_primary</item>
+        <item name="titleTextColor">@android:color/white</item>
+        <item name="subtitleTextColor">@color/Pink_Indigo_primary_light</item>
+        <item name="android:itemTextAppearance">@android:color/white</item>
+    </style>
+
+    <style name="Pink.Indigo.TabWidgetStyle" parent="Widget.Design.TabLayout">
+        <item name="tabBackground">@color/Pink_Indigo_primary</item>
+        <item name="tabSelectedTextColor">@color/Pink_Indigo_accent</item>
+    </style>
+
+    <style name="Pink.Indigo.AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/Pink_Indigo_primary</item>
+        <item name="android:windowTitleStyle">@style/Pink.Indigo.AlertDialogTheme.TitleTextAppearance</item>
+        <item name="textColorAlertDialogListItem">@android:color/white</item>
+        <item name="colorAccent">@color/Pink_Indigo_accent</item>
+        <item name="buttonBarStyle">@style/Pink.Indigo.AlertDialogTheme.ButtonBar</item>
+    </style>
+
+    <style name="Pink.Indigo.AlertDialogTheme.ButtonBar" parent="Widget.AppCompat.ButtonBar.AlertDialog">
+        <item name="android:background">@drawable/button_border</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="Pink.Indigo.AlertDialogTheme.TitleTextAppearance" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Pink.Indigo.ListViewStyle" parent="Widget.AppCompat.ListView">
+        <item name="android:background">@color/Pink_Indigo_primary_light</item>
+        <item name="android:divider">@color/Pink_Indigo_divider</item>
+        <item name="android:dividerHeight">2dp</item>
+    </style>
+
+
+    <!-- ORANGE - BLUE -->
 
     <style name="Orange.Blue" parent="AppTheme">
         <item name="colorPrimary">@color/Orange_Blue_primary</item>
@@ -61,7 +168,48 @@
         <item name="android:textColorPrimary">@color/Orange_Blue_primary_text</item>
         <item name="android:textColorSecondary">@color/Orange_Blue_secondary_text</item>
         <item name="android:divider">@color/Orange_Blue_divider</item>
+        <item name="toolbarStyle">@style/Orange.Blue.ToolBarStyle</item>
+        <item name="tabStyle">@style/Orange.Blue.TabWidgetStyle</item>
+        <item name="android:listViewStyle">@style/Orange.Blue.ListViewStyle</item>
     </style>
+
+    <style name="Orange.Blue.ToolBarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/Orange_Blue_primary</item>
+        <item name="titleTextColor">@android:color/white</item>
+        <item name="subtitleTextColor">@color/Orange_Blue_primary_light</item>
+        <item name="android:itemTextAppearance">@android:color/white</item>
+    </style>
+
+    <style name="Orange.Blue.TabWidgetStyle" parent="Widget.Design.TabLayout">
+        <item name="tabBackground">@color/Orange_Blue_primary</item>
+        <item name="tabSelectedTextColor">@color/Orange_Blue_accent</item>
+    </style>
+
+    <style name="Orange.Blue.AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/Orange_Blue_primary</item>
+        <item name="android:windowTitleStyle">@style/Orange.Blue.AlertDialogTheme.TitleTextAppearance</item>
+        <item name="textColorAlertDialogListItem">@android:color/white</item>
+        <item name="colorAccent">@color/Orange_Blue_accent</item>
+        <item name="buttonBarStyle">@style/Orange.Blue.AlertDialogTheme.ButtonBar</item>
+    </style>
+
+    <style name="Orange.Blue.AlertDialogTheme.ButtonBar" parent="Widget.AppCompat.ButtonBar.AlertDialog">
+        <item name="android:background">@drawable/button_border</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="Orange.Blue.AlertDialogTheme.TitleTextAppearance" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Orange.Blue.ListViewStyle" parent="Widget.AppCompat.ListView">
+        <item name="android:background">@color/Orange_Blue_primary_light</item>
+        <item name="android:divider">@color/Orange_Blue_divider</item>
+        <item name="android:dividerHeight">2dp</item>
+    </style>
+
+    <!-- PURPlE - AMBER -->
 
     <style name="Purple.Amber" parent="AppTheme">
         <item name="colorPrimary">@color/Purple_Amber_primary</item>
@@ -70,7 +218,48 @@
         <item name="android:textColorPrimary">@color/Purple_Amber_primary_text</item>
         <item name="android:textColorSecondary">@color/Purple_Amber_secondary_text</item>
         <item name="android:divider">@color/Purple_Amber_divider</item>
+        <item name="toolbarStyle">@style/Purple.Amber.ToolBarStyle</item>
+        <item name="tabStyle">@style/Purple.Amber.TabWidgetStyle</item>
+        <item name="android:listViewStyle">@style/Purple.Amber.ListViewStyle</item>
     </style>
+
+    <style name="Purple.Amber.ToolBarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/Purple_Amber_primary</item>
+        <item name="titleTextColor">@android:color/white</item>
+        <item name="subtitleTextColor">@color/Purple_Amber_primary_light</item>
+        <item name="android:itemTextAppearance">@android:color/white</item>
+    </style>
+
+    <style name="Purple.Amber.TabWidgetStyle" parent="Widget.Design.TabLayout">
+        <item name="tabBackground">@color/Purple_Amber_primary</item>
+        <item name="tabSelectedTextColor">@color/Purple_Amber_accent</item>
+    </style>
+
+    <style name="Purple.Amber.AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/Purple_Amber_primary</item>
+        <item name="android:windowTitleStyle">@style/Purple.Amber.AlertDialogTheme.TitleTextAppearance</item>
+        <item name="textColorAlertDialogListItem">@android:color/white</item>
+        <item name="colorAccent">@color/Purple_Amber_accent</item>
+        <item name="buttonBarStyle">@style/Purple.Amber.AlertDialogTheme.ButtonBar</item>
+    </style>
+
+    <style name="Purple.Amber.AlertDialogTheme.ButtonBar" parent="Widget.AppCompat.ButtonBar.AlertDialog">
+        <item name="android:background">@drawable/button_border</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="Purple.Amber.AlertDialogTheme.TitleTextAppearance" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Purple.Amber.ListViewStyle" parent="Widget.AppCompat.ListView">
+        <item name="android:background">@color/Purple_Amber_primary_light</item>
+        <item name="android:divider">@color/Purple_Amber_divider</item>
+        <item name="android:dividerHeight">2dp</item>
+    </style>
+
+    <!-- BROWN - BLUE -->
 
     <style name="Brown.Blue" parent="AppTheme">
         <item name="colorPrimary">@color/Brown_Blue_primary</item>
@@ -79,6 +268,45 @@
         <item name="android:textColorPrimary">@color/Brown_Blue_primary_text</item>
         <item name="android:textColorSecondary">@color/Brown_Blue_secondary_text</item>
         <item name="android:divider">@color/Brown_Blue_divider</item>
+        <item name="toolbarStyle">@style/Brown.Blue.ToolBarStyle</item>
+        <item name="tabStyle">@style/Brown.Blue.TabWidgetStyle</item>
+        <item name="android:listViewStyle">@style/Brown.Blue.ListViewStyle</item>
+    </style>
+
+    <style name="Brown.Blue.ToolBarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/Brown_Blue_primary</item>
+        <item name="titleTextColor">@android:color/white</item>
+        <item name="subtitleTextColor">@color/Brown_Blue_primary_light</item>
+        <item name="android:itemTextAppearance">@android:color/white</item>
+    </style>
+
+    <style name="Brown.Blue.TabWidgetStyle" parent="Widget.Design.TabLayout">
+        <item name="tabBackground">@color/Brown_Blue_primary</item>
+        <item name="tabSelectedTextColor">@color/Brown_Blue_accent</item>
+    </style>
+
+    <style name="Brown.Blue.AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/Brown_Blue_primary</item>
+        <item name="android:windowTitleStyle">@style/Brown.Blue.AlertDialogTheme.TitleTextAppearance</item>
+        <item name="textColorAlertDialogListItem">@android:color/white</item>
+        <item name="colorAccent">@color/Brown_Blue_accent</item>
+        <item name="buttonBarStyle">@style/Brown.Blue.AlertDialogTheme.ButtonBar</item>
+    </style>
+
+    <style name="Brown.Blue.AlertDialogTheme.ButtonBar" parent="Widget.AppCompat.ButtonBar.AlertDialog">
+        <item name="android:background">@drawable/button_border</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="Brown.Blue.AlertDialogTheme.TitleTextAppearance" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Brown.Blue.ListViewStyle" parent="Widget.AppCompat.ListView">
+        <item name="android:background">@color/Brown_Blue_primary_light</item>
+        <item name="android:divider">@color/Brown_Blue_divider</item>
+        <item name="android:dividerHeight">2dp</item>
     </style>
 
 </resources>

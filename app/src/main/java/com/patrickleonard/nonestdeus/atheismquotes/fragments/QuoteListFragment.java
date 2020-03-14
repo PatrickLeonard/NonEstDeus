@@ -1,8 +1,8 @@
 package com.patrickleonard.nonestdeus.atheismquotes.fragments;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,10 +21,11 @@ import com.patrickleonard.nonestdeus.atheismquotes.R;
  */
 public class QuoteListFragment extends Fragment {
 
-    private static final String ARG_COLUMN_COUNT = "column-count";
     private static final String ARG_SORT_BY = "sort-by";
+    private static final String ARG_FIRST_VISIBLE_POSITION = "first-visible-position";
     public static final String SORT_BY_AUTHOR = "sort-author";
     public static final String SORT_BY_NUMBER = "sort-number";
+    private int mFirstVisiblePosition;
     private String mSortBy;
     private OnListFragmentInteractionListener mListener;
 
@@ -36,10 +37,10 @@ public class QuoteListFragment extends Fragment {
     }
 
     @SuppressWarnings("unused")
-    public static QuoteListFragment newInstance(int columnCount,String sortBy) {
+    public static QuoteListFragment newInstance(int columnCount,String sortBy,int firstVisiblePosition) {
         QuoteListFragment fragment = new QuoteListFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_COLUMN_COUNT, columnCount);
+        args.putInt(ARG_FIRST_VISIBLE_POSITION,firstVisiblePosition);
         args.putString(ARG_SORT_BY,sortBy);
         fragment.setArguments(args);
         return fragment;
@@ -50,10 +51,10 @@ public class QuoteListFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-            int mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
-        }
-        if (getArguments() != null) {
             mSortBy = getArguments().getString(ARG_SORT_BY);
+        }
+        if(getArguments() != null) {
+            mFirstVisiblePosition = getArguments().getInt(ARG_FIRST_VISIBLE_POSITION);
         }
     }
 
@@ -63,16 +64,18 @@ public class QuoteListFragment extends Fragment {
         View view = inflater.inflate(R.layout.quote_list_fragment, container, false);
         // Set the adapter
         if (view instanceof ListView) {
-            Context context = view.getContext();
             ListView listView = (ListView) view;
-            listView.setAdapter(new QuoteListViewAdapter(QuoteBook.getQuoteList(context,mSortBy),mListener,mSortBy));
+            listView.setAdapter(new QuoteListViewAdapter(getActivity(), QuoteBook.getQuoteList(getActivity(),mSortBy),mListener,mSortBy));
+            View v = listView.getChildAt(0);
+            int top = (v == null) ? 0 : (v.getTop() - listView.getPaddingTop());
+            listView.setSelectionFromTop(mFirstVisiblePosition,top);
         }
         return view;
     }
 
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         if (context instanceof OnListFragmentInteractionListener) {
             mListener = (OnListFragmentInteractionListener) context;
@@ -99,6 +102,6 @@ public class QuoteListFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnListFragmentInteractionListener {
-        void onListFragmentInteraction(Quote quote);
+        void onListFragmentInteraction(Quote quote,int position);
     }
 }

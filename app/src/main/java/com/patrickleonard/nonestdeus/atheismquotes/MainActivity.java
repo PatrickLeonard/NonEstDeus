@@ -1,26 +1,20 @@
 package com.patrickleonard.nonestdeus.atheismquotes;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.AppCompatButton;
-import android.support.v7.widget.AppCompatRadioButton;
+import com.google.android.material.tabs.TabLayout;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.RadioGroup;
-import android.widget.TextView;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.patrickleonard.nonestdeus.atheismquotes.fragments.LicenseFragment;
@@ -29,17 +23,32 @@ import com.patrickleonard.nonestdeus.atheismquotes.fragments.QuoteListFragment;
 import com.patrickleonard.nonestdeus.atheismquotes.quotes.Quote;
 import com.patrickleonard.nonestdeus.atheismquotes.quotes.QuoteBook;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity implements QuoteListFragment.OnListFragmentInteractionListener {
 
     public static final String TAG = MainActivity.class.getCanonicalName();
-    public static final String APP_VERSION = "1.2.2";
+    public static final String APP_VERSION = "1.3.0";
     public static final String THEME_PREFERENCE_KEY = "theme_key";
     private TabLayout mTabLayout;
     private FragmentManager mFragmentManager;
+    private int mSelectedListViewPosition;
+    private int[] mThemeArray = {R.style.BlueGray_Cyan,R.style.LightGreen_Pink,R.style.Pink_Indigo,
+                                    R.style.Orange_Blue,R.style.Purple_Amber,R.style.Brown_Blue};
+
+    private int[] mAlertDialogThemeArray = {R.style.BlueGray_Cyan_AlertDialogTheme,R.style.LightGreen_Pink_AlertDialogTheme,
+                                            R.style.Pink_Indigo_AlertDialogTheme,R.style.Orange_Blue_AlertDialogTheme,
+                                            R.style.Purple_Amber_AlertDialogTheme,R.style.Brown_Blue_AlertDialogTheme};
+
+    private int[] mDrawableTintListArray = {R.color.bluegray_cyan_tab_color_tint_list,R.color.lightgreen_pink_tab_color_tint_list,
+                                            R.color.pink_indigo_tab_color_tint_list,R.color.orange_blue_tab_color_tint_list,
+                                            R.color.purple_amber_tab_color_tint_list,R.color.brown_blue_tab_color_tint_list};
+    private int mCurrentThemeNum;
+
 
     private void quoteListFragment(String sortBy) {
         FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-        QuoteListFragment quoteListFragment = QuoteListFragment.newInstance(1,sortBy);
+        QuoteListFragment quoteListFragment = QuoteListFragment.newInstance(1,sortBy,mSelectedListViewPosition);
         fragmentTransaction.replace(R.id.container,quoteListFragment);
         fragmentTransaction.commit();
     }
@@ -60,13 +69,14 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.LightGreen_Pink);
+        mCurrentThemeNum = PreferenceManager.getDefaultSharedPreferences(MainActivity.this).getInt(MainActivity.THEME_PREFERENCE_KEY,1);
+        setTheme(mThemeArray[mCurrentThemeNum]);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //mColorPalette = PaletteWheel.getPalette(this.getBaseContext(),PreferenceManager.getDefaultSharedPreferences(MainActivity.this).getInt(MainActivity.THEME_PREFERENCE_KEY,1));
         mFragmentManager = getSupportFragmentManager();
         mTabLayout = findViewById(R.id.navigation);
-        android.support.v7.widget.Toolbar toolbar = findViewById(R.id.my_awesome_toolbar);
+        mTabLayout.setTabIconTintResource(mDrawableTintListArray[mCurrentThemeNum]);
+        androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.my_awesome_toolbar);
         setSupportActionBar(toolbar);
         quoteFragment(QuoteBook.getRandomQuote());
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -86,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
                 switchFragmentDisplayed();
             }
         });
-        mTabLayout.getTabAt(0).select();
+        Objects.requireNonNull(mTabLayout.getTabAt(0)).select();
     }
 
     private void switchFragmentDisplayed() {
@@ -152,66 +162,37 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
         }
     }
 
-    public void onListFragmentInteraction(Quote quote) {
+    public void onListFragmentInteraction(Quote quote,int position) {
         quoteFragment(quote);
+        mSelectedListViewPosition = position;
     }
 
     private AlertDialog showThemeSelectionDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        LayoutInflater inflater = this.getLayoutInflater();
         String[] themeList = getResources().getStringArray(R.array.theme_titles);
-        ConstraintLayout paletteDialogConstraintLayout = (ConstraintLayout) inflater.inflate(R.layout.palette_dialog_layout,null);
-        //paletteDialogConstraintLayout.setBackgroundColor(mColorPalette.getBarBackgroundColorID());
-        final RadioGroup radioGroup = paletteDialogConstraintLayout.findViewById(R.id.palette_dialog_radio_group);
-        for(int i=0;i<themeList.length;i++) {
-            //ColorPalette colorPalette = PaletteWheel.getPalette(this,i);
-            android.support.v7.widget.AppCompatRadioButton radioButton = new AppCompatRadioButton(this);
-            radioButton.setText(themeList[i]);
-            //radioButton.setTextColor(colorPalette.getQuoteTextColor());
-            //radioButton.setBackgroundColor(colorPalette.getQuoteBackgroundColor());
-            //CompoundButtonCompat.setButtonTintList(radioButton,new ColorStateList( new int[][]{new int[]{-android.R.attr.state_checked},new int[]{android.R.attr.state_checked}},
-                    //new int[]{colorPalette.getQuoteTextColor(),colorPalette.getBarBackgroundColorID()}));
-            radioButton.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-            radioGroup.addView(radioButton,i);
-            if(i==PreferenceManager.getDefaultSharedPreferences(MainActivity.this).getInt(MainActivity.THEME_PREFERENCE_KEY,1)) {
-                radioGroup.check(radioButton.getId());
-            }
-        }
-        TextView title = paletteDialogConstraintLayout.findViewById(R.id.palette_dialog_title_text_view);
-        //title.setTextColor(mColorPalette.getTitleTextColor());
-        ImageView titleIcon = paletteDialogConstraintLayout.findViewById(R.id.palette_dialog_title_icon);
-        //titleIcon.setColorFilter(mColorPalette.getTitleTextColor(), PorterDuff.Mode.SRC_IN);
-        AppCompatButton cancelButton = paletteDialogConstraintLayout.findViewById(R.id.palette_dialog_cancel_button);
-        AppCompatButton okButton = paletteDialogConstraintLayout.findViewById(R.id.palette_dialog_ok_button);
-        //cancelButton.setBackgroundColor(mColorPalette.getBarBackgroundColorID());
-        //cancelButton.setTextColor(mColorPalette.getTitleTextColor());
-        cancelButton.setBackground(getResources().getDrawable(R.drawable.button_border));
-        //okButton.setBackgroundColor(mColorPalette.getBarBackgroundColorID());
-        //okButton.setTextColor(mColorPalette.getTitleTextColor());
-        okButton.setBackground(getResources().getDrawable(R.drawable.button_border));
-        builder.setView(R.layout.palette_dialog_layout);
-        builder .setCancelable(false)
-                .setView(paletteDialogConstraintLayout);
-        final AlertDialog alertDialog = builder.create();
-        cancelButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                alertDialog.dismiss();
-            }
-        });
-        okButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int indexSelected = radioGroup.indexOfChild(radioGroup.findViewById(radioGroup.getCheckedRadioButtonId()));
-                int current = PreferenceManager.getDefaultSharedPreferences(MainActivity.this).getInt(MainActivity.THEME_PREFERENCE_KEY,1);
-                if(current != indexSelected) {
-                    PreferenceManager.getDefaultSharedPreferences(MainActivity.this).edit().putInt(MainActivity.THEME_PREFERENCE_KEY, indexSelected).apply();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this,mAlertDialogThemeArray[mCurrentThemeNum]);
+        builder.setTitle(R.string.select_theme_color_scheme)
+                .setIcon(R.drawable.ic_color_palette_white)
+                .setSingleChoiceItems(themeList, PreferenceManager.getDefaultSharedPreferences(MainActivity.this).getInt(MainActivity.THEME_PREFERENCE_KEY,1), (dialog, which) -> PreferenceManager.getDefaultSharedPreferences(MainActivity.this).edit().putInt(MainActivity.THEME_PREFERENCE_KEY, which).apply())
+                .setPositiveButton(android.R.string.ok, (dialog, which) -> {
+                    dialog.dismiss();
                     recreate();
-                }
-                else {
-                    alertDialog.dismiss();
-                }
-            }
+                })
+                .setPositiveButtonIcon(getResources().getDrawable(android.R.drawable.ic_menu_set_as))
+                .setNegativeButton(android.R.string.cancel, (dialog, which) -> {
+                    PreferenceManager.getDefaultSharedPreferences(MainActivity.this).edit().putInt(MainActivity.THEME_PREFERENCE_KEY, mCurrentThemeNum).apply();
+                    dialog.dismiss();
+                })
+                .setNegativeButtonIcon(getResources().getDrawable(android.R.drawable.ic_menu_close_clear_cancel));
+        AlertDialog alertDialog = builder.create();
+        alertDialog.setOnShowListener(dialog -> {
+            Button negativeButton = ((AlertDialog) dialog).getButton(DialogInterface.BUTTON_NEGATIVE);
+            Button positiveButton = ((AlertDialog) dialog).getButton(DialogInterface.BUTTON_POSITIVE);
+            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) positiveButton.getLayoutParams();
+            params.weight = 10;
+            negativeButton.setLayoutParams(params);
+            positiveButton.setLayoutParams(params);
+            negativeButton.invalidate();
+            positiveButton.invalidate();
         });
         return alertDialog;
     }

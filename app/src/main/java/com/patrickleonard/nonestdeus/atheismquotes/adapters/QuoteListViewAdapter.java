@@ -1,5 +1,6 @@
 package com.patrickleonard.nonestdeus.atheismquotes.adapters;
-import android.support.annotation.NonNull;
+import android.content.Context;
+import androidx.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,29 +24,28 @@ public class QuoteListViewAdapter extends BaseAdapter {
     private final List<Quote> mValues;
     private final OnListFragmentInteractionListener mListener;
     private String mSortBy;
+    private Context mContext;
 
-    public QuoteListViewAdapter(List<Quote> items, OnListFragmentInteractionListener listener, String sortBy) {
+    public QuoteListViewAdapter(Context context, List<Quote> items, OnListFragmentInteractionListener listener, String sortBy) {
         mValues = items;
         mSortBy = sortBy;
         mListener = listener;
+        mContext = context;
     }
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         if(convertView == null){
-            convertView = LayoutInflater.from(parent.getContext())
+            convertView = LayoutInflater.from(mContext)
                     .inflate(R.layout.quote_item_fragment, parent, false);
         }
         ((TextView) convertView.findViewById(R.id.item_number)).setText(String.format(Locale.getDefault(),"%d",mValues.get(position).quoteNum));
         ((TextView) convertView.findViewById(R.id.content)).setText(getDisplayString(convertView,position));
-        convertView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(mListener != null) {
-                    // Notify the active callbacks interface (the activity, if the
-                    // fragment is attached to one) that an item has been selected.
-                    mListener.onListFragmentInteraction(mValues.get(position));
-                }
+        convertView.setOnClickListener(v -> {
+            if(mListener != null) {
+                // Notify the active callbacks interface (the activity, if the
+                // fragment is attached to one) that an item has been selected.
+                mListener.onListFragmentInteraction(mValues.get(position),position);
             }
         });
         return convertView;

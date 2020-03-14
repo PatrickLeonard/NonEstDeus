@@ -197,6 +197,8 @@
     <string name="dholdbach_author">Paul Henry Thiry d\'Holbach</string>
     <string name="stanton_author">Elizabeth Cady Stanton</string>
     <string name="almaarri_author">Al-Ma\'arri</string>
+    <string name="palette_dialog_icon">Palette Dialog Icon</string>
+    <string name="select_theme_color_scheme">Select Theme Color Scheme:</string>
 
     <string-array name="red_fuzz_smoke_storm">
         <!--Title Text Color-->
@@ -277,10 +279,11 @@
     </string-array>
 
     <string-array name="theme_titles">
-        <item>Theme 1</item>
-        <item>Theme 2</item>
-        <item>Theme 3</item>
-        <item>Theme 4</item>
-        <item>Theme 5</item>
+        <item>Blue Gray - Cyan</item>
+        <item>Light Green - Pink</item>
+        <item>Pink - Indigo</item>
+        <item>Orange - Blue</item>
+        <item>Purple - Amber</item>
+        <item>Brown - Blue</item>
     </string-array>
 </resources>

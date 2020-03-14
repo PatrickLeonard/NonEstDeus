@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    style="@style/AppTheme" >
 
     <TextView
         android:id="@+id/item_number"
@@ -12,7 +13,7 @@
         android:padding="8dp"
         android:lines="1"
         android:textAlignment="center"
-        android:textAppearance="?attr/textAppearanceListItem" />
+        android:textAppearance="?attr/textAppearanceListItem"/>
 
     <TextView
         android:id="@+id/content"

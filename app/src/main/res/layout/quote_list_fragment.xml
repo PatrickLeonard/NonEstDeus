@@ -11,4 +11,5 @@
     app:layoutManager="LinearLayoutManager"
     tools:context=".fragments.QuoteListFragment"
     tools:listitem="@layout/quote_item_fragment"
+    style="@style/Widget.AppCompat.ListView"
     />
