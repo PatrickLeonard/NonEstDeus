@@ -1,4 +1,4 @@
-package com.patrickleonard.nonestdeus.atheismquotes.fragments;
+package com.nonestdeus.patrickaleonard.nonestdeus.fragments;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.patrickleonard.nonestdeus.atheismquotes.MainActivity;
-import com.patrickleonard.nonestdeus.atheismquotes.R;
+import com.nonestdeus.patrickaleonard.nonestdeus.MainActivity;
+import com.nonestdeus.patrickaleonard.nonestdeus.R;
 
 import java.util.Locale;
 
@@ -37,12 +37,9 @@ public class LicenseFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.license_fragment,container,false);
-        //ColorPalette colorPalette = PaletteWheel.getPalette(view.getContext(), PreferenceManager.getDefaultSharedPreferences(view.getContext()).getInt(MainActivity.THEME_PREFERENCE_KEY,1));
         TextView textView = view.findViewById(R.id.message);
         textView.setText(String.format(Locale.getDefault(),getString(R.string.license),MainActivity.APP_VERSION));
-        //textView.setTextColor(colorPalette.getQuoteTextColor());
         RelativeLayout relativeLayout = view.findViewById(R.id.licenseLayout);
-        //relativeLayout.setBackgroundColor(colorPalette.getQuoteBackgroundColor());
         return view;
     }
 }

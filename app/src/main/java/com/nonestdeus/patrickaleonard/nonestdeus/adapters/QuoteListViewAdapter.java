@@ -1,4 +1,4 @@
-package com.patrickleonard.nonestdeus.atheismquotes.adapters;
+package com.nonestdeus.patrickaleonard.nonestdeus.adapters;
 import android.content.Context;
 import androidx.annotation.NonNull;
 import android.view.LayoutInflater;
@@ -7,10 +7,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.patrickleonard.nonestdeus.atheismquotes.R;
-import com.patrickleonard.nonestdeus.atheismquotes.fragments.QuoteListFragment;
-import com.patrickleonard.nonestdeus.atheismquotes.fragments.QuoteListFragment.OnListFragmentInteractionListener;
-import com.patrickleonard.nonestdeus.atheismquotes.quotes.Quote;
+import com.nonestdeus.patrickaleonard.nonestdeus.R;
+import com.nonestdeus.patrickaleonard.nonestdeus.fragments.QuoteListFragment;
+import com.nonestdeus.patrickaleonard.nonestdeus.fragments.QuoteListFragment.OnListFragmentInteractionListener;
+import com.nonestdeus.patrickaleonard.nonestdeus.quotes.Quote;
 
 import java.util.List;
 import java.util.Locale;
@@ -23,8 +23,8 @@ public class QuoteListViewAdapter extends BaseAdapter {
 
     private final List<Quote> mValues;
     private final OnListFragmentInteractionListener mListener;
-    private String mSortBy;
-    private Context mContext;
+    private final String mSortBy;
+    private final Context mContext;
 
     public QuoteListViewAdapter(Context context, List<Quote> items, OnListFragmentInteractionListener listener, String sortBy) {
         mValues = items;

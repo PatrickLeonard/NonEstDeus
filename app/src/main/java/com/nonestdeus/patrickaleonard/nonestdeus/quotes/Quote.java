@@ -1,4 +1,4 @@
-package com.patrickleonard.nonestdeus.atheismquotes.quotes;
+package com.nonestdeus.patrickaleonard.nonestdeus.quotes;
 /**
  * Created by Patrick Leonard on 7/22/2015.
  */

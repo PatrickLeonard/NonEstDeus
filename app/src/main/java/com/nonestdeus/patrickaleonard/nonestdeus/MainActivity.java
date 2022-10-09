@@ -1,10 +1,12 @@
-package com.patrickleonard.nonestdeus.atheismquotes;
+package com.nonestdeus.patrickaleonard.nonestdeus;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import com.google.android.material.tabs.TabLayout;
+
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.appcompat.app.AlertDialog;
@@ -17,30 +19,30 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.patrickleonard.nonestdeus.atheismquotes.fragments.LicenseFragment;
-import com.patrickleonard.nonestdeus.atheismquotes.fragments.QuoteFragment;
-import com.patrickleonard.nonestdeus.atheismquotes.fragments.QuoteListFragment;
-import com.patrickleonard.nonestdeus.atheismquotes.quotes.Quote;
-import com.patrickleonard.nonestdeus.atheismquotes.quotes.QuoteBook;
+import com.nonestdeus.patrickaleonard.nonestdeus.fragments.LicenseFragment;
+import com.nonestdeus.patrickaleonard.nonestdeus.fragments.QuoteFragment;
+import com.nonestdeus.patrickaleonard.nonestdeus.fragments.QuoteListFragment;
+import com.nonestdeus.patrickaleonard.nonestdeus.quotes.Quote;
+import com.nonestdeus.patrickaleonard.nonestdeus.quotes.QuoteBook;
 
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements QuoteListFragment.OnListFragmentInteractionListener {
 
     public static final String TAG = MainActivity.class.getCanonicalName();
-    public static final String APP_VERSION = "1.3.0";
+    public static final String APP_VERSION = "1.4.0";
     public static final String THEME_PREFERENCE_KEY = "theme_key";
     private TabLayout mTabLayout;
     private FragmentManager mFragmentManager;
     private int mSelectedListViewPosition;
-    private int[] mThemeArray = {R.style.BlueGray_Cyan,R.style.LightGreen_Pink,R.style.Pink_Indigo,
+    private final int[] mThemeArray = {R.style.BlueGray_Cyan,R.style.LightGreen_Pink,R.style.Pink_Indigo,
                                     R.style.Orange_Blue,R.style.Purple_Amber,R.style.Brown_Blue};
 
-    private int[] mAlertDialogThemeArray = {R.style.BlueGray_Cyan_AlertDialogTheme,R.style.LightGreen_Pink_AlertDialogTheme,
+    private final int[] mAlertDialogThemeArray = {R.style.BlueGray_Cyan_AlertDialogTheme,R.style.LightGreen_Pink_AlertDialogTheme,
                                             R.style.Pink_Indigo_AlertDialogTheme,R.style.Orange_Blue_AlertDialogTheme,
                                             R.style.Purple_Amber_AlertDialogTheme,R.style.Brown_Blue_AlertDialogTheme};
 
-    private int[] mDrawableTintListArray = {R.color.bluegray_cyan_tab_color_tint_list,R.color.lightgreen_pink_tab_color_tint_list,
+    private final int[] mDrawableTintListArray = {R.color.bluegray_cyan_tab_color_tint_list,R.color.lightgreen_pink_tab_color_tint_list,
                                             R.color.pink_indigo_tab_color_tint_list,R.color.orange_blue_tab_color_tint_list,
                                             R.color.purple_amber_tab_color_tint_list,R.color.brown_blue_tab_color_tint_list};
     private int mCurrentThemeNum;
@@ -133,18 +135,21 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.menu_license:
-                licenseFragment();
-                return true;
-            case R.id.menu_send_feedback:
-                sendFeedback();
-                return true;
-            case R.id.menu_palette_swap:
-                showThemeSelectionDialog().show();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        int itemId = item.getItemId();
+        if(itemId == R.id.menu_license) {
+            licenseFragment();
+            return true;
+        }
+        else if(itemId == R.id.menu_send_feedback) {
+            sendFeedback();
+            return true;
+        }
+        else if(itemId == R.id.menu_palette_swap) {
+            showThemeSelectionDialog().show();
+            return true;
+        }
+        else {
+            return super.onOptionsItemSelected(item);
         }
     }
 
@@ -176,13 +181,12 @@ public class MainActivity extends AppCompatActivity implements QuoteListFragment
                 .setPositiveButton(android.R.string.ok, (dialog, which) -> {
                     dialog.dismiss();
                     recreate();
-                })
-                .setPositiveButtonIcon(getResources().getDrawable(android.R.drawable.ic_menu_set_as))
+                }).setPositiveButtonIcon(ResourcesCompat.getDrawable(getResources(), android.R.drawable.ic_menu_set_as, null))
                 .setNegativeButton(android.R.string.cancel, (dialog, which) -> {
                     PreferenceManager.getDefaultSharedPreferences(MainActivity.this).edit().putInt(MainActivity.THEME_PREFERENCE_KEY, mCurrentThemeNum).apply();
                     dialog.dismiss();
                 })
-                .setNegativeButtonIcon(getResources().getDrawable(android.R.drawable.ic_menu_close_clear_cancel));
+                .setNegativeButtonIcon(ResourcesCompat.getDrawable(getResources(), android.R.drawable.ic_menu_close_clear_cancel, null));
         AlertDialog alertDialog = builder.create();
         alertDialog.setOnShowListener(dialog -> {
             Button negativeButton = ((AlertDialog) dialog).getButton(DialogInterface.BUTTON_NEGATIVE);

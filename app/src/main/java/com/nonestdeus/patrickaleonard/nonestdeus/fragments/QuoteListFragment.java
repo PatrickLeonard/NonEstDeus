@@ -1,4 +1,4 @@
-package com.patrickleonard.nonestdeus.atheismquotes.fragments;
+package com.nonestdeus.patrickaleonard.nonestdeus.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -8,10 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.patrickleonard.nonestdeus.atheismquotes.quotes.Quote;
-import com.patrickleonard.nonestdeus.atheismquotes.quotes.QuoteBook;
-import com.patrickleonard.nonestdeus.atheismquotes.adapters.QuoteListViewAdapter;
-import com.patrickleonard.nonestdeus.atheismquotes.R;
+import com.nonestdeus.patrickaleonard.nonestdeus.quotes.Quote;
+import com.nonestdeus.patrickaleonard.nonestdeus.quotes.QuoteBook;
+import com.nonestdeus.patrickaleonard.nonestdeus.adapters.QuoteListViewAdapter;
+import com.nonestdeus.patrickaleonard.nonestdeus.R;
 
 /**
  * A fragment representing a list of Items.
@@ -80,7 +80,7 @@ public class QuoteListFragment extends Fragment {
         if (context instanceof OnListFragmentInteractionListener) {
             mListener = (OnListFragmentInteractionListener) context;
         } else {
-            throw new RuntimeException(context.toString()
+            throw new RuntimeException(context
                     + " must implement OnListFragmentInteractionListener");
         }
     }

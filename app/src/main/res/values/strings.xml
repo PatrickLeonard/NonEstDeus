@@ -15,10 +15,21 @@
     <string name="clip_description_label">Non est deus quote</string>
     <string name="clipboard_copy_toast">Copied to Clipboard</string>
     <string name="error_occurred">Some error occurred. Please try again.</string>
-    <string name="license">NonEstDeus App. Ver. %s \n\nCopyright © 2018, Patrick Leonard\n\nThis software is provided \'as is\' and without any express or implied warranties, including, but no limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed.\n\nNonEstDeus is an open source project. The source code for NonEstDeus can be found, with license, on Github:\nhttps://github.com/PatrickLeonard/NonEstDeus</string>
+    <string name="license">NonEstDeus App. Ver. %s \n\nCopyright © 2022, Patrick Leonard\n\nThis software is provided \'as is\' and without any express or implied warranties, including, but no limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed.\n\nNonEstDeus is an open source project. The source code for NonEstDeus can be found, with license, on Github:\nhttps://github.com/PatrickLeonard/NonEstDeus</string>
     <string name="actionbar_subtitle">Atheism Quotes</string>
     <string name="change_color_palette">Colors</string>
     <string name="facebook_app_id">283909378905424</string>
+    <string name="palette_dialog_icon">Palette Dialog Icon</string>
+    <string name="select_theme_color_scheme">Select Theme Color Scheme:</string>
+
+    <string-array name="theme_titles">
+        <item>Blue Gray - Cyan</item>
+        <item>Light Green - Pink</item>
+        <item>Pink - Indigo</item>
+        <item>Orange - Blue</item>
+        <item>Purple - Amber</item>
+        <item>Brown - Blue</item>
+    </string-array>
 
     <!--Quotes -->
     <string name="dawkins_quote_1">We are all atheists about most of the gods that humanity has ever believed in. Some of us just go one god further.</string>
@@ -27,9 +38,14 @@
     <string name="hitchens_quote_1">That which can be asserted without evidence, can be dismissed without evidence.</string>
     <string name="voltaire_quote_1">Those who can make you believe absurdities, can make you commit atrocities.</string>
     <string name="asimov_quote_1">Properly read, the Bible is the most potent force for atheism ever conceived.</string>
+    <string name="asimov_quote_2">The creation tale of Genesis is very impressive, even in modern terms, if it is treated symbolically and allegorically. But again, the tendency for many people is to accept it literally and to fight ferociously against deviating from it by one iota.</string>
+    <string name="asimov_quote_3">I am an atheist, out and out. It took me a long time to say it. I\'ve been an atheist for years and years, but somehow I felt it was intellectually unrespectable to say one was an atheist, because it assumed knowledge that one didn\'t have. Somehow, it was better to say one was a humanist or an agnostic. I finally decided that I\'m a creature of emotion as well as of reason. Emotionally, I am an atheist. I don\'t have the evidence to prove that God doesn\'t exist, but I so strongly suspect he doesn\'t that I don\'t want to waste my time.</string>
     <string name="napoleon_quote_1">Religion is excellent stuff for keeping common people quiet. Religion is what keeps the poor from murdering the rich.</string>
-    <string name="epicurus_quote_1">Is God willing to prevent evil, but not able?\nThen he is not omnipotent.\nIs he able, but not willing?\nThen he is malevolent.\nIs he both able and willing?\n Then whence cometh evil?\nIs he neither able nor willing?\nThen why call him God?</string>
+    <string name="epicurus_quote_1">Is God willing to prevent evil, but not able?\n\nThen he is not omnipotent.\n\nIs he able, but not willing?\n\nThen he is malevolent.\n\nIs he both able and willing?\n\n Then whence cometh evil?\n\nIs he neither able nor willing?\n\nThen why call him God?</string>
     <string name="carlin_quote_1">Atheism is a non-prophet organization.</string>
+    <string name="carlin_quote_2">Religion has actually convinced people that there\'s an invisible man living in the sky who watches everything you do, every minute of every day. And the invisible man has a special list of ten things he does not want you to do. And if you do any of these ten things, he has a special place, full of fire and smoke and burning and torture and anguish, where he will send you to live and suffer and burn and choke and scream and cry forever and ever \'til the end of time!\n\nBut He loves you. He loves you, and He needs money! He always needs money! He\'s all-powerful, all-perfect, all-knowing, and all-wise, somehow just can\'t handle money!</string>
+    <string name="carlin_quote_3">I noticed that all the prayers I used to offer to God, and all the prayers I now offer to Joe Pesci, are being answered at about the same fifty percent rate. Half the time I get what I want, half the time I don\'t&#8230;Same as the four-leaf clover and the horseshoe&#8230;same as the voodoo lady who tells you your fortune by squeezing the goat\'s testicles. It\'s all the same&#8230;so just pick your superstition, sit back, make a wish, and enjoy yourself&#8230;</string>
+    <string name="carlin_quote_4">Religion is like drugs, it destroys the thinking mind.</string>
     <string name="twain_quote_1">The Bible has noble poetry in it… and some good morals and a wealth of obscenity, and upwards of a thousand lies.</string>
     <string name="hitchens_quote_2">Human decency is not derived from religion. It precedes it.</string>
     <string name="pirsig_quote_1">When one person suffers from a delusion, it is called insanity. When many people suffer from a delusion it is called a Religion.</string>
@@ -41,10 +57,16 @@
     <string name="zola_quote_1">Civilization will not attain to its perfection until the last stone from the last church falls on the last priest.</string>
     <string name="pryor_quote_1">The reason people use a crucifix against vampires is because vampires are allergic to bullshit.</string>
     <string name="sagan_quote_1">I don\'t want to believe. I want to know.</string>
+    <string name="sagan_quote_2">Science is not only compatible with spirituality; it is a profound source of spirituality. When we recognize our place in an immensity of light‐years and in the passage of ages, when we grasp the intricacy, beauty, and subtlety of life, then that soaring feeling, that sense of elation and humility combined, is surely spiritual. So are our emotions in the presence of great art or music or literature, or acts of exemplary selfless courage such as those of Mohandas Gandhi or Martin Luther King, Jr. The notion that science and spirituality are somehow mutually exclusive does a disservice to both.</string>
+    <string name="sagan_quote_3">For thousands of years humans were oppressed - as some of us still are - by the notion that the universe is a marionette whose strings are pulled by a god or gods, unseen and inscrutable.</string>
+    <string name="sagan_quote_4">An atheist is someone who is certain that God does not exist, someone who has compelling evidence against the existence of God. I know of no such compelling evidence. Because God can be relegated to remote times and places and to uptime causes, we would have to know a great deal more about the Universe than we do now to be sure that no such God exists. To be certain of the existence of God and you be certain of the nonexistence of God seem to me to be the confident extremes in a subject so riddled with doubt and uncertainty as to inspire very little confidence indeed.</string>
+    <string name="sagan_quote_5">Extraordinary claims require extraordinary evidence.</string>
     <string name="sam_harris_quote_1">We have a choice. We have two options as human beings. We have a choice between conversation and war. That\'s it. Conversation and violence. And faith is a conversation stopper.</string>
     <string name="roddenberry_quote_1">We must question the story logic of having an all-knowing all-powerful God, who creates faulty Humans, and then blames them for his own mistakes.</string>
+    <string name="roddenberry_quote_2">For most people, religion is nothing more than a substitute for a malfunctioning brain. If people need religion, ignore them and maybe they will ignore you, and you can go on with your life. It wasn\'t until I was beginning to do Star Trek that the subject of religion arose. What brought it up was that people were saying that I would have a chaplain on board the Enterprise. I replied, \"No, we don\'t.\"</string>
     <string name="lewis_black_quote_1">Who knew that the devil had a factory where he made millions of fossils, which his minions distributed throughout the earth, in order to confuse my tiny brain?</string>
     <string name="einstein_quote_1">I don\'t try to imagine a personal God; it suffices to stand in awe at the structure of the world, insofar as it allows our inadequate senses to appreciate it.</string>
+    <string name="einstein_quote_2">The word god is for me nothing more than the expression and product of human weaknesses, the Bible a collection of honourable, but still primitive legends which are nevertheless pretty childish. No interpretation no matter how subtle can (for me) change this.</string>
     <string name="ruth_green_quote_1">There was a time when religion ruled the world. It is known as the Dark Ages.</string>
     <string name="lincoln_quote_1">The Bible is not my book nor Christianity my profession. I could never give assent to the long, complicated statements of Christian dogma.</string>
     <string name="richard_morgan_quote_1">A preoccupation with the next world clearly shows an inability to cope credibly with this one.</string>
@@ -57,10 +79,14 @@
     <string name="twain_quote_2">Nothing exists but you. And you are but a thought.</string>
     <string name="sam_harris_quote_3">Religious moderation is the product of secular knowledge and scriptural ignorance.</string>
     <string name="gervais_quote_1">You won\'t burn in hell. But be nice anyway.</string>
-    <string name="jong_quote_1">Without the gods, how would I sing?\' I asked.\n\'With your own voice,\' he said.</string>
+    <string name="gervais_quote_2">A Christian telling an atheist they\'re going to hell is as scary as a child telling an adult they\'re not getting any presents from Santa.</string>
+    <string name="gervais_quote_3">Saying atheism is a belief system is like saying not going skiing is a hobby.</string>
+    <string name="gervais_quote_4">The existence of God is not subjective. He either exists or he doesn\'t. It\'s not a matter of opinion. You can have your own opinions. But you can\'t have your own facts.</string>
+    <string name="jong_quote_1">Without the gods, how would I sing?\' I asked.\n\n\'With your own voice,\' he said.</string>
     <string name="sam_harris_quote_4">The problem with religion, because it\'s been sheltered from criticism, is that it allows people to believe en masse what only idiots or lunatics could believe in isolation.</string>
     <string name="ingersoll_quote_1">And why does this same God tell me how to raise my children when he had to drown his?</string>
     <string name="gore_vidal_quote_1">To a born-again atheist like myself, it is clear that each of us has multiple selves, talents, perceptions. But to the Roman Catholic, unity is all.</string>
+    <string name="gore_vidal_quote_2">I regard monotheism as the greatest disaster ever to befall the human race. I see no good in Judaism, Christianity, or Islam &#8212; good people, yes, but any religion based on a single, well, frenzied and virulent god, is not as useful to the human race as, say, Confucianism, which is not a religion but an ethical and educational system.</string>
     <string name="madison_quote_1">Religious bondage shackles and debilitates the mind, and unfits it for every noble enterprise, every expanded prospect.</string>
     <string name="bill_gates_quote_1">Just in terms of allocation of time resources, religion is not very efficient. There`s a lot more I could be doing on a Sunday morning.</string>
     <string name="brad_pitt_quote_1">I\'m probably 20 percent atheist and 80 percent agnostic. I don\'t think anyone really knows. You\'ll either find out or not when you get there, until then there\'s no point thinking about it.</string>
@@ -69,12 +95,12 @@
     <string name="ruth_green_quote_3">Today evolution of human intelligence has advanced us to the stage where most of us are too smart to invent new gods but are reluctant to give up the old1 ones.</string>
     <string name="neil_degrasse_tyson_quote_2">God is an ever receding pocket of scientific ignorance.</string>
     <string name="stanton_quote_1">The bible and the church have been the greatest stumbling block in the way of women\'s emancipation.</string>
+    <string name="stanton_quote_2">The happiest people I have known have been those who gave themselves no concern about their own souls, but did their uttermost to mitigate the miseries of others. </string>
     <string name="almaarri_quote_1">The inhabitants of the earth are of two sorts: those with brains, but no religion, and those with religion, but no brains.</string>
     <string name="dholdbach_quote_1">If the ignorance of nature gave birth to such a variety of gods, the knowledge of this nature is calculated to destroy them.</string>
     <string name="ingersoll_quote_2">As more people become more intelligent they care less for preachers and more for teachers.</string>
     <string name="penn_jillette_quote_1">You don\'t have to be brave or a saint, a martyr, or even very smart to be an atheist. All you have to be able to say is \'I don\'t know.\'</string>
     <string name="sam_harris_quote_5">The faith of religion is belief on insufficient evidence.</string>
-    <string name="dershowitz_quote_1">I have always considered \"Pascal\'s Wager\" a questionable bet to place, since any God worth believing in would prefer an honest agnostic to a calculating hypocrite.</string>
     <string name="penn_jillette_quote_2">Once you\'ve condoned faith in general, you\'ve condoned any crazy shit done because of faith.</string>
     <string name="ruth_green_quote_4">The natural is so awesome that we need not go beyond it.</string>
     <string name="dholdbach_quote_2">All children are atheists, they have no idea of God.</string>
@@ -89,10 +115,11 @@
     <string name="penn_jillette_quote_3">Love and respect all people. Hate and destroy all faith.</string>
     <string name="voltaire_quote_2">All men are born with a nose and ten fingers, but no one was born with a knowledge of God.</string>
     <string name="amis_quote_1">Religious belief is without reason and without dignity, and its record is near-universally dreadful.</string>
-    <string name="gervais_quote_2">A Christian telling an atheist they\'re going to hell is as scary as a child telling an adult they\'re not getting any presents from Santa.</string>
     <string name="cox_quote_1">Saying that you are moral because you believe in a god is like saying you are an economist because you play monopoly.</string>
     <string name="andy_rooney_quote_3">I don\'t differentiate much, except in degree, between people who believe in religion from those who believe in astrology, magic or the supernatural.</string>
+    <string name="andy_rooney_quote_4">We all ought to understand we\'re on our own. Believing in Santa Claus doesn\'t do kids any harm for a few years but it isn\'t smart for them to continue waiting all their lives for him to come down the chimney with something wonderful. Santa Claus and God are cousins.</string>
     <string name="bertrand_russel_quote_1">The idea that things must have a beginning is really due to the poverty of our imagination.</string>
+    <string name="bertrand_russel_quote_2">As a philosopher, if I were speaking to a purely philosophic audience I should say that I ought to describe myself as an Agnostic, because I do not think that there is a conclusive argument by which one can prove that there is not a God. On the other hand, if I am to convey the right impression to the ordinary man in the street I think that I ought to say that I am an Atheist, because, when I say that I cannot prove that there is not a God, I ought to add equally that I cannot prove that there are not the Homeric gods.</string>
     <string name="tochukwu_quote_1">Blessed are the doubters: for they shall not be easily fooled.</string>
     <string name="neil_degrasse_tyson_quote_3">I\'d ask [God] why he keeps trying to kill us all with disease, pestilence, and natural disasters. I\'d ask why 99% of all species there ever were are now extinct — if God works in mysterious ways, that way is mysteriously genocidal.</string>
     <string name="navabi_quote_1">If God creates morality, then morality is nothing more than the whimsy of a divine being blindly followed by humans.</string>
@@ -109,181 +136,244 @@
     <string name="cj_anderson_quote_1">Where human knowledge ends the imagined God begins.</string>
     <string name="kudari_quote_1">Coincidentally, the words RELIGION and BULLSHIT both have eight letters.</string>
     <string name="stephen_fry_quote_1">You can\'t just say there is a god because the world is beautiful. You have to account for bone cancer in children.</string>
-    <string name="amit_gupta_quote_1"><![CDATA["Whenever I see all around , I see nothing except atoms & molecules "]]></string>
+    <string name="amit_gupta_quote_1">\"Whenever I see all around , I see nothing except atoms &amp; molecules \"</string>
     <string name="steven_weinberg_quote_1">Religion is an insult to human dignity. With or without religion, you would have good people doing good things and evil people doing evil things. But for good people to do evil things, that takes religion?</string>
     <string name="darrow_quote_1">I believe that religion is the belief in future life and in God. I don\'t believe in either. I don\'t believe in God as I don\'t believe in Mother Goose.</string>
+    <string name="darrow_quote_2">I am an Agnostic because I am not afraid to think. I am not afraid of any god in the universe who would send me or any other man or woman to hell. If there were such a being, he would not be a god; he would be a devil.</string>
     <string name="percy_shelley_quote_1">God is an hypothesis, and, as such, stands in need of proof: the onus probandi rests on the theist.</string>
+    <string name="percy_shelley_quote_2">A God made by man undoubtedly has need of man to make himself known to man.</string>
+    <string name="percy_shelley_quote_3">If he is infinitely good, what reason should we have to fear him? If he is infinitely wise, why should we have doubts concerning our future? If he knows all, why warn him of our needs and fatigue him with our prayers? If he is everywhere, why erect temples to him? If he is just, why fear that he will punish the creatures that he has filled with weaknesses? If grace does everything for them, what reason would he have for recompensing them? If he is all-powerful, how offend him, how resist him? If he is reasonable, how can he be angry at the blind, to whom he has given the liberty of being unreasonable? If he is immovable, by what right do we pretend to make him change his decrees? If he is inconceivable, why occupy ourselves with him? IF HE HAS SPOKEN, WHY IS THE UNIVERSE NOT CONVINCED?</string>
     <string name="schrodinger_quote_1">By the way, I never realized that to be nonbelieving, to be an atheist, was a thing to be proud of. It went without saying as it were.</string>
     <string name="sam_harris_quote_7">Atheism is not a philosophy; it is not even a view of the world; it is simply an admission of the obvious.</string>
-    <string name="molyneux_quote_1">I don\'t think it is a good mental health practice to fantasize that you know the infinite thoughts of imaginary entities.</string>
     <string name="holyoake_quote_1">Atheism deprives superstition of its stand ground, and compels Theism to reason for its existence.</string>
     <string name="laertius_quote_1">As to the gods, I have no means of knowing either that they exist or do not exist. For many are the obstacles that impede knowledge, both the obscurity of the question and the shortness of human life.</string>
-    <string name="charles_chaplan_quote_1">By simple common sense I don\'t believe in God, in none.</string>
+    <string name="charles_chaplin_quote_1">By simple common sense I don\'t believe in God, in none.</string>
     <string name="tennesse_williams_quote_1">All your Western theologies, the whole mythology of them, are based on the concept of God as a senile delinquent</string>
     <string name="amis_quote_2">It\'s possible to be flippant here, when Jihadists fly aircraft into buildings they shout God is Great, what do atheists shout when they do it?</string>
     <string name="chomsky_quote_1">…if you ask me whether or not I\'m an atheist, I wouldn\'t even answer. I would first want an explanation of what it is that I\'m supposed not to believe in, and I\'ve never seen an explanation.</string>
+    <string name="chomsky_quote_2">One of the difficulties in raising public concern over the very severe threats of global warming is that 40 percent of the US population does not see why it is a problem, since Christ is returning in a few decades. About the same percentage believe that the world was created a few thousand years ago. If science conflicts with the Bible, so much the worse for science. It would be hard to find an analogue in other societies.</string>
     <string name="hepburn_quote_1">I am an atheist and that\'s it. I believe there\'s nothing we can know except that we should be kind to each other and do what we can for other people.</string>
     <string name="wozniak_quote_1">I am also atheist or agnostic (I don\'t even know the difference). I\'ve never been to church and prefer to think for myself.</string>
+    <string name="bukowski_quote_1">For those who believe in God, most of the big questions are answered. But for those of us who can\'t readily accept the God formula, the big answers don\'t remain stone-written. We adjust to new conditions and discoveries. We are pliable. Love need not be a command nor faith a dictum. I am my own god. We are here to unlearn the teachings of the church, state, and our educational system. We are here to drink beer. We are here to kill war. We are here to laugh at the odds and live our lives so well that Death will tremble to take us</string>
+    <string name="nietzsche_quote_1">Is man merely a mistake of God\'s? Or God merely a mistake of man?</string>
+    <string name="nietzsche_quote_2">A degree of culture, and assuredly a very high one, is attained when man rises above superstitions and religious notions and fears, and, for instance, no longer believes in guardian angels or in original sin, and has also ceased to talk of the salvation of his soul.</string>
+    <string name="fields_quote_1">Atheism is more than just the knowledge that gods do not exist, and that religion is either a mistake or a fraud. Atheism is an attitude, a frame of mind that looks at the world objectively, fearlessly, always trying to understand all things as a part of nature.</string>
+    <string name="jefferson_quote_1">I have observed, indeed, generally, that while in protestant countries the defections from the Platonic Christianity of the priests is to Deism, in catholic countries they are to Atheism. Diderot, D\'Alembert, D\’Holbach, Condorcet, are known to have been among the most virtuous of men. Their virtue, then, must have had some other foundation than the love of God.</string>
+    <string name="aquinas_quote_1">To one who has faith, no explanation is necessary. To one without faith, no explanation is possible.</string>
+    <string name="hicks_quote_1">The whole image is that eternal suffering awaits anyone who questions God\'s infinite love. That\'s the message we\'re brought up with, isn\'t it? Believe or die! Thank you, forgiving Lord, for all those options.</string>
+    <string name="byron_quote_1">I have a great mind to believe in Christianity for the mere pleasure of fancying I may be damned.</string>
+    <string name="ohair_quote_1">An atheist believes that a hospital should be built instead of a church. An atheist believes that deed must be done instead of prayer said. An atheist strives for involvement in life and not escape into death. He wants disease conquered, poverty vanished, war eliminated.</string>
+    <string name="dikkers_quote_1">Be sure to lie to your kids about the benevolent, all-seeing Santa Claus. It will prepare them for an adulthood of believing in God.</string>
+    <string name="barker_quote_1">I think that God that we have created and allowed to shape our culture through, essentially Christian theology is a pretty villainous creature. I think that one of the things that male patriarchal figure has done is, allowed under it\'s, his church, his wing, all kinds of corruptions and villainies to grow and fester. In the name of that God terrible wars have been waged, in the name of that God terrible sexism has been allowed to spread. There are children being born all across this world that don\'t have enough food to eat because that God, at least his church, tells the mothers and fathers that they must procreate at all costs, and to prevent procreation with a condom is in contravention with his laws. Now, I don\'t believe that God exists. I think that God is creation of men, by men, and for men. What has happened over the many centuries now, the better part of two thousand in fact, is that that God has been slowly and steadily accruing power. His church has been accruing power, and the men who run that church, and they are all men, are not about to give it up. If they give it up, they give up luxury, they give up comfort.</string>
+    <string name="lawrence_quote_1">This is what I believe: That I am I. That my soul is a dark forest. That my known self will never be more than a little clearing in the forest. That gods, strange gods, come forth from the forest into the clearing of my known self, and then go back. That I must have the courage to let them come and go. That I will never let mankind put anything over me, but that I will try always to recognize and submit to the gods in me and the gods in other men and women. There is my creed.</string>
+    <string name="carlyle_quote_1">If Jesus Christ were to come today, people would not even crucify him. They would ask him to dinner, and hear what he had to say, and make fun of it.</string>
+    <string name="feynman_quote_1">It doesn\'t seem to me that this fantastically marvelous universe, this tremendous range of time and space and different kinds of animals, and all the different planets, and all these atoms with all their motions, and so on, all this complicated thing can merely be a stage so that God can watch human beings struggle for good and evil - which is the view that religion has. The stage is too big for the drama.</string>
+    <string name="feynman_quote_2">God was always invented to explain mystery. God is always invented to explain those things that you do not understand. Now when you finally discover how something works, you get some laws which you\'re taking away from God; you don\'t need him anymore. But you need him for the other mysteries. So therefore you leave him to create the universe because we haven\'t figured that out yet; you need him for understanding those things which you don\'t believe the laws will explain, such as consciousness, or why you only live to a certain length of time &#8212; life and death &#8212; stuff like that. God is always associated with those things that you do not understand.</string>
+    <string name="attenborough_quote_1">I don\'t know [why we\'re here]. People sometimes say to me, \'Why don\'t you admit that the humming bird, the butterfly, the Bird of Paradise are proof of the wonderful things produced by Creation?\' And I always say, well, when you say that, you\'ve also got to think of a little boy sitting on a river bank, like here, in West Africa, that\'s got a little worm, a living organism, in his eye and boring through the eyeball and is slowly turning him blind. The Creator God that you believe in, presumably, also made that little worm. Now I personally find that difficult to accommodate…</string>
+    <string name="attenborough_quote_2">I find it far more awesome, wonderful, that creation; our appearance in the world; should be the culmination, or at least one of the latest products of 3,000 Million years of organic evolution, than a kind of country trick, taking a rib out of a man\'s side in a trance.</string>
+    <string name="dennett_quote_1">You don\'t get to advertise all the good that your religion does without first scrupulously subtracting all the harm it does and considering seriously the question of whether some other religion, or no religion at all, does better.</string>
+    <string name="mencken_quote_1">It is often argued that religion is valuable because it makes men good, but even if this were true it would not be a proof that religion is true. That would be an extension of pragmatism beyond endurance. Santa Claus makes children good in precisely the same way, and yet no one would argue seriously that the fact proves his existence. The defense of religion is full of such logical imbecilities. The theologians, taking one with another, are adept logicians, but every now and then they have to resort to sophistries so obvious that their whole case takes on an air of the ridiculous. Even the most logical religion starts out with patently false assumptions. It is often argued in support of this or that one that men are so devoted to it that they are willing to die for it. That, of course, is as silly as the Santa Claus proof. Other men are just as devoted to manifestly false religions, and just as willing to die for them. Every theologian spends a large part of his time and energy trying to prove that religions for which multitudes of honest men have fought and died are false, wicked, and against God.</string>
+    <string name="mencken_quote_2">Theology is the effort to explain the unknowable in terms of the not worth knowing.</string>
+    <string name="gould_quote_1">We are the offspring of history, and must establish our own paths in this most diverse and interesting of conceivable universes—one indifferent to our suffering, and therefore offering us maximum freedom to thrive, or to fail, in our own chosen way.</string>
+    <string name="kilmister_quote_1">The only interesting thing about religion is how many people it\'s slaughtered. Communism and Nazism are religions as well, make no mistake about it.</string>
+    <string name="ehrman_quote_1">Different authors have different points of view. You can\'t just say, \'I believe in the Bible.\'</string>
+    <string name="ehrman_quote_2">atheism was an exceedingly rare phenomenon in antiquity: very few people believed there were literally no gods.\n\nThe word \"atheism\" itself, however, simply means \"without the gods,\" and one could be \"without\" them while still acknowledging they existed.\n\n&#8230;atheism applied more normally to \"anyone who rejected or neglected the traditional modes of honoring the gods.\"\n\nThat is to say, anyone who abjectly refused to participate in the worship of divine beings could be labeled an atheist.\n\nSuch a person could expect a good deal of opprobrium and sometimes civil action.\n\nThe Christians were often accused of being atheists.\n\nObviously that was not because they denied the divine realm but because they refused to acknowledge (and act as if) it was inhabited by more than the one being they worshiped and refused to interact with it in traditional ways.</string>
+    <string name="rorty_quote_1">My sense of the holy is bound up with the hope that some day my remote descendants will live in a global civilization in which love is pretty much the only law.</string>
+    <string name="besant_quote_1">No philosophy, no religion, has ever brought so glad a message to the world as this good news of Atheism.</string>
+    <string name="waters_quote_1">Our assholes will be clean but we must never wash our hands. Our immune systems will be strengthened by our being dirty. Not filthy. Just mildly grimy. Filthy fingernails have always been a favorite fashion accessory of mine. Especially when you place your hands in the prayer positions. Matter of fact, I urge all my followers to forgo nail polish permanently and replace it with expertly applied soot. The nonexistent gods above will ignore our prayers better this way.</string>
+    <string name="villanueva_quote_1">God seemed to have become a brand, a packaging, and people purchase this trusted brand with such faith and devotion that they no longer care who the vendor is.</string>
+    <string name="zacharias_quote_1">To sustain the belief that there is no God, atheism has to demonstrate infinite knowledge, which is tantamount to saying, \"I have infinite knowledge that there is no being in existence with infinite knowledge.\"</string>
+    <string name="goldman_quote_1">Do not all theists insist that there can be no morality, no justice, honesty or fidelity without the belief in a Divine Power? Based upon fear and hope, such morality has always been a vile product, imbued partly with self-righteousness, partly with hypocrisy. As to truth, justice, and fidelity, who have been their brave exponents and daring proclaimers? Nearly always the godless ones: the Atheists; they lived, fought, and died for them. They knew that justice, truth, and fidelity are not conditioned in heaven, but that they are related to and interwoven with the tremendous changes going on in the social and material life of the human race; not fixed and eternal, but fluctuating, even as life itself.</string>
+    <string name="krans_quote_1">We stay busy so we don\'t have to admit we don\'t have all the answers. After long enough with our constant distractions, we end our search for them. And God. Soon enough, we\'ll all come to realize we can\'t be God. We\'ll settle for telling ourselves we can. Or we\'ll just make one up.</string>
+    <string name="radcliffe_quote_1">I\'m an atheist, and a militant atheist when religion starts impacting on legislation.</string>
+    <string name="banks_quote_1">I just took [my cancer diagnosis] as bad luck, basically. It did strike me almost immediately, my atheist sort of thing kicked in and I thought \"ha, if I was a God-botherer, I\'d be thinking, why me God? What have I done to deserve this?\" and I thought at least I\'m free of that, at least I can simply treat it as bad luck and get on with it.</string>
+    <string name="dewitt_quote_1">Skepticism is my nature. Free Thought is my methodology. Agnosticism is my conclusion. Atheism is my opinion. Humanitarianism is my motivation.</string>
+    <string name="cantero_quote_1">All those pathetic lonely people fooling one another into their clumsy games of afterlife and cosmic relevance just to avoid noticing the nauseating sadness of their real lives.</string>
+    <string name="ra_quote_1">Most reject the more repugnant or indefensible dogmas while still holding onto some core belief. Many believers will proudly describe themselves as \"reasonable\" or \"rational\" based on how little of their religion they still embrace versus how much they now reject. I think it\'s funny when people realize that the less you believe the more reasonable you are, but they stop before they reach the logical conclusion.</string>
+    <string name="fitzgerald_quote_1">If Jesus had been an actual historical figure we have a thorny paradox. Either this Jesus was a remarkable individual who said and did a host of amazing, revolutionary things – but no one outside his fringe cult noticed for over a century. Or he didn\'t – and yet shortly after his death, tiny communities of worshipers that cannot agree about the most basic facts of his life spring up, scattered all across the empire. The truth is inescapable: there simply could never have been a historical Jesus.</string>
+    <string name="hook_quote_1">Nonetheless, it still remains true that as a set of cognitive beliefs, religious doctrines constitute a speculative hypothesis of an extremely low order of probability.</string>
+    <string name="thurber_quote_1">Hundreds of hysterical persons must confuse these phenomena with messages from the beyond and take their glory to the bishop rather than the eye doctor.</string>
+    <string name="sartre_quote_1">Man is nothing else but what he purposes, he exists only in so far as he realises himself, he is therefore nothing else but the sum of his actions, nothing else but what his life is.</string>
+    <string name="rubin_quote_1">Atheism is the default position. You have to be indoctrinated to believe something but not to believe nothing.</string>
+    <string name="rubin_quote_2">The gods are no longer part of the story. We\'re on our own.</string>
+    <string name="rubin_quote_3">God may be an atheist for all we know.</string>
+    <string name="coates_quote_1">Ideas like cosmic justice, collective hope, and national redemption had no meaning for me. The truth was in the everything that came after atheism, after the amorality of the universe is taken not as a problem but as a given. It was then that I was freed from considering my own morality away from the cosmic and the abstract. Life was short, and death undefeated. So I loved hard, since I would not love for long.</string>
+    <string name="coates_quote_2">Perhaps struggle is all we have because the god of history is an atheist, and nothing about his world is meant to be. So you must wake up every morning knowing that no promise is unbreakable, least of all the promises of waking up at all. This is not despair. These are the preferences of universe itself: verbs over nouns, actions over states, struggle over hope.</string>
+    <string name="coates_quote_3">I have no God to hold me up. And I believe that when they shatter the body they shatter everything, and I knew that all of us—Christians, Muslims, atheists—lived in this fear of this truth.</string>
+    <string name="lemaitre_quote_1">The Bible knows nothing about physics, and physics knows nothing about God.</string>
+    <string name="dan_barker_quote_1">The loftiest biblical principles are obedience, submission, and faith, rather than reason, intelligence, and human values.</string>
+    <string name="dan_barker_quote_2">\'Isn\'t atheism just another religion?\' No, it isn\'t. Atheism has no creeds, rituals, holy book, absolute moral code, origin myth, sacred spaces or shrines. It has no sin, divine judgment, forbidden words, prayer, worship, prophecy, group privileges, or anointed \'holy\' leaders. Atheists don\'t believe in a transcendent world or supernatural afterlife. Most important, there is no orthodoxy in atheism.</string>
+    <string name="dan_barker_quote_3">People are invariably surprised to hear me say I am both an atheist and an agnostic, as if this somehow weakens my certainty. I usually reply with a question like, \'Well, are you a Republican or an American?\' The two words serve different concepts and are not mutually exclusive. Agnosticism addresses knowledge; atheism addresses belief. The agnostic says, \'I don\'t have a knowledge that God exists.\' The atheist says, \'I don\'t have a belief that God exists.\' You can say both things at the same time. Some agnostics are atheistic and some are theistic.</string>
+    <string name="maher_quote_1">I don\'t like the word atheist because to me it mirrors the certainty of religion. I preach the gospel of I don\'t know.</string>
+    <string name="mccarthy_quote_1">Pascal\'s wager&#8212; the bet he took with himself that God existed, even though this could not be proved by reasoning&#8212; strikes me as too prudential. What had Pascal to lose by behaving as if God existed? Absolutely nothing, for there was no counter-Principle to damn him in case God didn\'t. For myself, I prefer not to play it so safe, and I shall never send for a priest or recite an Act of Contrition in my last moments. I do not mind if I lose my soul for all eternity. If the kind of God exists Who would damn me for not working out a deal with Him, then that is unfortunate. I should not care to spend eternity in the company of such a person.</string>
+    <string name="baggini_quote_1">If we pretend or imagine that life\'s purpose lies outside living itself, we will be searching the stars for what is underneath our feet all the time.</string>
+    <string name="baggini_quote_2">Religion will recede not by atheists shouting condemnation, but by the quiet voice of reason slowly making itself heard.</string>
+    <string name="hawking_quote_1">For centuries, it was believed that disabled people like me were living under a curse that was inflicted by God. I prefer to think that everything can be explained another way, by the laws of nature.</string>
+    <string name="hawking_quote_2">There is no God. No-one directs the universe.</string>
+    <string name="james_quote_1">Look, see: the universe does nothing. Victim or monster, there is no one to help.  God is dead. We should have tried to do our best without him.</string>
+    <string name="heinlein_quote_1">Anyone who can worship a trinity and insist that his religion is a monotheism can believe anything.</string>
+    <string name="heinlein_quote_2">Men rarely (if ever) manage to dream up a God superior to themselves. Most Gods have the manners and morals of a spoiled child.</string>
+    <string name="dillahunty_quote_1">I get my limits from a rational consideration of the consequences of my actions, that\'s how I determine what\'s moral. I get it from a foundation that says my actions have an effect on those people around me, and theirs have an effect on me, and if we\'re going to live cooperatively and share space, we have to recognize that impact. And my freedom to swing my arm ends at their nose, and that I have no right to impose my will over somebody else\'s will in that type of scenario. That\'s where I get them from. I get them from an understanding of reality, not an assertion of authority.</string>
+    <string name="dillahunty_quote_2">Either god exists or it doesn\'t exist. If a god does exist, it either interacts with the universe in some detectable way or it doesn\'t. If it doesn\'t, that god is indistinguishable from a non-existent god. That only leaves a god who interacts with the universe in some detectable way. But if science, which is the greatest realization of the use of our senses to, you know, detect things, hasn\'t found this god, that doesn\'t say much for individuals.\n\nIn short, the god you\'ve created is, in fact, undetectable by science. The limits of science are not the province of religious knowledge. Where science is ignorant, so is religion. The only difference is that religion lacks the integrity of science.</string>
+    <string name="garst_quote_1">Religion is the last cultural barrier to gender equity.</string>
+    <string name="cs_lewis_quote_1">The trouble about God is that he is like a person who never acknowledges your letters and so in time you come to the conclusion either that he does not exist or that you have got his address wrong.</string>
+    <string name="diderot_quote_1">It is very important not to mistake hemlock for parsley; but not at all so to believe or not in God.</string>
+    <string name="sinatra_quote_1">I believe in you and me. I\'m like Albert Schweitzer and Bertrand Russell and Albert Einstein in that I have a respect for life &#8212; in any form. I believe in nature, in the birds, the sea, the sky, in everything I can see or that there is real evidence for. If these things are what you mean by God, then I believe in God. But I don\'t believe in a personal God to whom I look for comfort or for a natural on the next roll of the dice.</string>
+    <string name="protagoras_quote_1">Concerning the gods I cannot know either that they exist or that they do not exist, or what form they might have, for there is much to prevent one\'s knowing: the obscurity of the subject and the shortness of man\'s life.</string>
+    <string name="bradlaugh_quote_1">Atheism is without God. It does not assert no God. The atheist does not say that there is no God, but he says \'I know not what you mean by God. I am without the idea of God. The word God to me is a sound conveying no clear or distinct affirmation. I do not deny God, because I cannot deny that of which I have no conception, and the conception of which by its affirmer is so imperfect that he is unable to define it for me.\'</string>
+    <string name="mcfarlane_quote_1">We\'re surrounded by people who don\'t make that distinction. If you say to them \'there\'s a monster living in my closet, you can\'t see him, but you gotta have faith that he\'s there\' people would say \'well that\'s ridiculous, you\'re out of you\'re mind, you should be locked up\' but the same thing does not apply to a guy living on a cloud&#8230; We suspend our powers of logic.</string>
+    <string name="stern_quote_1">I\'m sickened by all religions. Religion has divided people. I don\'t think there\'s any difference between the pope wearing a large hat and parading around with a smoking purse and an African painting his face white and praying to a rock.</string>
+    <string name="rushdie_quote_1">If by some bizarre chance there turns out to be a god [&#8230;], I\'m willing to bet he\'s an atheist too.</string>
+    <string name="salinger_quote_1">In the first place, I\'m sort of an atheist. I like Jesus and all, but I don\'t care too much for most of the other stuff in the Bible. Take the Disciples, for instance. They annoy the hell out of me, if you want to know the truth. They were all right after Jesus was dead and all, but while He was alive, they were about as much use to Him as a hole in the head. All they did was keep letting Him down. I like almost anybody in the Bible better than the Disciples. If you want to know the truth, the guy I like best in the Bible, next to Jesus, was that lunatic and all, that lived in the tombs and kept cutting himself with stones. I like him ten times as much as the Disciples, that poor bastard.</string>
+    <string name="metzinger_quote_1">Evolution simply happened&#8212;foresightless, by chance, without goal. There is nobody to despise or rebel against—not even ourselves. And this is not some bizarre form of neurophilosophical nihilism but rather a point of intellectual honesty and great spiritual depth.</string>
+    <string name="hood_quote_1">Supernatural thinking is simply the natural consequence of failing to match our intuitions with the true reality of the world.</string>
+    <string name="kellogg_quote_1">A long line of research in cognitive science has documented that people make causal attributions about events as a means of maintaining personal control. It is the feeling that things are spinning out of control that motivates the human brain to find a pattern in events and try to predict what is going to happen next. The left-brain interpreter thus will be activated whenever the individual senses a lack of control. Superstitions and conspiracy theories can be seen as the societal consequences of the interpreter\'s drive to find a causal explanation for events that are seemingly out of control.</string>
+    <string name="huxley_quote_1">You never see animals going through the absurd and often horrible fooleries of magic and religion. Only man behaves with such gratuitous folly. It is the price he has to pay for being intelligent but not, as yet, intelligent enough.</string>
+    <string name="knightley_quote_1">It\'s absolutely extraordinary. If only I wasn\'t an atheist, I could get away with anything. You\'d just ask for forgiveness and then you\'d be forgiven.</string>
+    <string name="gilman_quote_1">Let us inquire what glory there was in an omnipotent being torturing forever a puny little creature who could in no way defend himself? Would it be to the glory of man to fry ants?</string>
+    <string name="gage_quote_1">The careful student of history will discover that Christianity has been of very little value in advancing civilization, but has done a great deal toward retarding it.</string>
+    <string name="fahringer_quote_1">We would be 1,500 years ahead if it hadn\'t been for the church dragging science back by its coattails and burning our best minds at the stake.</string>
+    <string name="adams_quote_1">I believe the Black church has done great harm to Black women, especially with its misogynistic gender roles that demean us intellectually while using us as workhorses to further the aims of the church/pastor. My goal is to encourage other Black women to break the bondage of the psychological abuse known as religion so we can actively take on the dismantling of the white supremacist patriarchy, which remains because of our learned docility.</string>
+    <string name="goddard_quote_1">I see too many good people use religion to defend and shield their prejudice, bigotry, and inaction. As a queer black atheist in America, I know that if things are going to change, then we need to question and challenge those religious attitudes. And we need to take action now, today, in this world, instead of waiting for justice in some imagined afterlife.</string>
+    <string name="west_quote_1">I have no faith in the sense of comforting beliefs which persuade me that all my troubles are blessings in disguise. I do not believe that any facts exist, or, rather, are accessible to me, which give any assurance that my life has served an eternal purpose.\n\nI feel no overwhelming anxiety to find some creed to assure me that all has been for the best, which will tell me that I have only to follow a particular path to be consoled by eternal happiness.</string>
+    <string name="smoker_quote_1">If the alleged creator really were a god of love, then he must be so incompetent that it would surely have been better had he left creation uncreated.\n\nWhat is the I.Q. of \"divine intelligence\"? Since it apparently scores no better than random chance, and has learned nothing at all from billions of years of trial and error, \"divine intelligence\" would be put to shame by the powers of adaptability exhibited by the least of its supposed creatures.</string>
 
     <!--Authors -->
-    <string name="chomsky_author">Noam Chomsky</string>
-    <string name="wozniak_author">Steve Wozniak</string>
-    <string name="hepburn_author">Katharine Hepburn</string>
-    <string name="tennesse_willaims_author">Tennessee Williams</string>
-    <string name="charles_chaplin_author">Charles Chaplin</string>
+    <string name="chomsky_author">Chomsky, Noam</string>
+    <string name="wozniak_author">Wozniak, Steve</string>
+    <string name="hepburn_author">Hepburn, Katharine</string>
+    <string name="tennesse_willaims_author">Williams, Tennessee</string>
+    <string name="charles_chaplin_author">Chaplin, Charles</string>
     <string name="laertius_author">Diogenes Laertius</string>
-    <string name="holyoake_author">George Holyoake</string>
-    <string name="molyneux_author">Stefan Molyneux</string>
-    <string name="schrodinger_author">Erwin Schrodinger</string>
-    <string name="percy_shelley_author">Percy Bysshe Shelley</string>
-    <string name="darrow_author">Clarence Darrow</string>
-    <string name="steven_weinberg_author">Steven Weinberg</string>
-    <string name="amit_gupta_author">Amit Gupta</string>
-    <string name="stephen_fry_author">Stephen Fry</string>
-    <string name="kudari_author">Daya Kudari</string>
-    <string name="cj_anderson_author">C.J. Anderson</string>
-    <string name="robert_jordan_author">Robert Jordan</string>
-    <string name="jeni_author">Richard Jeni</string>
-    <string name="jethro_tull_author">Jethro Tull</string>
-    <string name="brad_pitt_author">Brad Pitt</string>
-    <string name="bill_gates_author">Bill Gates</string>
-    <string name="madison_author">James Madison</string>
-    <string name="gore_vidal_author">Gore Vidal</string>
-    <string name="ingersoll_author">Robert G. Ingersoll</string>
-    <string name="jong_author">Erica Jong</string>
-    <string name="gervais_author">Ricky Gervais</string>
-    <string name="bakunin_author">Mikhail Bakunin</string>
-    <string name="john_c_wright_author">John C. Wright</string>
-    <string name="marquis_de_sade_author">Marquis de Sade</string>
-    <string name="duhamel_author">Georges Duhamel</string>
-    <string name="richard_morgan_author">Richard K. Morgan</string>
-    <string name="lincoln_author">Abraham Lincoln</string>
-    <string name="ruth_green_author">Ruth Hurmence Green</string>
-    <string name="einstein_author">Albert Einstein</string>
-    <string name="lewis_black_author">Lewis Black</string>
-    <string name="roddenberry_author">Gene Roddenberry</string>
-    <string name="sam_harris_author">Sam Harris</string>
-    <string name="sagan_author">Carl Sagan</string>
-    <string name="pryor_author">Richard Pryor</string>
-    <string name="zola_author">Emile Zola</string>
-    <string name="murakami_author">Haruki Murakami</string>
-    <string name="neil_degrasse_tyson_author">Neil deGrasse Tyson</string>
-    <string name="tom_wolfe_author">Tom Wolfe</string>
-    <string name="vonnegut_author">Kurt Vonnegut</string>
-    <string name="colbert_author">Stephen Colbert</string>
-    <string name="author_pirsig">Robert M. Pirsig</string>
-    <string name="twain_author">Mark Twain</string>
-    <string name="carlin_author">George Carlin</string>
+    <string name="holyoake_author">Holyoake, George</string>
+    <string name="schrodinger_author">Schrodinger, Erwin</string>
+    <string name="percy_shelley_author">Shelley, Percy Bysshe</string>
+    <string name="darrow_author">Darrow, Clarence</string>
+    <string name="steven_weinberg_author">Weinberg, Steven</string>
+    <string name="amit_gupta_author">Gupta, Amit</string>
+    <string name="stephen_fry_author">Fry, Stephen</string>
+    <string name="kudari_author">Kudari, Daya</string>
+    <string name="cj_anderson_author">Anderson, C.J.</string>
+    <string name="robert_jordan_author">Jordan, Robert</string>
+    <string name="jeni_author">Jeni, Richard</string>
+    <string name="jethro_tull_author">Tull, Jethro</string>
+    <string name="brad_pitt_author">Pitt, Brad</string>
+    <string name="bill_gates_author">Gates, Bill</string>
+    <string name="madison_author">Madison, James</string>
+    <string name="gore_vidal_author">Vidal, Gore</string>
+    <string name="ingersoll_author">Ingersoll, Robert G.</string>
+    <string name="jong_author">Jong, Erica</string>
+    <string name="gervais_author">Gervais, Ricky</string>
+    <string name="bakunin_author">Bakunin, Mikhail</string>
+    <string name="john_c_wright_author">Wright, John C.</string>
+    <string name="marquis_de_sade_author">François, Donatien Alphonse (Marquis de Sade)</string>
+    <string name="duhamel_author">Duhamel, Georges</string>
+    <string name="richard_morgan_author">Morgan, Richard K.</string>
+    <string name="lincoln_author">Lincoln, Abraham</string>
+    <string name="ruth_green_author">Green, Ruth Hurmence</string>
+    <string name="einstein_author">Einstein, Albert</string>
+    <string name="lewis_black_author">Black, Lewis</string>
+    <string name="roddenberry_author">Roddenberry, Gene</string>
+    <string name="sam_harris_author">Harris, Sam</string>
+    <string name="sagan_author">Sagan, Carl</string>
+    <string name="pryor_author">Pryor, Richard</string>
+    <string name="zola_author">Zola, Emile</string>
+    <string name="murakami_author">Murakami, Haruki</string>
+    <string name="neil_degrasse_tyson_author">Tyson, Neil deGrasse</string>
+    <string name="tom_wolfe_author">Wolfe, Tom</string>
+    <string name="vonnegut_author">Vonnegut, Kurt</string>
+    <string name="colbert_author">Colbert, Stephen</string>
+    <string name="author_pirsig">Pirsig, Robert M.</string>
+    <string name="twain_author">Twain, Mark</string>
+    <string name="carlin_author">Carlin, George</string>
     <string name="epicurus_author">Epicurus</string>
-    <string name="napoleon_author">Napoleon Bonaparte</string>
-    <string name="asimov_author">Isaac Asimov</string>
-    <string name="dawkins_author">Richard Dawkins</string>
-    <string name="hitchens_author">Christopher Hitchens</string>
+    <string name="napoleon_author">Bonaparte, Napoleon</string>
+    <string name="asimov_author">Asimov, Isaac</string>
+    <string name="dawkins_author">Dawkins, Richard</string>
+    <string name="hitchens_author">Hitchens, Christopher</string>
     <string name="voltaire_author">Voltaire</string>
-    <string name="shaha_author">Alom Shaha</string>
-    <string name="culliton_author">Travis Culliton</string>
-    <string name="mcclennan_author">C.P. McClennan</string>
-    <string name="navabi_author">Armin Navabi</string>
-    <string name="tochukwu_author">Aniekee Tochukwu</string>
-    <string name="bertrand_russell_author">Bertrand Russell</string>
-    <string name="cox_author">Robert W. Cox</string>
-    <string name="amis_author">Martin Amis</string>
-    <string name="smith_ready_author">Jeri Smith-Ready</string>
-    <string name="mehta_author">Hemant Mehta</string>
-    <string name="andy_rooney_author">Andy Rooney</string>
-    <string name="powers_author">David Powers</string>
-    <string name="dershowitz_author">Alan M. Dershowitz</string>
-    <string name="penn_jillette_author">Penn Jillette</string>
-    <string name="dholdbach_author">Paul Henry Thiry d\'Holbach</string>
-    <string name="stanton_author">Elizabeth Cady Stanton</string>
+    <string name="shaha_author">Shaha, Alom</string>
+    <string name="culliton_author">Culliton, Travis</string>
+    <string name="mcclennan_author">McClennan, C.P.</string>
+    <string name="navabi_author">Navabi, Armi</string>
+    <string name="tochukwu_author">Tochukwu, Aniekee</string>
+    <string name="bertrand_russell_author">Russell, Bertrand</string>
+    <string name="cox_author">Cox, Robert W.</string>
+    <string name="amis_author">Amis, Martin</string>
+    <string name="smith_ready_author">Smith-Ready, Jeri</string>
+    <string name="mehta_author">Mehta, Hemant</string>
+    <string name="andy_rooney_author">Rooney, Andy</string>
+    <string name="powers_author">Powers, David</string>
+    <string name="penn_jillette_author">Jillette, Penn</string>
+    <string name="dholdbach_author">Thiry d\'Holbach, Paul Henry</string>
+    <string name="stanton_author">Stanton, Elizabeth Cady</string>
     <string name="almaarri_author">Al-Ma\'arri</string>
-    <string name="palette_dialog_icon">Palette Dialog Icon</string>
-    <string name="select_theme_color_scheme">Select Theme Color Scheme:</string>
-
-    <string-array name="red_fuzz_smoke_storm">
-        <!--Title Text Color-->
-        <item>#000000</item>
-        <!--Toolbar/Navigation Bar Background Color-->
-        <item>#E5C3C3</item>
-        <!--Quote Text Color-->
-        <item>#D86C6C</item>
-        <!--Quote Background Color-->
-        <item>#F7F2F2</item>
-        <!--List Fragment Item Background Color-->
-        <item>#FFCCCC</item>
-    </string-array>
-
-    <string-array name="azure_black_sea_serpent">
-        <!--Title Text Color-->
-        <item>#040F0F</item>
-        <!--Toolbar/Navigation Bar Background Color-->
-        <item>#51BCBC</item>
-        <!--Quote Text Color-->
-        <item>#1C4949</item>
-        <!--Quote Background Color-->
-        <item>#D4F4F4</item>
-        <!--List Fragment Item Background Color-->
-        <item>#A1EAEA</item>
-    </string-array>
-
-    <string-array name="platinum_pastel_power_burgundy">
-        <!--Title Text Color-->
-        <item>#424242</item>
-        <!--Toolbar/Navigation Bar Background Color-->
-        <item>#AEA4BF</item>
-        <!--Quote Text Color-->
-        <item>#3B252C</item>
-        <!--Quote Background Color-->
-        <item>#E3E4DB</item>
-        <!--List Fragment Item Background Color-->
-        <item>#CDCDCD</item>
-    </string-array>
-
-    <string-array name="mantis_mint_tea_apple">
-        <!--Title Text Color-->
-        <item>#337733</item>
-        <!--Toolbar/Navigation Bar Background Color-->
-        <item>#B2D89E</item>
-        <!--Quote Text Color-->
-        <item>#009900</item>
-        <!--Quote Background Color-->
-        <item>#CAEFB6</item>
-        <!--List Fragment Item Background Color-->
-        <item>#9DE577</item>
-    </string-array>
-
-    <string-array name="jungle_acajou_peach_ochre_mustard">
-        <!--Title Text Color-->
-        <item>#1B2021</item>
-        <!--Toolbar/Navigation Bar Background Color-->
-        <item>#EFC69B</item>
-        <!--Quote Text Color-->
-        <item>#481D24</item>
-        <!--Quote Background Color-->
-        <item>#E9724C</item>
-        <!--List Fragment Item Background Color-->
-        <item>#FFC857</item>
-    </string-array>
-
-    <string-array name="grey_redwood_taupe_raisin">
-        <!--Title Text Color-->
-        <item>#9B5852</item>
-        <!--Toolbar/Navigation Bar Background Color-->
-        <item>#D7CDCC</item>
-        <!--Quote Text Color-->
-        <item>#2B1D1C</item>
-        <!--Quote Background Color-->
-        <item>#705B59</item>
-        <!--List Fragment Item Background Color-->
-        <item>#FFFFFF</item>
-    </string-array>
-
-    <string-array name="theme_titles">
-        <item>Blue Gray - Cyan</item>
-        <item>Light Green - Pink</item>
-        <item>Pink - Indigo</item>
-        <item>Orange - Blue</item>
-        <item>Purple - Amber</item>
-        <item>Brown - Blue</item>
-    </string-array>
+    <string name="bukowski_author">Bukowski, Charles</string>
+    <string name="nietzsche_author">Nietzsche, Friedrich</string>
+    <string name="fields_author">Fields, Emmett F.</string>
+    <string name="jefferson_author">Jefferson, Thomas</string>
+    <string name="aquinas_author">Aquinas, St. Thomas</string>
+    <string name="hicks_author">Hicks, Bill</string>
+    <string name="byron_author">Byron, Lord</string>
+    <string name="ohair_author">O\'Hair, Madalyn Murray</string>
+    <string name="dikkers_author">Dikkers, Scott</string>
+    <string name="barker_author">Barker, Clive</string>
+    <string name="lawrence_author">Lawrence, DH</string>
+    <string name="carlyle_author">Carlyle, Thomas</string>
+    <string name="feynman_author">Feynman, Richard P.</string>
+    <string name="attenborough_author">Attenborough, David</string>
+    <string name="dennett_author">Dennett, Daniel</string>
+    <string name="mencken_author">Mencken, H.L.</string>
+    <string name="gould_author">Gould, Stephen Jay</string>
+    <string name="kilmister_author">Kilmister, Lemmy</string>
+    <string name="ehrman_author">Ehrman, Bart D.</string>
+    <string name="rorty_author">Rorty, Richard M.</string>
+    <string name="besant_author">Besant, Annie Wood</string>
+    <string name="waters_author">Waters, John</string>
+    <string name="villanueva_author">Villanueva, Justin</string>
+    <string name="zacharias_author">Zacharias, Ravi</string>
+    <string name="goldman_author">Goldman, Emma</string>
+    <string name="krans_author">Krans, Brian</string>
+    <string name="radcliffe_author">Radcliffe, Daniel</string>
+    <string name="banks_author">Banks, Iain M.</string>
+    <string name="dewitt_author">DeWitt, Jerry</string>
+    <string name="cantero_author">Cantero, Edgar</string>
+    <string name="ra_author">Ra, Aron</string>
+    <string name="fitzgerald_author">Fitzgerald, David</string>
+    <string name="hook_author">Hook, Sidney</string>
+    <string name="thurber_author">Thurber, James</string>
+    <string name="sartre_author">Sartre, Jean-Paul</string>
+    <string name="rubin_author">Rubin, Marty</string>
+    <string name="coates_author">Coates, Ta-Nehisi</string>
+    <string name="lemaitre_author">Lemaître, Georges</string>
+    <string name="dan_barker_author">Barker, Dan</string>
+    <string name="maher_author">Maher, Bill</string>
+    <string name="mccarthy_author">McCarthy, Mary</string>
+    <string name="baggini_author">Baggini, Julian</string>
+    <string name="hawking_author">Hawking, Stephen</string>
+    <string name="james_author">James, Cliff</string>
+    <string name="heinlein_author">Heinlein, Robert A.</string>
+    <string name="dillahunty_author">Dillahunty, Matt</string>
+    <string name="garst_author">Garst, Karen L.</string>
+    <string name="cs_lewis_author">Lewis, C.S.</string>
+    <string name="diderot_author">Diderot, Denis</string>
+    <string name="sinatra_author">Sinatra, Frank</string>
+    <string name="protagoras_author">Protagoras</string>
+    <string name="bradlaugh_author">Bradlaugh, Charles</string>
+    <string name="mcfarlane_author">Mcfarlane, Seth</string>
+    <string name="stern_author">Stern, Howard</string>
+    <string name="rushdie_author">Rushdie, Salman</string>
+    <string name="salinger_author">Salinger, J.D.</string>
+    <string name="metzinger_author">Metzinger, Thomas</string>
+    <string name="hood_author">Hood, Bruce M.</string>
+    <string name="kellogg_author">Kellogg, Ronald T.</string>
+    <string name="huxley_author">Huxley, Aldous</string>
+    <string name="knightley_author">Knightley, Keira</string>
+    <string name="gilman_author">Gilman, Charlotte Perkins</string>
+    <string name="gage_author">Gage, Matilda Joslyn</string>
+    <string name="fahringer_author">Fahringer, Catherine</string>
+    <string name="adams_author">Adams, Deanna</string>
+    <string name="goddard_author">Goddard, Debbie</string>
+    <string name="west_author">West, Rebecca</string>
+    <string name="smoker_author">Smoker, Barbara</string>
 </resources>
