@@ -1,6 +1,6 @@
 ## Synopsis
 
-This app contains 102 hard-coded quotes about atheism based on the "Fun Facts" Treehouse Android application. They are displayed at random while randomly changing the color of the background. It is a very simple app just click the button. Creating it was a great introductory lesson about the Android framework.
+This app contains 204 hard-coded quotes about atheism based on the "Fun Facts" Treehouse Android application. They are displayed at random while randomly changing the color of the background. It is a very simple app just click the button. Creating it was a great introductory lesson about the Android framework.
 
 ## Motivation
 
