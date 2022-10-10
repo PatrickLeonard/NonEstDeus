@@ -32,7 +32,7 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity implements QuoteListFragment.OnListFragmentInteractionListener {
 
     public static final String TAG = MainActivity.class.getCanonicalName();
-    public static final String APP_VERSION = "1.4.0";
+    public static final String APP_VERSION = "1.3.0";
     public static final String THEME_PREFERENCE_KEY = "theme_key";
     private TabLayout mTabLayout;
     private FragmentManager mFragmentManager;
