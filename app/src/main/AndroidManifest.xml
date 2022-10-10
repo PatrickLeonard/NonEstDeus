@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
         <activity
             android:name="com.nonestdeus.patrickaleonard.nonestdeus.MainActivity"
             android:exported="true"
@@ -28,5 +29,8 @@
             android:name="com.facebook.FacebookContentProvider"
             android:exported="false" />
     </application>
-
+    <queries>
+        <provider android:authorities="com.facebook.katana.provider.PlatformProvider"
+            android:exported="false" />
+    </queries>
 </manifest>

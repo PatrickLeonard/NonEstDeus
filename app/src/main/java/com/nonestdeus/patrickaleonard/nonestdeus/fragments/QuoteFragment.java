@@ -61,8 +61,6 @@ public class QuoteFragment extends Fragment {
             String textToCopy;
             if(getArguments() == null) {
                 toast = Toast.makeText(getActivity(), R.string.error_occurred, Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.TOP, 0, 0);
-                toast.show();
             }
             else {
                 textToCopy = String.format(Locale.getDefault(),"\"%s\" -- %s",getString(getArguments().getInt(Quote.ARG_QUOTE_TEXT)),
@@ -70,9 +68,9 @@ public class QuoteFragment extends Fragment {
                 ClipData clip = ClipData.newPlainText(getString(R.string.clip_description_label), textToCopy);
                 mClipboardManager.setPrimaryClip(clip);
                 toast = Toast.makeText(getActivity(), R.string.clipboard_copy_toast, Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.TOP, 0, 0);
-                toast.show();
             }
+            toast.setGravity(Gravity.TOP, 0, 0);
+            toast.show();
         });
         setLayoutToNewQuote();
         shareToFacebook();

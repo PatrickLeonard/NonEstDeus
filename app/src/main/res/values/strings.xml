@@ -19,6 +19,7 @@
     <string name="actionbar_subtitle">Atheism Quotes</string>
     <string name="change_color_palette">Colors</string>
     <string name="facebook_app_id">283909378905424</string>
+    <string name="facebook_client_token">5fd05d0d329b74f160671e8dffbc3741</string>
     <string name="palette_dialog_icon">Palette Dialog Icon</string>
     <string name="select_theme_color_scheme">Select Theme Color Scheme:</string>
 

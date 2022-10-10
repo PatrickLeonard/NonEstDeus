@@ -39,7 +39,6 @@ public class LicenseFragment extends Fragment {
         View view = inflater.inflate(R.layout.license_fragment,container,false);
         TextView textView = view.findViewById(R.id.message);
         textView.setText(String.format(Locale.getDefault(),getString(R.string.license),MainActivity.APP_VERSION));
-        RelativeLayout relativeLayout = view.findViewById(R.id.licenseLayout);
         return view;
     }
 }

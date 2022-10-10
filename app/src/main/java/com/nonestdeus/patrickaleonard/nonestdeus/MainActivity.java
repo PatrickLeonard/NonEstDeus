@@ -4,6 +4,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+
+import com.facebook.FacebookSdk;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.core.content.res.ResourcesCompat;
