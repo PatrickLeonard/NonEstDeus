@@ -11,13 +11,27 @@ android {
         applicationId "com.nonestdeus.patrickaleonard.nonestdeus"
         minSdkVersion 19
         targetSdkVersion 33
-        versionCode 20
-        versionName "1.3.0"
+        versionCode 21
+        versionName "1.3.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
     buildTypes {
+        debug {
+            Properties properties = new Properties()
+            properties.load(project.rootProject.file('local.properties').newDataInputStream())
+            def fbAppId = properties.getProperty('fb.app.id')
+            resValue "string", "facebook_app_id", fbAppId
+            def fbClientToken = properties.getProperty(('fb.client.token'))
+            resValue "string", "facebook_client_token", fbClientToken
+        }
         release {
+            Properties properties = new Properties()
+            properties.load(project.rootProject.file('local.properties').newDataInputStream())
+            def fbAppId = properties.getProperty('fb.app.id')
+            resValue "string", "facebook_app_id", fbAppId
+            def fbClientToken = properties.getProperty(('fb.client.token'))
+            resValue "string", "facebook_client_token", fbClientToken
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'

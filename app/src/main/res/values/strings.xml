@@ -18,8 +18,6 @@
     <string name="license">NonEstDeus App. Ver. %s \n\nCopyright © 2022, Patrick Leonard\n\nThis software is provided \'as is\' and without any express or implied warranties, including, but no limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed.\n\nNonEstDeus is an open source project. The source code for NonEstDeus can be found, with license, on Github:\nhttps://github.com/PatrickLeonard/NonEstDeus</string>
     <string name="actionbar_subtitle">Atheism Quotes</string>
     <string name="change_color_palette">Colors</string>
-    <string name="facebook_app_id">283909378905424</string>
-    <string name="facebook_client_token">5fd05d0d329b74f160671e8dffbc3741</string>
     <string name="palette_dialog_icon">Palette Dialog Icon</string>
     <string name="select_theme_color_scheme">Select Theme Color Scheme:</string>
 

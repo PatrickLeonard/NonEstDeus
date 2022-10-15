@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -96,9 +97,8 @@ public class QuoteFragment extends Fragment {
     private void shareToFacebook() {
         try {
             final ShareLinkContent content = new ShareLinkContent.Builder()
-                    .setContentUrl(Uri.parse("https://play.google.com/store/apps/details?id=com.nonestdeus.patrickaleonard.nonestdeus"))
-                    .setQuote("\""+mQuoteText.getText()+"\" -- "+mQuoteAuthorText.getText())
                     .setShareHashtag(new ShareHashtag.Builder().setHashtag("#nonestdeus").build())
+                    .setContentUrl(Uri.parse("https://play.google.com/store/apps/details?id=com.nonestdeus.patrickaleonard.nonestdeus"))
                     .build();
             mShareButton.setShareContent(content);
         } catch (Exception e) {
